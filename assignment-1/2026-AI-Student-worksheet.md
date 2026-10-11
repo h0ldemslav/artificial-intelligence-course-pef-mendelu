@@ -124,14 +124,12 @@ Rovněž nebere v úvahu dodržování syntaxe formátování bibliografických 
 
 ## D. Systems and conditions
 
-| System      | Interface/API | Visible model/version | Tools enabled | Prompt adaptations | Date tested |
-| ----------- | ------------- | --------------------- | ------------- | ------------------ | ----------- |
-| ChatGPT     |               |                       |               |                    |             |
-| Gemini      |               |                       |               |                    |             |
-| Claude      |               |                       |               |                    |             |
-| Claude Code |               |                       |               |                    |             |
-| Grok        |               |                       |               |                    |             |
-| Perplexity  |               |                       |               |                    |             |
+| System     | Interface/API | Visible model/version | Tools enabled | Prompt adaptations | Date tested |
+| ---------- | ------------- | --------------------- | ------------- | ------------------ | ----------- |
+| ChatGPT    |               |                       |               |                    |             |
+| Gemini     |               |                       |               |                    |             |
+| Claude     |               |                       |               |                    |             |
+| Perplexity |               |                       |               |                    |             |
 
 **Comparison design:**
 
