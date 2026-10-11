@@ -4,27 +4,37 @@ Complete this worksheet before full data collection. Submit the initial version 
 
 ## A. Project identity
 
-**Project title:**
+**Project title:** Systematické porovnání AI asistentů v rámci výběru a zpracování vědeckých citací
 
 **Team members:**
 
+- Patrik Michl
+- Anna Šmikmátorová
+- Daniil Astapenko
+- Erik Praunsperger
+
 **Roles:**
+
+- Patrik Michl - vývoj skriptu a promptu
+- Anna Šmikmátorová - team lead, dokumentace a tvorba testovacích případů
+- Daniil Astapenko - dokumentace a vyhodnocení
+- Erik Praunsperger - vývoj skriptu a promptu
 
 **Primary track:**
 
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
+- [ ] Směr A: Řízený text
+- [x] Směr B: Výzkum podložený zdroji
+- [ ] Směr C: Vícejazyčné a regionální fungování
 
 **Project scope:**
 
-- [ ]  
-- [ ]  
-- [ ]  
+- [x] Minimální projekt (4 systémy, 40 testovacích případů, 3 výchozí podmínky)
+- [ ] Standardní projekt
+- [ ] Rozšířený projekt
 
 **Worksheet version and date:**
+
+- 0.1, 11.10.2026
 
 ---
 
@@ -32,25 +42,41 @@ Complete this worksheet before full data collection. Submit the initial version 
 
 **Primary research question:**
 
----
+Do jaké míry zlepšuje strukturovaný a optimalizovaný prompt schopnost čtyř AI asistentů (ChatGPT, Gemini, Claude, Perplexity) výběru a zpracování vědeckých citací při psaní odborných textů v češtině.
 
 ---
 
 **Capability being measured:**
 
+Výběr zdrojů, kontextové zakotvení citací a ověřování bibliografických údajů v českých akademických textech. Konkrétně schopnost:
+
+1. Vybírat autoritativní, kontextově relevantní vědecké zdroje, které podpoří konkrétní tvrzení.
+2. Kriticky odhalovat a odmítat zavádějící, stažené, neakademické nebo nesprávně zařazené vstupy.
+3. Generovat syntakticky platné a nehalucinované trvalé identifikátory (DOI a ISBN).
+
 ---
 
 **Primary hypothesis:**
+
+Za podmínek použití optimalizovaného promptu s explicitními pravidly pro verifikaci zdrojů a kritérii pro odmítnutí nevhodných podkladů dosáhnou systémy s přístupem na web / specializovaným indexem (např. Perplexity či ChatGPT s vyhledáváním) vyšší míry celkové citační správnosti (kombinace věcné relevance k tématice, správnosti identifikátorů jako ISBN/DOI a úspěšného odmítnutí irelevantních zdrojů) v rámci hlavní metriky (Míra platných a věcně přiléhavých citací), protože propojení vyhledávacího indexu s verifikačními pravidly v promptu efektivně zabraňuje halucinování metadat i nekritickému přebírání nabídnutých irelevantních textů.
+
+Hypotézu budeme považovat za podpořenou pouze tehdy, pokud se tento výsledek projeví také na 10 případech v testovací sadě držené stranou.
 
 ---
 
 **Alternative explanation:**
 
+Modely mohou dosahovat vysoké přesnosti u často citovaných prací jednoduše proto, že tyto práce byly mnohonásobně zastoupeny v jejich trénovacích datech. Naopak u méně známých nebo specificky českých publikací bude chybovost v identifikátorech výrazně vyšší bez ohledu na kvalitu promptu.
+
 ---
 
 **What result would challenge our hypothesis?**
 
----
+Naše hypotéza by byla zpochybněna nebo vyvrácena, pokud by:
+
+1. Optimalizovaný prompt nepřinesl měřitelné zlepšení primární metriky (kontextové relevance) u 10 vyhrazených testovacích případů ve srovnání se strukturovanou nebo základní podmínkou (což by svědčilo o přetrénování na vývojových a validačních sadách).
+2. Systémy s přístupem na web (Perplexity, ChatGPT s prohlížením, Claude s prohlížením, Gemini) vykazovaly stejnou nebo vyšší míru vymyšlených DOI/ISBN a nekritického přijímání neplatných zdrojů ve srovnání s offline/kontrastními modely, což dokazuje, že samotná integrace vyhledávání nezmírňuje vytváření falešných metadat.
+3. Optimalizace zadání vyvolává nadměrné odmítavé chování (falešná odmítnutí), kdy modely odmítají legitimní, ověřitelné zdroje nebo odmítají podpořit platná tvrzení, čímž se snižuje jejich praktická užitečnost.
 
 ---
 
@@ -64,13 +90,13 @@ Complete this worksheet before full data collection. Submit the initial version 
 
 **Unit of analysis:**
 
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
 
 **Primary metric:**
 
@@ -88,20 +114,20 @@ Complete this worksheet before full data collection. Submit the initial version 
 
 ## D. Systems and conditions
 
-| System | Interface/API | Visible model/version | Tools enabled | Prompt adaptations | Date tested |
-| --- | --- | --- | --- | --- | --- |
-| ChatGPT |  |  |  |  |  |
-| Gemini |  |  |  |  |  |
-| Claude |  |  |  |  |  |
-| Claude Code |  |  |  |  |  |
-| Grok |  |  |  |  |  |
-| Perplexity |  |  |  |  |  |
+| System      | Interface/API | Visible model/version | Tools enabled | Prompt adaptations | Date tested |
+| ----------- | ------------- | --------------------- | ------------- | ------------------ | ----------- |
+| ChatGPT     |               |                       |               |                    |             |
+| Gemini      |               |                       |               |                    |             |
+| Claude      |               |                       |               |                    |             |
+| Claude Code |               |                       |               |                    |             |
+| Grok        |               |                       |               |                    |             |
+| Perplexity  |               |                       |               |                    |             |
 
 **Comparison design:**
 
-- [ ]  
-- [ ]  
-- [ ]  
+- [ ]
+- [ ]
+- [ ]
 
 **What cannot be made equal?**
 
@@ -125,16 +151,16 @@ Complete this worksheet before full data collection. Submit the initial version 
 
 **Repeated-run cases:**
 
-| Stratum | Planned number | Actual number | How selected |
-| --- | --- | --- | --- |
-| Ordinary |  |  |  |
-| Difficult |  |  |  |
-| Edge or adversarial |  |  |  |
-| Ambiguous or incomplete |  |  |  |
-| Czech |  |  |  |
-| English |  |  |  |
-| Mixed language |  |  |  |
-| Other relevant stratum |  |  |  |
+| Stratum                 | Planned number | Actual number | How selected |
+| ----------------------- | -------------- | ------------- | ------------ |
+| Ordinary                |                |               |              |
+| Difficult               |                |               |              |
+| Edge or adversarial     |                |               |              |
+| Ambiguous or incomplete |                |               |              |
+| Czech                   |                |               |              |
+| English                 |                |               |              |
+| Mixed language          |                |               |              |
+| Other relevant stratum  |                |               |              |
 
 **Data provenance:**
 
@@ -191,11 +217,11 @@ Complete this worksheet before full data collection. Submit the initial version 
 ## G. Prompt-change log
 
 | Version | Date | Change | Evidence | Expected effect | Actual validation effect | Retained? |
-| --- | --- | --- | --- | --- | --- | --- |
-| v0 |  |  |  |  |  |  |
-| v1 |  |  |  |  |  |  |
-| v2 |  |  |  |  |  |  |
-| v3 |  |  |  |  |  |  |
+| ------- | ---- | ------ | -------- | --------------- | ------------------------ | --------- |
+| v0      |      |        |          |                 |                          |           |
+| v1      |      |        |          |                 |                          |           |
+| v2      |      |        |          |                 |                          |           |
+| v3      |      |        |          |                 |                          |           |
 
 ---
 
@@ -204,10 +230,10 @@ Complete this worksheet before full data collection. Submit the initial version 
 | Metric | Primary/secondary | Automatic/
 human/judge | Calculation | Calibration or validation | Limitation |
 | --- | --- | --- | --- | --- | --- |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
 
 **Human raters:**
 
@@ -251,23 +277,23 @@ If yes, state judge model, rubric, calibration sample, and known risks:
 
 ### J. Logging checklist
 
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
-- [ ]  
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
 
 **Storage location:**
 
@@ -307,38 +333,38 @@ If yes, state judge model, rubric, calibration sample, and known risks:
 
 ## L. Results table
 
-| System | Condition | *N* | Primary score | Interval or variation | Secondary score | Median latency | Cost | First-attempt success |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| ChatGPT | Baseline |  |  |  |  |  |  |  |
-| ChatGPT | Structured |  |  |  |  |  |  |  |
-| ChatGPT | Optimized |  |  |  |  |  |  |  |
-| Gemini | Baseline |  |  |  |  |  |  |  |
-| Gemini | Structured |  |  |  |  |  |  |  |
-| Gemini | Optimized |  |  |  |  |  |  |  |
-| Claude | Baseline |  |  |  |  |  |  |  |
-| Claude | Structured |  |  |  |  |  |  |  |
-| Claude | Optimized |  |  |  |  |  |  |  |
-| Claude Code | Baseline |  |  |  |  |  |  |  |
-| Claude Code | Structured |  |  |  |  |  |  |  |
-| Claude Code | Optimized |  |  |  |  |  |  |  |
-| Grok | Baseline |  |  |  |  |  |  |  |
-| Grok | Structured |  |  |  |  |  |  |  |
-| Grok | Optimized |  |  |  |  |  |  |  |
-| Perplexity | Baseline |  |  |  |  |  |  |  |
-| Perplexity | Structured |  |  |  |  |  |  |  |
-| Perplexity | Optimized |  |  |  |  |  |  |  |
+| System      | Condition  | _N_ | Primary score | Interval or variation | Secondary score | Median latency | Cost | First-attempt success |
+| ----------- | ---------- | --- | ------------- | --------------------- | --------------- | -------------- | ---- | --------------------- |
+| ChatGPT     | Baseline   |     |               |                       |                 |                |      |                       |
+| ChatGPT     | Structured |     |               |                       |                 |                |      |                       |
+| ChatGPT     | Optimized  |     |               |                       |                 |                |      |                       |
+| Gemini      | Baseline   |     |               |                       |                 |                |      |                       |
+| Gemini      | Structured |     |               |                       |                 |                |      |                       |
+| Gemini      | Optimized  |     |               |                       |                 |                |      |                       |
+| Claude      | Baseline   |     |               |                       |                 |                |      |                       |
+| Claude      | Structured |     |               |                       |                 |                |      |                       |
+| Claude      | Optimized  |     |               |                       |                 |                |      |                       |
+| Claude Code | Baseline   |     |               |                       |                 |                |      |                       |
+| Claude Code | Structured |     |               |                       |                 |                |      |                       |
+| Claude Code | Optimized  |     |               |                       |                 |                |      |                       |
+| Grok        | Baseline   |     |               |                       |                 |                |      |                       |
+| Grok        | Structured |     |               |                       |                 |                |      |                       |
+| Grok        | Optimized  |     |               |                       |                 |                |      |                       |
+| Perplexity  | Baseline   |     |               |                       |                 |                |      |                       |
+| Perplexity  | Structured |     |               |                       |                 |                |      |                       |
+| Perplexity  | Optimized  |     |               |                       |                 |                |      |                       |
 
 ---
 
 ### M. Error analysis
 
 | Error ID | System | Condition | Task ID | Category | Severity | First attempt? | Description | Likely cause | Preventable by prompt? |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
+| -------- | ------ | --------- | ------- | -------- | -------- | -------------- | ----------- | ------------ | ---------------------- |
+|          |        |           |         |          |          |                |             |              |                        |
+|          |        |           |         |          |          |                |             |              |                        |
+|          |        |           |         |          |          |                |             |              |                        |
+|          |        |           |         |          |          |                |             |              |                        |
+|          |        |           |         |          |          |                |             |              |                        |
 
 **Most frequent error:**
 
