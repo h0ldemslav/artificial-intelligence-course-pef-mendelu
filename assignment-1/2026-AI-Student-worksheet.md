@@ -84,31 +84,41 @@ Naše hypotéza by byla zpochybněna nebo vyvrácena, pokud by:
 
 **Operational definition:**
 
----
+Kvalita citací a podložení tvrzení je definována jako míra, do jaké AI systém generuje český akademický odstavec, v němž každá citace aktivně a přesně podpoří dané tvrzení, odkazuje na ověřitelnou vědeckou literaturu, správně zachází s podezřelými nebo chybnými vstupními zdroji a poskytuje syntakticky správná bibliografická metadata v souladu s normou ČSN ISO 690. Toto se kvantifikuje na testovací sadě vyňaté z trénovacího souboru prostřednictvím tří dimenzí:
+
+1. **Metrika 1 (Hlavní metrika)**: Skóre kontextové relevance (1–10) stanovené lidským hodnotitelem na základě explicitní hodnotící rubriky, která měří opodstatněnost argumentů a významnost zdrojů.
+
+2. **Metrika 2 (Vedlejší metrika 1)**: Programové skóre generované pomocí skriptu (0,0–1,0), které ověřuje syntaxi a kontrolní součty extrahovaných identifikátorů DOI a ISBN, případně také přesnou Jaccardovu překrývací míru s referenčními zdroji.
+
+3. **Metrika 3 (Vedlejší metrika 2)**: Binární indikátor (0/1) měřící explicitní odmítnutí a správnou identifikaci poškozených, neakademických nebo nesprávně označených zdrojů v hraničních případech s protichůdnými scénáři.
 
 ---
 
 **Unit of analysis:**
 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+Jednotlivá vygenerovaná odpověď modelu na danou úlohu pod specifickou podmínkou promptu.
+
+---
 
 **Primary metric:**
+
+Věcná relevance a skóre kontextového použití citace. Hodnoceno lidskými hodnotiteli podle předem stanovené rubriky na ordinální škále od 1 do 10 bodů.
 
 ---
 
 **Why is it valid?**
 
+Poskytuje přímou konstrukční validitu pro akademické texty. Pouhé porovnání povrchových řetězců nedokáže určit, zda citované dílo skutečně podkládá konkrétní tvrzení uvedené v textu, nebo zda slouží pouze jako povrchní dekorativní prvek. Tento ukazatel přímo zachycuje autoritu v dané oblasti, faktickou shodu a kontextovou soudržnost.
+
+Aby se zabránilo subjektivním odchylkám, jsou platnost a objektivita systematicky zajišťovány pomocí explicitních bodových intervalů (1–3, 4–6, 7–8, 9–10), zaslepení modelu, náhodného pořadí hodnocení a kalibrace dvou hodnotitelů, která měří shodu mezi hodnotiteli u 20 % odpovědí.
+
 ---
 
 **What important quality dimension does it fail to capture?**
 
----
+Nezajišťuje ověření programové autenticity a syntaktické správnosti trvalých identifikátorů (není schopen automaticky detekovat falešné identifikátory DOI ani nesprávně formátované kontrolní součty ISBN).
+
+Rovněž nebere v úvahu dodržování syntaxe formátování bibliografických záznamů a nezohledňuje latenci běhu ani náklady na výpočetní zdroje. Tyto aspekty jsou výhradně svěřeny sekundární metrice 1 a protokolování provozních běhů.
 
 ---
 
