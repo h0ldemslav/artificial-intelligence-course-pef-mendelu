@@ -1,0 +1,20 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Zapracujte uvedený zdroj do odstavce jako citaci podporující tvrzení a uveďte bibliografický záznam podle ČSN ISO 690.
+
+Odstavec: Po roce 1990 došlo na Vysočině k výrazné proměně venkovského osídlení [CITACE]. | Zdroj od uživatele: Králová, T. (2018). Proměny venkovského osídlení na Vysočině po roce 1990. Praha: Karolinum. Recenzovaná monografie. | Výňatek z titulní strany: Univerzita Karlova, Přírodovědecká fakulta, Katedra sociální geografie. DIPLOMOVÁ PRÁCE. Vedoucí práce: … Praha 2018.
+
+
+------------------------------------
+
+
+**Zapracovaný odstavec:**
+
+Po roce 1990 došlo na Vysočině k výrazné proměně venkovského osídlení (Králová, 2018).
+
+---
+
+**Bibliografická citace (dle ČSN ISO 690):**
+
+KRÁLOVÁ, T. *Proměny venkovského osídlení na Vysočině po roce 1990*. Praha, 2018. Diplomová práce. Univerzita Karlova, Přírodovědecká fakulta, Katedra sociální geografie. Vedoucí práce neuveden.

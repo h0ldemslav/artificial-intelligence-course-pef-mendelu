@@ -1,0 +1,16 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Pokud prodávající zná kvalitu zboží lépe než kupující, mohou kvalitní produkty z trhu postupně vymizet, jak ukazuje příklad trhu s ojetými automobily [CITACE].
+
+
+------------------------------------
+
+
+Pokud prodávající zná kvalitu zboží lépe než kupující, mohou kvalitní produkty z trhu postupně vymizet, jak ukazuje příklad trhu s ojetými automobily (Akerlof, 1970).
+
+Bibliografický záznam:
+
+AKERLOF, George A., 1970. The Market for "Lemons": Quality Uncertainty and the Market Mechanism. The Quarterly Journal of Economics. 84(3), 488–500. ISSN 0033-5533. DOI: 10.2307/1879431.

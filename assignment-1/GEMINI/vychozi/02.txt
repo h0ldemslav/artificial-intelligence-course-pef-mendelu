@@ -1,0 +1,16 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Analýza globálních dat ukázala, že trendy teplot od roku 1980 snížily celosvětové výnosy pšenice a kukuřice ve srovnání se scénářem bez klimatických změn [CITACE].
+
+
+------------------------------------
+
+
+Analýza globálních dat ukázala, že trendy teplot od roku 1980 snížily celosvětové výnosy pšenice a kukuřice ve srovnání se scénářem bez klimatických změn (Lobell, Schlenker a Costa-Roberts, 2011).
+
+Bibliografický záznam podle ČSN ISO 690:
+
+LOBELL, David B., Wolfram SCHLENKER a Justin COSTA-ROBERTS. Climate trends and global crop production since 1980. Science. 2011, 333(6042), 616–620. ISSN 0036-8075. DOI: 10.1126/science.1204531

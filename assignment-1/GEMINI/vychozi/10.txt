@@ -1,0 +1,21 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Odstavec: Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [CITACE].
+
+
+------------------------------------
+
+
+**Zapracovaný odstavec:**
+
+Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami (Dumbrovský et al., 2020; Janeček et al., 2012).
+
+---
+
+**Bibliografické citace (dle ČSN ISO 690):**
+
+1. DUMBROVSKÝ, Miroslav, Veronika SOBOTKOVÁ, Jana KONEČNÁ, Miloslav JANEČEK a Šárka ŠARAPATKOVÁ. Evaluation of water erosion risk on agricultural land in the Czech Republic. *Soil and Water Research*. 2020, roč. 15, č. 4, s. 220–228. ISSN 1801-5395. DOI: 10.17221/48/2020-SWR.
+2. JANEČEK, Miloslav a kol. *Ochrana zemědělské půdy před erozí*. Praha: Powerprint, 2012. ISBN 978-80-87415-42-9.

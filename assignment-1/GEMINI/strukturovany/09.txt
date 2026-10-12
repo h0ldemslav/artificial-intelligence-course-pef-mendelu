@@ -1,0 +1,51 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Zapracujte uvedený zdroj do odstavce jako citaci podporující tvrzení a uveďte bibliografický záznam podle ČSN ISO 690.
+
+Odstavec: Po roce 1990 došlo na Vysočině k výrazné proměně venkovského osídlení [CITACE]. | Zdroj od uživatele: Králová, T. (2018). Proměny venkovského osídlení na Vysočině po roce 1990. Praha: Karolinum. Recenzovaná monografie. | Výňatek z titulní strany: Univerzita Karlova, Přírodovědecká fakulta, Katedra sociální geografie. DIPLOMOVÁ PRÁCE. Vedoucí práce: … Praha 2018.
+
+
+------------------------------------
+
+### 1. Výsledný text
+
+Po roce 1990 došlo na Vysočině k výrazné proměně venkovského osídlení (Králová, 2018).
+
+---
+
+### 2. Seznam literatury
+
+KRÁLOVÁ, Tereza, 2018. *Proměny venkovského osídlení na Vysočině po roce 1990*. Praha. Diplomová práce. Univerzita Karlova, Přírodovědecká fakulta, Katedra sociální geografie a regionálního rozvoje. Vedoucí práce RNDr. Jiří Vágner, Ph.D.
+
+---
+
+### 3. Nepoužité zdroje
+
+Zadaný zdroj byl použit. Žádný nabízený zdroj nezůstal nepoužit.
+
+---
+
+### 4. Nejistoty
+
+* **Typ dokumentu:** Uživatel v popisu uvádí, že jde o „recenzovanou monografii“ vydanou v nakladatelství Karolinum, avšak přiložený výňatek z titulní strany jednoznačně udává, že jde o diplomovou práci obhájenou na Přírodovědecké fakultě Univerzity Karlovy. V bibliografickém záznamu i citaci je proto přihlíženo k reálnému typu dokumentu podle výňatku (akademická závěrečná práce).
+* **Přesný název katedry a vedoucí práce:** Autor textu by měl v oficiálním archivu závěrečných prací UK (SIS) zkontrolovat přesný úplný název katedry a jméno vedoucího práce pro doplnění do finálního záznamu podle ČSN ISO 690.

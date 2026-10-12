@@ -1,0 +1,46 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Odstavec: Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [CITACE].
+
+
+------------------------------------
+
+
+1. **Výsledný text**
+
+Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami (Janeček a kol., 2012).
+
+2. **Seznam literatury**
+
+JANEČEK, Miloslav a kol., 2012. *Ochrana zemědělské půdy před erozí*. Praha: Powerprint. ISBN 978-80-87415-42-9.
+
+3. **Nepoužité zdroje**
+
+nepoužito (V zadání nebyly předloženy žádné konkrétní zdroje k posouzení či výběru.)
+
+4. **Nejistoty**
+
+* Zda nepreferujete citaci metodiky či legislativního předpisu MZe (např. *Standardy dobrého zemědělského a environmentálního stavu půdy – DZES* nebo metodické příručky VÚMOP) namísto souhrnné monografie.
+* Pokud potřebujete k danému tvrzení doplnit druhý zdroj zaměřený specificky na dopady širokořádkových plodin (např. kukuřice) na erozi, doporučuji dohledat a zkontrolovat konkrétní impaktovaný článek či výzkumnou zprávu VÚMOP.

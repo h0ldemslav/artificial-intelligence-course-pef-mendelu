@@ -1,0 +1,25 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Vytvořte úplný a správný bibliografický záznam podle ČSN ISO 690. Pokud jsou dodaná metadata chybná nebo neúplná, opravte je a uveďte, co jste změnili.
+
+Metadata: He et al., ResNet článek z konference CVPR 2016.
+
+
+------------------------------------
+
+
+**Výsledný bibliografický záznam podle ČSN ISO 690:**
+
+HE, Kaiming, Xiangyu ZHANG, Shaoqing REN a Jian SUN. Deep Residual Learning for Image Recognition. In: *2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*. Las Vegas, NV, USA: IEEE, 2016, s. 770-778. DOI: 10.1109/CVPR.2016.90. ISBN 978-1-4673-8851-1.
+
+---
+
+**Provedené opravy a doplnění metadat:**
+
+1. **Jména autorů:** Metadata obsahovala pouze zápis „He et al.“. Záznam byl doplněn o všechna plná jména autorů (Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun).
+2. **Název článku:** Chybějící název článku byl doplněn na základě identifikaceResNet publikace (*Deep Residual Learning for Image Recognition*).
+3. **Název konference/sborníku:** Obecné označení „CVPR 2016“ bylo upřesněno na oficiální název sborníku (*2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*).
+4. **Místo konání a vydavatel:** Doplněno místo konání konference (Las Vegas, NV, USA) a nakladatel/vydavatel sborníku (IEEE).
+5. **Rozsah stran:** Doplněno konkrétní rozmezí stran ve sborníku (s. 770-778).
+6. **Standardní identifikátory:** Doplněn identifikátor DOI (`10.1109/CVPR.2016.90`) a ISBN sborníku (`978-1-4673-8851-1`).

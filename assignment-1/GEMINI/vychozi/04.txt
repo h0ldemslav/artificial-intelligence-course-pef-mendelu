@@ -1,0 +1,19 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Z nabízených zdrojů vyberte ten, který nejlépe podporuje tvrzení v odstavci, a citujte jej podle ČSN ISO 690. U každého nevybraného zdroje jednou větou zdůvodněte, proč jej nepoužijete.
+
+Odstavec: Zvýšit světovou produkci potravin a současně snížit dopady zemědělství na životní prostředí lze mimo jiné uzavřením výnosových mezer a efektivnějším využíváním vody a živin. | Kandidáti: (1) Foley, J. A. et al. (2011). Solutions for a cultivated planet. Nature. (2) He, K. et al. (2016). Deep Residual Learning for Image Recognition. CVPR. (3) Fama, E. F. (1970). Efficient Capital Markets. Journal of Finance. (4) Tilman, D. et al. (2002). Agricultural sustainability and intensive production practices. Nature.
+
+
+------------------------------------
+
+
+**Správný zdroj:**
+FOLEY, Jonathan A., Ruth DEFRIES, Gregory P. ASNER, et al. Solutions for a cultivated planet. *Nature*. 2011, **478**(7369), 337–342. ISSN 1476-4687. DOI: 10.1038/nature10452.
+
+**Zdůvodnění nepoužití ostatních zdrojů:**
+
+* **(2) He, K. et al. (2016):** Tento zdroj se zabývá hlubokým učením a rozpoznáváním obrazu v oblasti počítačové vědy, což nesouvisí se zemědělstvím a produkcí potravin.
+* **(3) Fama, E. F. (1970):** Tento článek je zaměřen na hypotézu efektivních trhů ve financích a ekonomii, nikoli na zemědělskou produkci a využití zdrojů.
+* **(4) Tilman, D. et al. (2002):** Přestože se tento zdroj věnuje udržitelnému zemědělství, článek Jonathana Foleyho a kol. (2011) přímo definuje a rozvíjí konkrétní koncepty zmíněné v odstavci, jako je uzavírání výnosových mezer (*closing yield gaps*) a zvyšování efektivity využívání vody a živin.

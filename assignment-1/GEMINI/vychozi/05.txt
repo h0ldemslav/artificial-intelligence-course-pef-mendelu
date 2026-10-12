@@ -1,0 +1,16 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Zapracujte uvedený zdroj do odstavce jako citaci podporující tvrzení a uveďte bibliografický záznam podle ČSN ISO 690.
+
+Odstavec: Nejméně kompetentní lidé hodnotí své schopnosti výše než skuteční experti [CITACE]. | Zdroj: Kruger, J.; Dunning, D. (1999). Unskilled and unaware of it. Journal of Personality and Social Psychology, 77(6), 1121–1134.
+
+
+------------------------------------
+
+
+**Odstavec s citací:**
+Nejméně kompetentní lidé hodnotí své schopnosti výše než skuteční experti (Kruger a Dunning, 1999).
+
+**Bibliografický záznam podle ČSN ISO 690:**
+KRUGER, Justin a David DUNNING. Unskilled and unaware of it: How difficulties in recognizing one's own incompetence lead to inflated self-assessments. *Journal of Personality and Social Psychology*. 1999, **77**(6), 1121–1134. ISSN 0022-3514. DOI: 10.1037/0022-3514.77.6.1121.
