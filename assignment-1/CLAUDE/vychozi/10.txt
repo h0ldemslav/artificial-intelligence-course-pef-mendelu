@@ -1,0 +1,20 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Odstavec: Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [CITACE].
+
+
+------------------------------------
+
+
+**Doplněný odstavec:**
+
+Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [1].
+
+**Bibliografický záznam (ČSN ISO 690):**
+
+[1] Vyhláška č. 240/2021 Sb., o ochraně zemědělské půdy před erozí. In: *Sbírka zákonů České republiky*. 2021, částka 100. Platnost od 23. 6. 2021. Dostupné z: https://www.zakonyprolidi.cz/cs/2021-240. DOI: neuvedeno. ISBN: neuvedeno.
+
+**Poznámka:** Nenašel jsem odborný článek nebo monografii s ověřitelným DOI nebo ISBN, která by přesně podpořila toto tvrzení, takže jsem nechtěl DOI ani ISBN vymýšlet. Uvedená vyhláška je právní předpis, který se erozním ohrožením zemědělské půdy přímo zabývá. Pro odborný zdroj doporučuji vyhledat v databázích Web of Science, Scopus nebo Google Scholar kombinaci „vodní eroze“ a „orná půda“ a ověřit DOI přímo u vydavatele.

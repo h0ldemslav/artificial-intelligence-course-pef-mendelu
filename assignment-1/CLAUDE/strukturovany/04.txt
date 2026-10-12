@@ -1,0 +1,49 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Z nabízených zdrojů vyberte ten, který nejlépe podporuje tvrzení v odstavci, a citujte jej podle ČSN ISO 690. U každého nevybraného zdroje jednou větou zdůvodněte, proč jej nepoužijete.
+
+Odstavec: Zvýšit světovou produkci potravin a současně snížit dopady zemědělství na životní prostředí lze mimo jiné uzavřením výnosových mezer a efektivnějším využíváním vody a živin. | Kandidáti: (1) Foley, J. A. et al. (2011). Solutions for a cultivated planet. Nature. (2) He, K. et al. (2016). Deep Residual Learning for Image Recognition. CVPR. (3) Fama, E. F. (1970). Efficient Capital Markets. Journal of Finance. (4) Tilman, D. et al. (2002). Agricultural sustainability and intensive production practices. Nature.
+
+
+------------------------------------
+
+
+**1. Výsledný text**
+
+Zvýšit světovou produkci potravin a zároveň snížit dopady zemědělství na životní prostředí lze mimo jiné uzavřením výnosových mezer a efektivnějším využíváním vody a živin (Foley et al., 2011).
+
+**2. Seznam literatury**
+
+FOLEY, Jonathan A., et al. Solutions for a cultivated planet. *Nature*. 2011, roč. 478, č. 7369, s. 337–342. DOI 10.1038/nature10452.
+
+**3. Nepoužité zdroje**
+
+- He, K. et al. (2016), *Deep Residual Learning for Image Recognition*: Práce o rozpoznávání obrazu v počítačovém vidění a s výživou ani zemědělstvím nesouvisí.
+- Fama, E. F. (1970), *Efficient Capital Markets*: Práce o efektivitě finančních trhů nemá k produkci potravin ani k dopadům na životní prostředí žádnou tematickou souvislost.
+- Tilman, D. et al. (2002), *Agricultural sustainability and intensive production practices*: Je věcně relevantní a původní, ale tvrzení o uzavírání výnosových mezer a efektivním hospodaření s vodou a živinami podporuje méně přímo než Foley et al. (2011). Lze jej použít jako doplňkový zdroj k diskusi o intenzivní produkci a jejích dopadech.
+
+**4. Nejistoty**
+
+- Bibliografické údaje (číslo ročníku 478, číslo 7369, stránky 337–342 a DOI) jsou podle mého vědomí správné, ale nebyly ověřeny vyhledáním. Před odevzdáním doporučuji je zkontrolovat na stránce DOI nebo v databázi Nature.
+- Foley et al. (2011) je modelová studie. Tvrzení v odstavci je formulováno jako možnost („lze“), což odpovídá. Pokud text uvádí konkrétní množství nebo procenta, je třeba je ověřit přímo v článku a případně doplnit výhradu, že jde o odhady z modelů.
+- Pokud text vychází z dalšího tvrzení o vztahu mezi intenzitou výroby a dopady na prostředí, bude potřeba ověřit, že jej podporuje samostatný zdroj, protože jediná citace pokrývá hlavně možnosti zvýšení produkce a snížení dopadů.

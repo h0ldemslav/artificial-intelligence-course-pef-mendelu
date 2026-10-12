@@ -1,0 +1,14 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Zapracujte uvedený zdroj do odstavce jako citaci podporující tvrzení a uveďte bibliografický záznam podle ČSN ISO 690.
+
+Odstavec: Formativní hodnocení se na českých základních školách v posledních letech rozšířilo do většiny tříd [CITACE]. | Zdroj: Dvořáková, M. (2019). Formativní hodnocení v praxi českých základních škol. Pedagogická orientace, 29(4), 512–530.
+
+
+------------------------------------
+
+
+Formativní hodnocení se na českých základních školách v posledních letech rozšířilo do většiny tříd (Dvořáková, 2019).
+
+DVOŘÁKOVÁ, M. Formativní hodnocení v praxi českých základních škol. *Pedagogická orientace*. 2019, roč. 29, č. 4, s. 512–530.

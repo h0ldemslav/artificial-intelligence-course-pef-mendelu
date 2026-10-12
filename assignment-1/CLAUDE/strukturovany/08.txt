@@ -1,0 +1,51 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Vytvořte úplný a správný bibliografický záznam podle ČSN ISO 690. Pokud jsou dodaná metadata chybná nebo neúplná, opravte je a uveďte, co jste změnili.
+
+Metadata: He et al., ResNet článek z konference CVPR 2016.
+
+
+------------------------------------
+
+
+**1. Výsledný text**
+nepoužito
+
+**2. Seznam literatury**
+
+HE, Kaiming, Xiangyu ZHANG, Shaoqing REN a Jian SUN. Deep residual learning for image recognition. In: *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*. Las Vegas: IEEE, 2016, s. 770–778. DOI 10.1109/CVPR.2016.90. ISBN 978-1-4673-8851-1.
+
+**Co bylo změněno nebo doplněno:**
+- Zkrácené „He et al.“ bylo nahrazeno úplným seznamem autorů (Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun). Podle ČSN ISO 690 se u více autorů uvádějí všichni, nebo se použije zkrácení, pokud to norma nebo instituce dovolují.
+- Zkratka „CVPR 2016“ byla rozepsána na plný název konference a doplněna o místo konání a vydavatele.
+- Byly doplněny stránky (770–778), DOI a ISBN sborníku.
+- Příjmení autorů jsou psána velkými písmeny podle konvence ČSN ISO 690.
+
+**3. Nepoužité zdroje**
+Žádné další zdroje nebyly nabídnuty, takže nebylo co vyhodnocovat.
+
+**4. Nejistoty**
+- **ISBN 978-1-4673-8851-1** uvádím podle paměti. Doporučuji ověřit ho v katalogu IEEE Xplore nebo v knihovně, protože sborníky někdy mají více ISBN (tištěná a elektronická verze).
+- **Stránky 770–778** a **DOI 10.1109/CVPR.2016.90** jsou podle mých znalostí správné, ale před odevzdáním je zkontrolujte na IEEE Xplore nebo na stránkách CVPR.
+- **Místo konání (Las Vegas)** jsem nepřevzal z dodaných metadat, ověřte ho v oficiálním sborníku.
+- Pokud citujete preprint, existuje verze na arXiv (arXiv:1512.03385). Pro odbornou práci je ale vhodnější citovat publikovanou verzi z CVPR, pokud ji máte k dispozici.

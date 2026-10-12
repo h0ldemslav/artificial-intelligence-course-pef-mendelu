@@ -1,0 +1,50 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Z nabízených zdrojů vyberte ten, který nejlépe podporuje tvrzení v odstavci, a citujte jej podle ČSN ISO 690. U každého nevybraného zdroje jednou větou zdůvodněte, proč jej nepoužijete.
+
+Odstavec: Studenti, kteří věří ve vlastní schopnost úkol zvládnout, vynakládají více úsilí a déle vytrvají při obtížích. | Kandidáti: (1) Bandura, A. (1977). Self-efficacy: Toward a Unifying Theory of Behavioral Change. Psychological Review. (2) Milgram, S. (1963). Behavioral Study of Obedience. Journal of Abnormal and Social Psychology. (3) Hattie, J.; Timperley, H. (2007). The Power of Feedback. RER. (4) Wright, L. (2017). Self-belief engines in adolescent learners. International Journal of Motivation Dynamics, 9(4), 301–318.
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+Podle teorie sebeúčinnosti vedou přesvědčení jednotlivce o vlastní schopnosti zvládnout úkol k většímu vynaložení úsilí a delší vytrvalosti při překážkách (Bandura, 1977). Tato formulace je záměrně opatrnější než původní znění. Bandura v článku předkládá obecnou teorii a předpovídá tento vztah, nezkoumá specificky studenty. Pokud chcete tvrzení ponechat v původní podobě, doplňte empirickou studii o studentech.
+
+## 2. Seznam literatury
+
+BANDURA, Albert. Self-efficacy: toward a unifying theory of behavioral change. *Psychological Review*. 1977, roč. 84, č. 2, s. 191–215. DOI 10.1037/0033-295X.84.2.191.
+
+## 3. Nepoužité zdroje
+
+- **Milgram (1963)**: Studie o poslušnosti vůči autoritě nesouvisí s sebeúčinností ani s vytrvalostí studentů.
+- **Hattie & Timperley (2007)**: Článek o zpětné vazbě je tematicky blízký učení, ale netýká se sebeúčinnosti ani vynaložení úsilí jako takového.
+- **Wright (2017)**: Nedokázal jsem ověřit existenci článku ani časopisu *International Journal of Motivation Dynamics*, proto jej nelze použít bez ověření v databázi.
+
+## 4. Nejistoty
+
+- **Stránky a DOI** u Bandury (1977) uvádím podle své paměti. Doporučuji je ověřit v databázi APA PsycNet nebo přímo podle DOI, protože jsem je nemohl ověřit při práci s nástroji.
+- **Rozsah tvrzení**: Článek je teoretický. Pokud text tvrdí něco o studentech konkrétně, bude potřeba doplnit empirický zdroj, který jsem v nabídce nenašel.
+- **Wright (2017)**: Zkontrolujte, zda článek vůbec existuje. Pokud se nepodaří najít v databázi, je třeba jej z textu odstranit.
+- **Formát ČSN ISO 690**: Před odevzdáním zkontrolujte přesnou podobu velikosti písmen v názvu a zápis časopisu podle požadavků vaší školy, protože se mohou lišit.

@@ -1,0 +1,50 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Analýza globálních dat ukázala, že trendy teplot od roku 1980 snížily celosvětové výnosy pšenice a kukuřice ve srovnání se scénářem bez klimatických změn [CITACE].
+
+
+------------------------------------
+
+
+**1. Výsledný text**
+
+Analýza globálních dat ukázala, že klimatické trendy od roku 1980, zejména růst teploty a změny srážek, snížily celosvětové výnosy pšenice a kukuřice přibližně o 5,5 % (pšenice) a 3,8 % (kukuřice) ve srovnání se scénářem bez těchto trendů (Lobell et al., 2011).
+
+*Upozornění k původnímu tvrzení:* Původní formulace připisuje pokles pouze trendům teploty. Lobell et al. (2011) analyzovali kombinované klimatické trendy, tedy teplotu i srážky, a jejich efekty nelze v článku bez dalšího oddělit. Výsledky také platí pro srovnání s hypotetickým scénářem bez trendů, nikoli pro pokles oproti roku 1980. Proto navrhuji tuto opravu, pokud má text zůstat přesný. Čísla uvádím podle hlavního textu článku, ale je vhodné je před odevzdáním ověřit přímo v originálu.
+
+**2. Seznam literatury**
+
+LOBELL, David B., Wolfram SCHLENKER a Justin COSTA-ROBERTS. Climate trends and global crop production since 1980. *Science*. 2011, roč. 333, č. 6042, s. 616–620. DOI 10.1126/science.1204531.
+
+**3. Nepoužité zdroje**
+
+Žádné další zdroje nebyly nabídnuty ani navrženy. Jeden zdroj zcela pokrývá požadované tvrzení, takže druhá citace není nutná.
+
+**4. Nejistoty**
+
+- **DOI a stránkování:** Údaje o čísle ročníku, čísle vydání, stranách a DOI jsem uvedl z paměti. Nemohl jsem je v tomto prostředí ověřit. Před odevzdáním je zkontrolujte na webu časopisu *Science* nebo v Crossref.
+- **Přesná čísla poklesu:** Hodnoty 5,5 % a 3,8 % odpovídají mým znalostem z článku, ale nejsem si jistý, zda jde o přesné znění všech výsledků nebo o zaokrouhlení. Ověřte je v tabulkách článku.
+- **Rozsah výsledků:** Článek uvádí, že u rýže a sóji nebyl pokles statisticky průkazný. Pokud text zmiňuje všechny hlavní plodiny, je třeba to zohlednit.
+- **Aktuálnost:** Článek pokrývá období 1980–2008. Pokud text pracuje s novějšími daty, je potřeba najít novější studie.

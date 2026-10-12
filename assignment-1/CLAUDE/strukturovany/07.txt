@@ -1,0 +1,56 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Vytvořte úplný a správný bibliografický záznam podle ČSN ISO 690. Pokud jsou dodaná metadata chybná nebo neúplná, opravte je a uveďte, co jste změnili.
+
+Metadata: Fama, E. F. (1965). Efficient Capital Markets: A Review of Theory and Empirical Work. Journal of Business.
+
+
+------------------------------------
+
+
+**1. Výsledný text**
+
+nepoužito
+
+**2. Seznam literatury**
+
+FAMA, Eugene F. Efficient capital markets: a review of theory and empirical work. *The Journal of Finance*. 1970, roč. 25, č. 2, s. 383–417. DOI 10.2307/2325486.
+
+**Opravy dodaných metadat**
+
+- **Rok:** 1965 → 1970. Článek vyšel v roce 1970.
+- **Časopis:** *Journal of Business* → *The Journal of Finance*. Článek s tímto názvem vyšel v *Journal of Finance*, nikoli v *Journal of Business*.
+- **Doplněné údaje:** ročník 25, číslo 2, rozsah stran 383–417 a DOI.
+- **Formát:** Název článku je v ČSN ISO 690 psán jen s velkým počátečním písmenem a za dvojtečkou, jak to vyžaduje norma pro názvy s podtitulem. Jméno autora je uvedeno ve formátu PŘÍJMENÍ, Jméno.
+
+Záměna s jinou prací: Fama v roce 1965 publikoval článek „The Behavior of Stock-Market Prices“ v *Journal of Business* (38, č. 1, s. 34–105). Pokud jste měl na mysli tento text, je potřeba jeho metadata zadat samostatně.
+
+**3. Nepoužité zdroje**
+
+Žádné další zdroje nebyly nabídnuty.
+
+**4. Nejistoty**
+
+- Údaje (ročník 25, číslo 2, strany 383–417, DOI 10.2307/2325486) jsou podle mých znalostí správné, ale v této odpovědi jsem je nemohl ověřit proti databázi. Doporučuji ověřit je v JSTOR, na webu *Journal of Finance* nebo v Crossref.
+- Pokud se v textu odkazujete na konkrétní tvrzení z článku, zkontrolujte jeho stránku v původním zdroji. Samotný záznam nezaručuje, že vámi citované tvrzení se v článku nachází.
+- Pro český text ověřte, zda vaše instituce nevyžaduje jinou variantu ČSN ISO 690 (například u zkratek časopisů nebo u uvádění jmen v originálním jazyce).

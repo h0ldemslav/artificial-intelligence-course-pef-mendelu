@@ -1,0 +1,57 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Odstavec: Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [CITACE].
+
+
+------------------------------------
+
+
+**1. Výsledný text**
+
+Vodní eroze ohrožuje přibližně polovinu orné půdy v Česku (Vysloužilová a Kliment, 2012). Zrychlená vodní eroze je tedy plošně významným problémem, ne jen lokálním jevem.
+
+*Poznámka k tvrzení:* Věta v zadání je v podstatě správná, ale „významná část“ je neurčitá a zdroje se v číslech liší. Vysloužilová a Kliment uvádějí přibližně 50 %. Hodnoty ve zpravodajství se pohybují od zhruba 28 % (vodní eroze, podle Novinek) přes 57 % potenciálně ohrožené půdy (Zpráva o životním prostředí 2016, podle ČT24) až po 70 % (odborník v Seznam Zprávách). Proto doporučuji přesnější formulaci uvedenou výše. Tvrzení o svažitých pozemcích s širokořádkovými plodinami jsem v odborném zdroji nenašel, proto jsem ho do textu nezahrnul (viz Nejistoty).
+
+**2. Seznam literatury (ČSN ISO 690)**
+
+VYSLOUŽILOVÁ, Barbora a Zdeněk KLIMENT. Modelování erozních a sedimentačních procesů v malém povodí [Soil Erosion and Sediment Deposition Modelling at the Small Catchment Scale]. *Geografie*. 2012, roč. 117, č. 2, s. 170–191. Dostupné také z: https://geografie.cz/media/pdf/geo_2012117020170.pdf. DOI: neověřeno.
+
+**3. Nepoužité zdroje**
+
+- Novinky.cz, „Česko trápí eroze i zábory půdy…“: zpravodajský článek, nikoli odborný zdroj; uvádí jiné procento (28 %) než odborná literatura.
+- ČT24, „Z Česka denně zmizí 15 hektarů…“ a „Z Česka mizí kvůli erozi nejúrodnější půda…“: zpravodajství, citované údaje pocházejí z Zprávy o životním prostředí 2016, kterou by bylo vhodnější citovat přímo.
+- Seznam Zprávy, „Z Česka odtéká nejúrodnější půda…“: publicistický článek s odhadem 70 %, který není doložen.
+- Novinky.cz, „Krajina se změní…“: popularizační text bez primárních dat a bez údajů o svažitých pozemcích s širokořádkovými plodinami.
+- Novinky.cz (Právo), „Eroze dělá kvůli špatnému hospodaření z černozemí bezcenné půdy“: zpravodajský článek, nepodporuje konkrétní tvrzení v textu.
+- Businessinfo.cz, „Z Česka mizí ornice…“: názorový článek bez ověřitelných primárních zdrojů.
+- ČT24, „Česku hrozí kvůli erozi miliardová pokuta z Bruselu“: zpravodajský článek, tematicky souvisí, ale neposkytuje konkrétní ověřitelné číslo k tvrzení.
+
+**4. Nejistoty**
+
+- **DOI** článku jsem nedohledal. Před odevzdáním jej ověřte na webu časopisu Geografie nebo v databázi Crossref.
+- **Rozsah citace:** z úryvku jsem ověřil pouze větu o 50 % orné půdy. Před citováním doporučuji přečíst celý článek.
+- **Původní zdroj 50 %:** článek odkazuje na Janečka a kol. (2012?). Tento zdroj by měl být původním zdrojem údaje o rozsahu vodní eroze. Ověřte jeho plné bibliografické údaje a případně jej citujte místo sekundárního odkazu. Záznam jsem nedoplnil, protože rok, název a vydavatele jsem nedohledal.
+- **Svažité pozemky a širokořádkové plodiny:** odborné potvrzení chybí. Doporučuji doplnit tvrzení z odborné publikace o protierozní ochraně (např. Janeček a kol.) po ověření jejích metadat.
+- **Údaje ve zpravodajství** se navzájem liší (28 %, 50 %, 57 %, 70 %). Před použitím některého čísla ověřte primární zdroj, zejména Zprávu o životním prostředí.

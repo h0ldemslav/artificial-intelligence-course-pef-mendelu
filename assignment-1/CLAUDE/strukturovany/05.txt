@@ -1,0 +1,49 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Zapracujte uvedený zdroj do odstavce jako citaci podporující tvrzení a uveďte bibliografický záznam podle ČSN ISO 690.
+
+Odstavec: Nejméně kompetentní lidé hodnotí své schopnosti výše než skuteční experti [CITACE]. | Zdroj: Kruger, J.; Dunning, D. (1999). Unskilled and unaware of it. Journal of Personality and Social Psychology, 77(6), 1121–1134.
+
+
+------------------------------------
+
+
+**1. Výsledný text**
+
+Původní tvrzení je v této formě nepřesné. Kruger a Dunning (1999) nezjistili, že nejméně kompetentní lidé hodnotí své schopnosti obecně výše než experti. Zjistili, že účastníci v nejnižším kvartilu výkonu nadhodnocovali své relativní postavení mezi ostatními, zatímco nejlepší účastníci své výkony spíše podceňovali (Kruger a Dunning, 1999). Navrhovaná formulace:
+
+> Účastníci s nejnižším výkonem v testech logického uvažování, gramatiky a humoru výrazně nadhodnocovali své relativní postavení mezi ostatními, zatímco účastníci s nejlepším výkonem hodnotili své schopnosti přesněji nebo je mírně podceňovali (Kruger a Dunning, 1999). Autoři tento jev vysvětlují tím, že ke správnému posouzení vlastní nekompetence jsou potřeba stejné dovednosti, jaké jsou potřeba k dobrému výkonu v dané oblasti. Efekt je však předmětem metodologické diskuse, proto je vhodné jej interpretovat opatrně.
+
+**2. Seznam literatury**
+
+KRUGER, Justin a David DUNNING. Unskilled and unaware of it: how difficulties in recognizing one's own incompetence lead to inflated self-assessments. *Journal of Personality and Social Psychology*. 1999, roč. 77, č. 6, s. 1121–1134. ISSN 0022-3514. DOI 10.1037/0022-3514.77.6.1121.
+
+**3. Nepoužité zdroje**
+
+Žádné nabídnuté zdroje nebyly nepoužity. Uvedený zdroj je původní a často citovaná studie, která přímo podporuje upravené tvrzení.
+
+**4. Nejistoty**
+
+- **Bibliografická metadata:** Jméno, název, časopis, ročník, číslo, stránky a DOI jsem uvedl podle svých znalostí. Doporučuji je ověřit v databázi APA PsycNet nebo na webu vydavatele (American Psychological Association) a podle potřeby doplnit úplný podnázev článku.
+- **Rozsah zjištění:** Přesné hodnoty z tabulek a grafů studie jsem neověřil. Formulace o kvartilech a o podceňování nejlepších účastníků odpovídá obecně uváděné interpretaci, ale před odevzdáním zkontrolujte původní text.
+- **Metodologická diskuse:** Existují práce, které tvrdí, že velká část tohoto efektu může být statistickým artefaktem (regrese k průměru a způsob měření). Pokud text tento efekt podává jako prokázaný jev, mělo by být zmíněno, že jeho interpretace je sporná. Konkrétní zdroje kritiky doporučuji vyhledat a ověřit, než je do textu zařadíte.

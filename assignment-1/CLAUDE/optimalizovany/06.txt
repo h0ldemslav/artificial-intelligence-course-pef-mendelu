@@ -1,0 +1,74 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata. Výsledné tvrzení musí odpovídat rozsahu a síle důkazů citovaného zdroje.
+
+Pravidla:
+
+1. Citujte pouze zdroje, jejichž existencí a metadaty jste si jisti nebo které jste ověřili. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+
+2. Zdroj musí podporovat konkrétní tvrzení, nikoli pouze obecné téma. Přednost mají původní nebo významné odborné práce. Známá či často citovaná publikace není automaticky vhodným důkazem pro každou větu z daného oboru.
+
+3. Před použitím citace posuďte:
+   - který konkrétní závěr nebo pasáž zdroje podporuje tvrzení;
+   - zda odpovídá zkoumaná populace, prostředí, období a podmínky;
+   - zda zdroj poskytuje přímý důkaz, nebo pouze obecné teoretické východisko;
+   - zda formulace tvrzení není silnější nebo obecnější než závěr zdroje.
+
+   Nepřisuzujte zdroji obsah, který neznáte.
+
+4. Pokud zdroj podporuje tvrzení jen částečně nebo za určitých podmínek, zpřesněte přímo výsledný odstavec. Nestačí ponechat nepřesnou větu a její omezení uvést až v části Nejistoty.
+
+5. Nezaměňujte souvislost za příčinu, nezjištěný efekt za definitivní důkaz neexistence efektu ani výsledek jedné studie za univerzální pravidlo. Používejte výrazy jako „prokazuje“, „jednoznačně vyvrací“ nebo „vždy“ pouze tehdy, pokud odpovídají skutečné síle důkazů.
+
+6. U definic, přímých citátů a formulací převzatých přes dalšího autora rozlišujte původního autora a sekundární pramen. Stránku uvádějte jen tehdy, pokud odpovídá příslušné pasáži. Pokud přesnou oporu nemáte, použijte doloženou parafrázi nebo nejistotu přiznejte.
+
+7. Dodaný zdroj nepoužívejte jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+
+8. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci. Také náhradní tvrzení a věcné komentáře musí mít odpovídající oporu. Pokud ji nemáte, neprezentujte vlastní domněnku jako odborný závěr.
+
+9. Pokud mezi nabízenými zdroji není přesná opora tvrzení, tuto skutečnost uveďte. Nejbližší tematický zdroj nepředstavujte jako přímý důkaz. Respektujte přitom omezení úlohy na výběr z nabízených kandidátů.
+
+10. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu, případně s opraveným nebo zpřesněným tvrzením. Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo zjistit nebo ověřit, zejména omezení podpory tvrzení a nejasný původ definic. Tyto poznámky nesmějí odporovat výslednému odstavci.
+
+Úloha:
+
+Zapracujte uvedený zdroj do odstavce jako citaci podporující tvrzení a uveďte bibliografický záznam podle ČSN ISO 690.
+
+Odstavec: Formativní hodnocení se na českých základních školách v posledních letech rozšířilo do většiny tříd [CITACE]. | Zdroj: Dvořáková, M. (2019). Formativní hodnocení v praxi českých základních škol. Pedagogická orientace, 29(4), 512–530.
+
+
+------------------------------------
+
+
+**1. Výsledný text**
+
+Nepoužito. Zadaný zdroj jsem neověřil a jeho existenci ani údaje nelze potvrdit, takže jej nemohu použít jako oporu. Tvrzení o rozšíření formativního hodnocení „do většiny tříd“ je navíc silnější, než by dokládala většina dostupných studií, které jsem našel. Navrhuji nahradit větu opatrnější formulací:
+
+> Formativní hodnocení se na českých základních školách v posledních letech dostává do školní praxe, jeho rozšíření do většiny tříd však zatím nelze s odkazem na dostupné výzkumy spolehlivě doložit.
+
+Pokud chcete zachovat tvrzení o rozšíření, potřebujete zdroj, který měří míru využívání ve větším vzorku škol nebo tříd. Ten jsem v této rešerši nenašel.
+
+**2. Seznam literatury**
+
+Nepoužito, protože žádný zdroj nepodporuje finální větu. Pro úplnost uvádím jeden nalezený příbuzný text, který jsem nepoužil (viz bod 3):
+
+LAUFKOVÁ, Veronika. Formativní hodnocení v praxi české základní školy. *Pedagogika*. 2017, roč. 67, č. 2. Dostupné z: https://ojs.cuni.cz/pedagogika/article/view/424
+
+**3. Nepoužité zdroje**
+
+- *Dvořáková, M. (2019). Formativní hodnocení v praxi českých základních škol. Pedagogická orientace, 29(4), 512–530.* Nenašel jsem žádný záznam s těmito údaji ani autorkou M. Dvořáková; v databázích se objevují jiné články z časopisu Pedagogická orientace ročníku 29 (2019), například práce K. Dvořákové a K. Špačkové na stranách 73–101, které neodpovídají zadání. Bez ověřitelného záznamu jej nelze citovat.
+- *Laufková, V. (2017). Formativní hodnocení v praxi české základní školy. Pedagogika, 67(2).* Je tematicky blízký, ale popisuje případovou studii jedné školy a jedné učitelky s dalšími žáky a jejich postoji. Nemůže doložit rozšíření do většiny tříd, a proto jej nepoužívám jako oporu tohoto tvrzení.
+- *Formativní hodnocení v praxi učitele, Formativne.cz a rizeniskoly.cz, Wikipedie.* Jde o praktické články nebo encyklopedické zdroje bez empirických dat o míře rozšíření, takže nejsou vhodnou oporou pro odborný text.
+
+**4. Nejistoty**
+
+- Zadaný bibliografický záznam (Dvořáková, M., 2019, Pedagogická orientace 29(4), 512–530) se nepodařilo ověřit. Před použitím jej musíte zkontrolovat v katalogu časopisu nebo v databázi, například v Google Scholar, Scopus nebo na stránkách nakladatele. Pokud článek existuje, zkontrolujte, zda autorka a stránky odpovídají.
+- Nepodařilo se zjistit žádný zdroj, který by měřil rozšíření formativního hodnocení na českých základních školách v širším vzorku. Pokud existuje, pravděpodobně nebyl v dostupných výsledcích.
+- Wikipedie uvádí, že formativní hodnocení se v české praxi objevuje zhruba posledních dvacet let, ale intuitivně a bez jasné definice. Tuto informaci jsem nepoužil jako oporu, protože jde o sekundární zdroj bez uvedené primární studie.

@@ -1,0 +1,49 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Pokud prodávající zná kvalitu zboží lépe než kupující, mohou kvalitní produkty z trhu postupně vymizet, jak ukazuje příklad trhu s ojetými automobily [CITACE].
+
+
+------------------------------------
+
+
+**1. Výsledný text**
+
+Pokud prodávající zná kvalitu zboží lépe než kupující, mohou kvalitní produkty z trhu vytlačit nekvalitní, a v krajním případě se trh může zhroutit. Akerlov tento mechanismus ilustruje na příkladu trhu s ojetými automobily, kde kupující nemůže před koupí spolehlivě rozlišit kvalitní vozidla od „citrónů“ (Akerlof, 1970).
+
+*Poznámka k opravě tvrzení:* Původní formulace „kvalitní produkty postupně vymizí, jak ukazuje příklad…“ je přehnaná ve dvou ohledech. Akerlov je teoretický model, ne empirický důkaz, a jeho závěr nepopisuje pozvolný proces, ale možné vytlačení nebo zhroucení trhu. Proto doporučuji „mohou … vytlačit“ a „ilustruje“ místo „ukazuje“.
+
+**2. Seznam literatury**
+
+AKERLOF, George A. The market for "lemons": quality uncertainty and the market mechanism. *The Quarterly Journal of Economics*. 1970, roč. 84, č. 3, s. 488–500. DOI 10.2307/1879431.
+
+**3. Nepoužité zdroje**
+
+Žádné další zdroje nebyly nabídnuty. Druhý zdroj jsem nepřidal, protože nemám dostatečně jistá metadata pro jiný konkrétní text, který by přímo podporoval toto tvrzení.
+
+**4. Nejistoty**
+
+- DOI 10.2307/1879431 je z mé paměti. Doporučuji ověřit jej v databázi JSTOR nebo na stránce časopisu, protože jsem jej nemohl online zkontrolovat.
+- Stránkový rozsah (488–500) a číslo ročníku a sešitu uvádím také z paměti a doporučuji kontrolu.
+- Pokud odborný text vyžaduje empirický doklad o trhu s ojetými vozy, Akerlov jej nepřináší. Bylo by třeba doplnit empirickou studii, kterou bych zde ale nemohl bezpečně ověřit.

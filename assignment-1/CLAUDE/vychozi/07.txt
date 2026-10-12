@@ -1,0 +1,22 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Vytvořte úplný a správný bibliografický záznam podle ČSN ISO 690. Pokud jsou dodaná metadata chybná nebo neúplná, opravte je a uveďte, co jste změnili.
+
+Metadata: Fama, E. F. (1965). Efficient Capital Markets: A Review of Theory and Empirical Work. Journal of Business.
+
+
+------------------------------------
+
+
+**Bibliografický záznam (ČSN ISO 690):**
+
+FAMA, Eugene F. Efficient Capital Markets: A Review of Theory and Empirical Work. *Journal of Finance*. 1970, roč. 25, č. 2, s. 383–417. DOI: 10.2307/2325486.
+
+**Co jsem změnil:**
+
+- **Rok:** 1965 nahrazen rokem 1970, v němž článek vyšel.
+- **Časopis:** *Journal of Business* nahrazen *Journal of Finance*, kde byl článek publikován.
+- **Ročník, číslo a stránky:** doplněny jako 25, č. 2, s. 383–417.
+- **DOI:** doplněno.
+- **Jméno autora:** doplněno celé křestní jméno (Eugene) a formát příjmení psaný velkými písmeny podle ČSN ISO 690.

@@ -1,0 +1,20 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Z nabízených zdrojů vyberte ten, který nejlépe podporuje tvrzení v odstavci, a citujte jej podle ČSN ISO 690. U každého nevybraného zdroje jednou větou zdůvodněte, proč jej nepoužijete.
+
+Odstavec: Studenti, kteří věří ve vlastní schopnost úkol zvládnout, vynakládají více úsilí a déle vytrvají při obtížích. | Kandidáti: (1) Bandura, A. (1977). Self-efficacy: Toward a Unifying Theory of Behavioral Change. Psychological Review. (2) Milgram, S. (1963). Behavioral Study of Obedience. Journal of Abnormal and Social Psychology. (3) Hattie, J.; Timperley, H. (2007). The Power of Feedback. RER. (4) Wright, L. (2017). Self-belief engines in adolescent learners. International Journal of Motivation Dynamics, 9(4), 301–318.
+
+
+------------------------------------
+
+
+**Vybraný zdroj:**
+
+BANDURA, Albert. Self-efficacy: toward a unifying theory of behavioral change. *Psychological Review*. 1977, roč. 84, č. 2, s. 191–215. ISSN 0033-295X.
+
+**Nevybrané zdroje:**
+
+- **Milgram (1963):** Studie se zabývá poslušností vůči autoritě, nikoli vírou ve vlastní schopnosti nebo vytrvalostí.
+- **Hattie, Timperley (2007):** Práce se zaměřuje na zpětnou vazbu ve vzdělávání, nikoli přímo na vlastní účinnost a vytrvalost studentů.
+- **Wright (2017):** Nelze ověřit existenci tohoto článku ani časopisu *International Journal of Motivation Dynamics*, a proto jej nelze bezpečně citovat.

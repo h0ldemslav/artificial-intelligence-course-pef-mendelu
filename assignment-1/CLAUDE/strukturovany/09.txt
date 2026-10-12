@@ -1,0 +1,51 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Zapracujte uvedený zdroj do odstavce jako citaci podporující tvrzení a uveďte bibliografický záznam podle ČSN ISO 690.
+
+Odstavec: Po roce 1990 došlo na Vysočině k výrazné proměně venkovského osídlení [CITACE]. | Zdroj od uživatele: Králová, T. (2018). Proměny venkovského osídlení na Vysočině po roce 1990. Praha: Karolinum. Recenzovaná monografie. | Výňatek z titulní strany: Univerzita Karlova, Přírodovědecká fakulta, Katedra sociální geografie. DIPLOMOVÁ PRÁCE. Vedoucí práce: … Praha 2018.
+
+
+------------------------------------
+
+
+**1. Výsledný text**
+
+Citaci nelze použít, protože zdroj není v zadání správně označen. Níže je odstavec bez citace a s návrhem přesnější formulace tvrzení.
+
+> Po roce 1990 se na Vysočině proměňovalo venkovské osídlení. Tvrzení „výrazná proměna“ je bez konkrétních dat a zdroje příliš obecné; doporučuji ho buď podpořit ověřeným zdrojem s daty, nebo formulovat opatrněji, např.: „Po roce 1990 se na Vysočině venkovské osídlení proměňovalo, a to v souvislosti s [konkrétní jev, např. změnami dojíždění nebo úbytkem obyvatel – doplňte podle zdroje].“
+
+**2. Seznam literatury**
+
+Nepoužito. Záznam nelze sestavit spolehlivě, protože metadata zdroje si navzájem odporují (viz níže).
+
+**3. Nepoužité zdroje**
+
+- **Králová, T. (2018). Proměny venkovského osídlení na Vysočině po roce 1990. Praha: Karolinum.** Nepoužito, protože výňatek z titulní strany uvádí, že jde o diplomovou práci (Univerzita Karlova, Přírodovědecká fakulta, Katedra sociální geografie, Praha 2018), nikoli o recenzovanou monografii. Typ dokumentu i nakladatel jsou tedy v rozporu. Diplomová práce navíc nebývá vydávána Karolinem jako monografie. Zdroj by se měl citovat jako kvalifikační práce, a to až po ověření, zda existuje a je dostupná.
+
+**4. Nejistoty**
+
+- **Typ dokumentu:** Je to monografie (Karolinum), nebo diplomová práce (UK PřF, 2018)? Výňatek z titulní strany naznačuje druhou možnost. Před citací ověřte originál nebo katalogový záznam.
+- **Existence zdroje:** Neověřil jsem, že dílo existuje v katalogu (např. Národní knihovna ČR, CASLIN, Theses.cz nebo Národní úložiště kvalifikačních prací). Pokud jde o diplomovou práci, je běžně dostupná v databázi závěrečných prací UK.
+- **Chybějící údaje:** Titulní strana je zkrácena („Vedoucí práce: …“), takže jméno vedoucího a případně konečný název práce nejsou známy.
+- **Pokud jde o diplomovou práci a záznam ověříte,** byl by podle ČSN ISO 690 zhruba tento tvar, s údaji ověřenými z originálu: Králová, T. *Proměny venkovského osídlení na Vysočině po roce 1990*. Praha: Univerzita Karlova, Přírodovědecká fakulta, 2018. Diplomová práce. Vedoucí práce [doplnit].
+- **Alternativní zdroje:** Nemám ověřený odborný zdroj, který by tvrzení přímo podporoval, a nechci navrhnout citaci z paměti. Doporučuji vyhledat v katalogu knihovny odborné práce o venkovském osídlení a demografickém vývoji na Vysočině po roce 1990, zejména od geografů nebo z demografických publikací ČSÚ. Pokud chcete, mohu to pomoci vyhledat.
