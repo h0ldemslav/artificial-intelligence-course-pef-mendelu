@@ -1,0 +1,125 @@
+METRIKA 2 – FORMÁLNÍ PŘESNOST DOI / ISBN
+=====================================
+
+Požadavky: Python 3.10 nebo novější. Žádné další knihovny ani internet.
+
+1. PŘÍPRAVA
+Každý z 120 výstupů AI uložte do samostatného textového souboru .txt
+v kódování UTF-8. Ukládejte pouze odpověď modelu, nikoli zadání nebo prompt.
+Všechny soubory dejte do složky vystupy vedle skriptu metrika2.py.
+Lze použít podsložky, např. vystupy/ChatGPT/strukturovany/01.txt.
+run_id bude relativní cesta bez přípony: ChatGPT/strukturovany/01.
+
+2. SPUŠTĚNÍ (v terminálu ve složce se skriptem)
+py -3 metrika2.py --input vystupy
+
+Alternativa, pokud příkaz py nefunguje:
+python metrika2.py --input vystupy
+
+Skript kontroluje počet 120 souborů. Pro zkoušku s jiným počtem:
+py -3 metrika2.py --input vystupy --expected-count 3
+
+3. VÝSTUP
+vysledky_metrika2.csv: jeden řádek na výstup, identifikátor běhu,
+počet nalezených, platných a neplatných DOI/ISBN, skóre a stav.
+identifikatory_metrika2.csv: jednotlivé kandidáty, původní a normalizované
+hodnoty, platnost 0/1 a číslo řádku v hodnoceném úseku textu.
+CSV používá středník, UTF-8 s BOM a desetinnou tečku. V Excelu importujte
+přes Data / Z textu nebo CSV; při převodu skóre na číslo nastavte vhodné
+místní nastavení pro desetinnou tečku.
+
+Skóre metrika2_formalni = počet platných unikátních identifikátorů /
+počet všech extrahovaných unikátních kandidátů.
+Například 3 platné ze 4 znamenají 0.75. DOI a ISBN mají stejnou váhu.
+Opakovaný stejný identifikátor se v jedné odpovědi započítá pouze jednou.
+Označené chybné identifikátory se také započítávají do jmenovatele.
+
+Při absenci identifikátorů je skóre 0 a stav BEZ_IDENTIFIKATORU.
+Jde o explicitní pracovní konvenci, kterou protokol sám nestanovuje.
+Tento stav není důkazem chyby modelu: některé zdroje identifikátor nemají.
+Při agregaci jej vykazujte samostatně nebo předem sjednoťte pravidlo v týmu.
+Formální skóre nepostihuje chybějící DOI/ISBN u jednotlivých citací, pokud
+odpověď obsahuje jiné identifikátory. Pro chybějící povinné identifikátory
+slouží referenční režim níže.
+
+4. DOPLNĚNÍ CENTRÁLNÍ TABULKY
+Existující tabulku exportujte do CSV (UTF-8, středník nebo čárka).
+Musí obsahovat jedinečný, neprázdný sloupec run_id se stejnými hodnotami
+jako názvy souborů bez .txt včetně případných podsložek.
+
+py -3 metrika2.py --input vystupy --central centralni.csv --output centralni_s_metrikou2.csv
+
+Původní CSV zůstane zachováno. Skript uloží doplněnou kopii se všemi jeho
+sloupci a řádky; u vyhodnocených běhů aktualizuje sloupce metriky 2.
+Další sloupce (model, typ promptu, metriky 1 a 3 apod.) se přenesou.
+Při chybějících run_id skript skončí chybou a tabulku nevytvoří.
+Výslednou kopii importujte zpět do centrální tabulky.
+
+5. ROZSAH HODNOCENÍ
+Výchozí --scope all hodnotí celý výstup. Započítá tedy i identifikátory
+v části Nepoužité zdroje nebo Nejistoty. Pokud mají být hodnoceny pouze
+citované zdroje, použijte u všech běhů stejné pravidlo:
+
+py -3 metrika2.py --input vystupy --scope bibliography
+
+Tento režim vyžaduje samostatný nadpis Seznam literatury, Literatura,
+References nebo Bibliography; oddíl ukončí následující rozpoznaný nadpis.
+Podporuje číslování a nadpisy Markdown. Při nerozpoznaném nadpisu skončí
+chybou, aby nebyl potichu hodnocen jiný úsek.
+--scope auto použije seznam literatury, pokud jej rozpozná, jinak celý
+text; použitý rozsah je vždy uveden ve sloupci rozsah. Auto může míchat
+rozsahy, proto před výzkumným srovnáním zkontrolujte tento sloupec.
+
+6. VOLITELNÁ SHODA S REFERENCEMI
+Protokol navíc požaduje ověřování vůči referenční hodnotě. Připravte JSON
+s ověřenými očekávanými identifikátory pro každý run_id, například:
+
+{
+  "ChatGPT/strukturovany/01": {
+    "doi": ["10.1038/s41586-020-2649-2"],
+    "isbn": ["9780306406157"]
+  }
+}
+
+Hodnoty jsou pouze ukázka formátu, nikoli reference pro vaše úlohy.
+Všechny běhy musí mít vlastní položku. Pro běh bez očekávaných
+identifikátorů použijte {"doi": [], "isbn": []}.
+
+py -3 metrika2.py --input vystupy --references reference.json
+
+Přibude metrika2_referencni = velikost průniku nalezených a očekávaných
+identifikátorů / velikost jejich sjednocení (Jaccardova shoda).
+Penalizuje chybějící i nadbytečné identifikátory. Když jsou obě množiny
+prázdné, skóre zůstane prázdné, protože není co ověřovat.
+Sloupce reference_shody, reference_chybi a reference_navic uvádějí počty.
+Jde o navrženou operacionalizaci: protokol přesný vzorec neurčuje.
+Reference musí odpovídat vybranému rozsahu a skutečně požadovaným zdrojům;
+při volné volbě literatury by pevný seznam penalizoval i jiné správné zdroje.
+ISBN-10 a ISBN-13 se automaticky nepřevádějí; reference uvádějte ve stejné
+formě jako očekávanou odpověď. DOI se porovnávají bez rozlišení velikosti písmen.
+
+7. CO VALIDÁTOR KONTROLUJE A KDE JSOU JEHO MEZE
+DOI: běžný vzor Crossref 10.[4 až 9 číslic]/přípona. Zpracuje DOI:, holý
+identifikátor i https://doi.org/ a https://dx.doi.org/. Odstraní běžnou
+koncovou interpunkci a přebytečnou uzavírací závorku. Neověřuje existenci.
+Některé starší nebo neobvyklé DOI mohou být tímto vzorem odmítnuty.
+https://www.crossref.org/blog/dois-and-matching-regular-expressions/
+
+ISBN: 10 číslic (poslední může být X), nebo 13 číslic s prefixem 978/979;
+ověřuje kontrolní součet. U označených ISBN dovoluje mezery a spojovníky.
+Bez označení rozpoznává souvislá 10/13místná čísla a čísla se spojovníky;
+volně mezerami členěné ISBN bez označení se neextrahuje. Holá čísla mohou
+být falešně zaměněna za ISBN, proto je vhodné zkontrolovat detailní CSV.
+Neověřuje přidělení čísla, správné rozdělení skupin ani konkrétní vydání.
+https://www.isbn-international.org/content/what-isbn/10
+
+Chybné kandidáty bez označení a bez rozpoznatelného číselného tvaru může
+extraktor minout. Identifikátor zalomený uvnitř na více řádků ani URL
+s procentním kódováním automaticky neopravuje. Odstranění interpunkce
+může změnit vzácný identifikátor, ve kterém je tato interpunkce součástí DOI.
+Detaily ponechávají původní hodnotu pro ruční kontrolu.
+
+Skript neposuzuje autora, rok ani název publikace a nevolá Crossref/Google
+Books API. Řeší požadovanou formální přesnost DOI/ISBN; k úplnému měření
+pravdivosti metadat podle protokolu je nutná další verifikace.
+Skutečných 120 odpovědí ani centrální tabulka nebyly při přípravě dodány.
