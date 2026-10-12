@@ -1,0 +1,28 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Odstavec: Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [CITACE].
+
+
+------------------------------------
+
+
+Doplnění citace v odstavci:
+
+Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami (VÝZKUMNÝ ÚSTAV MONITORINGU A OCHRANY PŮDY, v. v. i., [b. r.]; JANEČEK, 2007).&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.vumop.cz\&sz=32)
+
+VÚMOP, v. v. i.
+
++1
+
+
+
+Bibliografické záznamy podle ČSN ISO 690:
+
+1\. VÝZKUMNÝ ÚSTAV MONITORINGU A OCHRANY PŮDY, v. v. i. Eroze půdy [online]. Praha: VÚMOP, v. v. i. [cit. 2026-10-12]. Dostupné z: [https://www.vumop.cz/eroze-pudy/](https://www.vumop.cz/eroze-pudy/)
+
+2\. JANEČEK, Miloslav a kol. Ochrana zemědělské půdy před erozí. Praha: Výzkumný ústav meliorací a ochrany půdy, v. v. i., 2007. 76 s. ISBN 978-80-254-0973-2.

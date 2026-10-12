@@ -1,0 +1,22 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Z nabízených zdrojů vyberte ten, který nejlépe podporuje tvrzení v odstavci, a citujte jej podle ČSN ISO 690. U každého nevybraného zdroje jednou větou zdůvodněte, proč jej nepoužijete.
+
+Odstavec: Studenti, kteří věří ve vlastní schopnost úkol zvládnout, vynakládají více úsilí a déle vytrvají při obtížích. | Kandidáti: (1) Bandura, A. (1977). Self-efficacy: Toward a Unifying Theory of Behavioral Change. Psychological Review. (2) Milgram, S. (1963). Behavioral Study of Obedience. Journal of Abnormal and Social Psychology. (3) Hattie, J.; Timperley, H. (2007). The Power of Feedback. RER. (4) Wright, L. (2017). Self-belief engines in adolescent learners. International Journal of Motivation Dynamics, 9(4), 301–318.
+
+
+------------------------------------
+
+
+Vybraný zdroj (1):
+
+BANDURA, Albert. Self-efficacy: Toward a Unifying Theory of Behavioral Change. Psychological Review. 1977, roč. 84, č. 2, s. 191–215. DOI 10.1037/0033-295X.84.2.191.
+
+Zdůvodnění výběru: Zdroj přímo pojednává o vlastní účinnosti (self-efficacy) a vysvětluje její vliv na úsilí, vytrvalost a reakce jedince na překážky.
+
+Nevybrané zdroje:
+
+- (2) Milgram (1963): Studie se zaměřuje na poslušnost vůči autoritě, nikoli na přesvědčení jedince o vlastních schopnostech a jeho vytrvalost při plnění úkolů.
+- (3) Hattie a Timperley (2007): Článek se zabývá především vlivem zpětné vazby na učení a výkon, nikoli přímo vztahem mezi vlastní účinností a vytrvalostí.
+- (4) Wright (2017): Zdroj se tematicky jeví jako relevantní, ale bez ověření jeho existence a odborné důvěryhodnosti jej nelze upřednostnit před zavedenou a přímo relevantní studií Alberta Bandury.

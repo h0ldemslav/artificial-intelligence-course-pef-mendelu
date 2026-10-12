@@ -1,0 +1,70 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Odstavec: Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [CITACE].
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+Vodní eroze ohrožuje významnou část zemědělské půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami (Gregar et al., 2024). Tuto souvislost dokládá odborná studie zaměřená na vliv meziplodin na ztrátu půdy a povrchový odtok na svažitých kukuřičných polích.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://swr.agriculturejournals.cz\&sz=32)
+
+Soil and Water Research
+
++1
+
+
+
+Doporučení: Původní formulace je věcně přijatelná, ale pokud má tvrzení zdůrazňovat rozsah ohrožení, je vhodné uvést, že se týká zemědělské půdy, nikoli pouze orné půdy. Studie Gregara et al. (2024) uvádí, že vodní eroze představuje významné riziko pro více než 50 % zemědělské půdy v České republice.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://swr.agriculturejournals.cz\&sz=32)
+
+Soil and Water Research
+
+
+
+## 2. Seznam literatury
+
+GREGAR, Jan, Jan PETRŮ, Jana KALIBOVÁ, Věra ÜRGE, David KINCL a Jan VOPRAVIL. Impact of intercrops on soil loss and surface runoff from sloping maize fields. Soil and Water Research. 2024, roč. 19, č. 3, s. 168–175. DOI 10.17221/43/2024-SWR.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://swr.agriculturejournals.cz\&sz=32)
+
+Soil and Water Research
+
+
+
+## 3. Nepoužité zdroje
+
+- SMUTNÝ et al. (2018), Current Arable Farming Systems in the Czech Republic – Agronomic Measures Adapted to Soil Protection and Climate Change: zdroj je odborný a relevantní, ale pro stručné doložení obecného tvrzení je vhodnější novější studie Gregara et al. (2024), která přímo uvádí rozsah ohrožení zemědělské půdy v Česku.
+- PODHRÁZSKÁ, UHLÍŘOVÁ a HEJDUK (2009), Evaluation of crop effects on runoff and washout of soil from the surface of agricultural land: studie se zaměřuje na vliv plodin na erozi v experimentálních podmínkách, nikoli na celkový rozsah ohrožení půdy v Česku.
+
+## 4. Nejistoty
+
+- Údaj „více než 50 % zemědělské půdy“ pochází z abstraktu studie Gregara et al. (2024). Pro použití tohoto procenta jako přesného celostátního odhadu by bylo vhodné ověřit jeho metodický základ a původní datový zdroj.
+- Studie se věnuje především kukuřici na svažitých pozemcích. Podporuje tedy tvrzení o zvýšeném riziku u širokořádkových plodin, ale sama o sobě nedokládá stejnou míru rizika pro všechny širokořádkové plodiny.
+- DOI a bibliografické údaje článku Gregara et al. (2024) byly ověřeny podle dostupného odborného článku. ISBN se u tohoto časopiseckého článku standardně neuvádí.

@@ -1,0 +1,104 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata. Výsledné tvrzení musí odpovídat rozsahu a síle důkazů citovaného zdroje.
+
+Pravidla:
+
+1. Citujte pouze zdroje, jejichž existencí a metadaty jste si jisti nebo které jste ověřili. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+
+2. Zdroj musí podporovat konkrétní tvrzení, nikoli pouze obecné téma. Přednost mají původní nebo významné odborné práce. Známá či často citovaná publikace není automaticky vhodným důkazem pro každou větu z daného oboru.
+
+3. Před použitím citace posuďte:
+   - který konkrétní závěr nebo pasáž zdroje podporuje tvrzení;
+   - zda odpovídá zkoumaná populace, prostředí, období a podmínky;
+   - zda zdroj poskytuje přímý důkaz, nebo pouze obecné teoretické východisko;
+   - zda formulace tvrzení není silnější nebo obecnější než závěr zdroje.
+
+   Nepřisuzujte zdroji obsah, který neznáte.
+
+4. Pokud zdroj podporuje tvrzení jen částečně nebo za určitých podmínek, zpřesněte přímo výsledný odstavec. Nestačí ponechat nepřesnou větu a její omezení uvést až v části Nejistoty.
+
+5. Nezaměňujte souvislost za příčinu, nezjištěný efekt za definitivní důkaz neexistence efektu ani výsledek jedné studie za univerzální pravidlo. Používejte výrazy jako „prokazuje“, „jednoznačně vyvrací“ nebo „vždy“ pouze tehdy, pokud odpovídají skutečné síle důkazů.
+
+6. U definic, přímých citátů a formulací převzatých přes dalšího autora rozlišujte původního autora a sekundární pramen. Stránku uvádějte jen tehdy, pokud odpovídá příslušné pasáži. Pokud přesnou oporu nemáte, použijte doloženou parafrázi nebo nejistotu přiznejte.
+
+7. Dodaný zdroj nepoužívejte jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+
+8. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci. Také náhradní tvrzení a věcné komentáře musí mít odpovídající oporu. Pokud ji nemáte, neprezentujte vlastní domněnku jako odborný závěr.
+
+9. Pokud mezi nabízenými zdroji není přesná opora tvrzení, tuto skutečnost uveďte. Nejbližší tematický zdroj nepředstavujte jako přímý důkaz. Respektujte přitom omezení úlohy na výběr z nabízených kandidátů.
+
+10. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu, případně s opraveným nebo zpřesněným tvrzením. Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo zjistit nebo ověřit, zejména omezení podpory tvrzení a nejasný původ definic. Tyto poznámky nesmějí odporovat výslednému odstavci.
+
+Úloha:
+
+Vytvořte úplný a správný bibliografický záznam podle ČSN ISO 690. Pokud jsou dodaná metadata chybná nebo neúplná, opravte je a uveďte, co jste změnili.
+
+Metadata: He et al., ResNet článek z konference CVPR 2016.
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+He et al. (2016) publikovali konferenční příspěvek Deep Residual Learning for Image Recognition na konferenci IEEE Conference on Computer Vision and Pattern Recognition (CVPR) v roce 2016. Příspěvek představuje reziduální učení pro trénování hlubokých neuronových sítí a je známý jako základní práce související s architekturou ResNet.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.cv-foundation.org\&sz=32)
+
+cv-foundation.org
+
++1
+
+
+
+## 2. Seznam literatury
+
+Ověřený bibliografický záznam podle ČSN ISO 690:
+
+HE, Kaiming, Xiangyu ZHANG, Shaoqing REN a Jian SUN. Deep Residual Learning for Image Recognition. In: 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). Las Vegas, NV, USA: IEEE, 2016, s. 770–778. DOI: [10.1109/CVPR.2016.90](https://doi.org/10.1109/CVPR.2016.90).&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://doi.org\&sz=32)
+
+DOI
+
++1
+
+
+
+Ověřená metadata:
+
+- Autoři: Kaiming He, Xiangyu Zhang, Shaoqing Ren a Jian Sun.
+- Název: Deep Residual Learning for Image Recognition.
+- Typ dokumentu: konferenční příspěvek.
+- Konference: IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
+- Rok vydání: 2016.
+- Strany: 770–778.
+- DOI: 10.1109/CVPR.2016.90.
+- ISBN sborníku: 978-1-4673-8851-1.&#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://doi.org\&sz=32)
+
+  DOI
+
+  +1
+
+
+
+## 3. Nepoužité zdroje
+
+Žádné. V zadání nebyly kromě stručného označení publikace nabídnuty další zdroje.
+
+## 4. Nejistoty
+
+- Rozsah bibliografického záznamu: Údaje o autorech, názvu, konferenci, roku, stránkách a DOI jsou ověřeny prostřednictvím záznamů vydavatele IEEE a archivu CVF.
+- ISBN: Uvedené ISBN se vztahuje ke sborníku konference, nikoli k samostatnému článku.
+- Způsob zápisu: Záznam je sestaven podle zásad ČSN ISO 690 pro příspěvek ve sborníku. Konkrétní interpunkce a pořadí některých údajů se mohou lišit podle institucionální citační metodiky.
+- Označení ResNet: „ResNet článek“ je neformální označení. Oficiální název publikace je Deep Residual Learning for Image Recognition; samotné slovo „ResNet“ v názvu není.

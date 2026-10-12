@@ -1,0 +1,95 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Vytvořte úplný a správný bibliografický záznam podle ČSN ISO 690. Pokud jsou dodaná metadata chybná nebo neúplná, opravte je a uveďte, co jste změnili.
+
+Metadata: Fama, E. F. (1965). Efficient Capital Markets: A Review of Theory and Empirical Work. Journal of Business.
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+Dodaná metadata odkazují na skutečně existující odborný článek Eugena F. Famy o teorii a empirickém výzkumu efektivnosti kapitálových trhů. Bibliografický záznam je však neúplný, protože neobsahuje ročník časopisu, číslo, rozsah stran ani DOI. Tyto údaje je třeba doplnit podle ověřeného záznamu publikace.
+
+## 2. Seznam literatury
+
+Ověření ukázalo, že dodaná metadata kombinují údaje ze dvou různých článků Eugena F. Famy. Název Efficient Capital Markets: A Review of Theory and Empirical Work patří článku publikovanému v roce 1970 v časopise The Journal of Finance, nikoli článku z roku 1965 v The Journal of Business.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://doi.org\&sz=32)
+
+Wiley Online Library
+
++2
+
+
+
+### A. Doporučený záznam – pokud chcete citovat dílo uvedené v názvu
+
+FAMA, Eugene F. Efficient Capital Markets: A Review of Theory and Empirical Work. The Journal of Finance. 1970, roč. 25, č. 2, s. 383–417. DOI: [10.1111/j.1540-6261.1970.tb00518.x](https://doi.org/10.1111/j.1540-6261.1970.tb00518.x).&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://doi.org\&sz=32)
+
+Wiley Online Library
+
++1
+
+
+
+Odkaz v textu podle metody jméno–datum: (Fama, 1970).
+
+### B. Alternativní záznam – pokud chcete citovat článek z roku 1965
+
+FAMA, Eugene F. The Behavior of Stock-Market Prices. The Journal of Business. 1965, roč. 38, č. 1, s. 34–105. DOI: [10.1086/294743](https://doi.org/10.1086/294743).&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://cir.nii.ac.jp\&sz=32)
+
+CiNii Research
+
++1
+
+
+
+Odkaz v textu podle metody jméno–datum: (Fama, 1965).
+
+## 3. Nepoužité zdroje
+
+Žádný z uvedených článků nebyl vyřazen jako tematicky nevhodný. Oba jsou relevantní, ale jde o dvě odlišné publikace. Záznam z roku 1965 proto nelze použít jako bibliografický záznam článku z roku 1970 a naopak.
+
+## 4. Nejistoty
+
+- Rok vydání: Ověřeno, že článek s názvem Efficient Capital Markets: A Review of Theory and Empirical Work vyšel v roce 1970.
+
+- Časopis, ročník, číslo a strany: Pro článek z roku 1970 ověřeno jako The Journal of Finance, roč. 25, č. 2, s. 383–417. Pro článek z roku 1965 ověřeno jako The Journal of Business, roč. 38, č. 1, s. 34–105.
+
+- DOI: Ověřeno pro oba články podle bibliografických záznamů vydavatelských a odborných databází.&#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://doi.org\&sz=32)
+
+  Wiley Online Library
+
+  +1
+
+- Soulad s ČSN ISO 690: Záznamy jsou sestaveny podle běžné podoby normy pro články v časopisech. Konkrétní interpunkci a typografii je vhodné přizpůsobit případným doplňujícím požadavkům školy nebo vydavatele.
+
+Doporučení: Pokud váš odborný text pojednává o hypotéze efektivních trhů a odkazuje na přehled teorie a empirického výzkumu, použijte variantu A a citaci (Fama, 1970).

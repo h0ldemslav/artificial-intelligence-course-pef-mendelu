@@ -1,0 +1,59 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Analýza globálních dat ukázala, že trendy teplot od roku 1980 snížily celosvětové výnosy pšenice a kukuřice ve srovnání se scénářem bez klimatických změn [CITACE].
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+Analýza globálních dat ukázala, že trendy teplot v období 1980–2008 snížily celosvětovou produkci kukuřice o 3,8 % a pšenice o 5,5 % ve srovnání s kontrafaktuálním scénářem bez klimatických trendů (Lobell, Schlenker a Costa-Roberts, 2011).
+
+Poznámka k formulaci: Původní tvrzení je věcně podložené. Upřesnil jsem však časové období na roky 1980–2008, protože právě toto období analyzovala citovaná studie. Výsledky se týkají celkové produkce, nikoli přímo výnosu na jednotku plochy.
+
+## 2. Seznam literatury
+
+LOBELL, David B., Wolfram SCHLENKER a Justin COSTA-ROBERTS. Climate trends and global crop production since 1980. Science. 2011, roč. 333, č. 6042, s. 616–620. DOI 10.1126/science.1204531. Dostupné z: [https://doi.org/10.1126/science.1204531](https://doi.org/10.1126/science.1204531).
+
+Bibliografické údaje včetně autorů, názvu, ročníku, čísla, stran a DOI byly ověřeny v záznamu databáze PubMed a v publikačních údajích Stanfordovy univerzity.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://pubmed.ncbi.nlm.nih.gov\&sz=32)
+
+PubMed
+
++1
+
+
+
+## 3. Nepoužité zdroje
+
+Nepoužito. Nebyly navrženy žádné další zdroje.
+
+## 4. Nejistoty
+
+- Studie odhaduje dopad pozorovaných klimatických trendů na produkci pomocí statistických modelů propojujících počasí a zemědělskou produkci; nejde o přímé experimentální měření.
+- Kontrafaktuální scénář představuje modelový odhad produkce bez pozorovaných klimatických trendů, nikoli skutečně pozorovaný stav.
+- Pokud okolní text pojednává výhradně o výnosech na hektar, doporučuji ponechat v odstavci termín „produkce“ jen tehdy, odpovídá-li zamýšlenému významu; citovaná studie uvádí změny globální produkce.

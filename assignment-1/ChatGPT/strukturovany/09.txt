@@ -1,0 +1,61 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Zapracujte uvedený zdroj do odstavce jako citaci podporující tvrzení a uveďte bibliografický záznam podle ČSN ISO 690.
+
+Odstavec: Po roce 1990 došlo na Vysočině k výrazné proměně venkovského osídlení [CITACE]. | Zdroj od uživatele: Králová, T. (2018). Proměny venkovského osídlení na Vysočině po roce 1990. Praha: Karolinum. Recenzovaná monografie. | Výňatek z titulní strany: Univerzita Karlova, Přírodovědecká fakulta, Katedra sociální geografie. DIPLOMOVÁ PRÁCE. Vedoucí práce: … Praha 2018.
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+Předložený výňatek neumožňuje použít zdroj jako ověřenou recenzovanou monografii. Podle titulní strany se jedná o diplomovou práci Univerzity Karlovy, Přírodovědecké fakulty, Katedry sociální geografie, obhájenou či dokončenou v Praze v roce 2018. Údaj o vydání nakladatelstvím Karolinum proto není doložen a bibliografické údaje v zadání jsou v rozporu s poskytnutým výňatkem.
+
+Věta může být formulována následovně, pokud obsah diplomové práce skutečně dokládá dané tvrzení:
+
+Po roce 1990 došlo na Vysočině k výrazné proměně venkovského osídlení (Králová, 2018).
+
+Samotný výňatek z titulní strany však toto věcné tvrzení nepotvrzuje. Před vložením citace je třeba ověřit obsah práce, zejména zda analyzuje změny venkovského osídlení na Vysočině po roce 1990 a zda její výsledky podporují hodnocení těchto změn jako výrazných.
+
+## 2. Seznam literatury
+
+Úplný bibliografický záznam podle ČSN ISO 690 nelze bezpečně sestavit, dokud nebude ověřen autorův úplný název práce a její institucionální záznam. Na základě poskytnutých údajů lze uvést pouze pracovní záznam:
+
+KRÁLOVÁ, T. Proměny venkovského osídlení na Vysočině po roce 1990. Diplomová práce. Praha, 2018. Univerzita Karlova, Přírodovědecká fakulta, Katedra sociální geografie.
+
+Poznámka: Jde o předběžný záznam sestavený z údajů v zadání, nikoli o nezávisle ověřenou bibliografickou citaci. DOI ani ISBN nebyly doloženy.
+
+## 3. Nepoužité zdroje
+
+- Králová (2018), údajně recenzovaná monografie vydaná nakladatelstvím Karolinum – tento typ dokumentu a nakladatelské údaje nejsou v souladu s poskytnutou titulní stranou, která označuje dokument jako diplomovou práci. Nelze proto přijmout původní bibliografické označení bez dalšího ověření.
+- Výsledky vyhledávání v repozitáři Univerzity Karlovy – nalezené práce se týkají venkovského prostoru či osídlení, ale nebyla ověřena shoda autora, názvu a obsahu s předloženým zdrojem; nelze je proto použít jako náhradu za Královou.
+
+## 4. Nejistoty
+
+1. Identita dokumentu: Nepodařilo se spolehlivě potvrdit, že práce s uvedeným názvem a autorkou T. Královou skutečně existuje v podobě popsané v zadání.
+2. Obsahová opora: Bez abstraktu, příslušné kapitoly nebo úplného textu nelze určit, zda práce skutečně dokládá výraznou proměnu venkovského osídlení na Vysočině po roce 1990.
+3. Bibliografická metadata: Je nutné ověřit celé jméno autorky, přesný název práce, fakultu, katedru, rok a případně trvalý odkaz v univerzitním repozitáři.
+4. Síla tvrzení: Výraz „výrazná proměna“ je hodnotící. Pokud práce dokládá pouze konkrétní změny počtu obyvatel, struktury sídel nebo migrace, doporučuji tvrzení zpřesnit podle skutečně analyzovaného ukazatele.
+
+Doporučení: Před definitivním zařazením citace si vyžádejte odkaz na práci v repozitáři nebo její abstrakt. Do té doby považujte citaci za předběžnou, nikoli za ověřenou oporu odborného tvrzení.

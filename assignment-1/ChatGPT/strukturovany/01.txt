@@ -1,0 +1,61 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Pokud prodávající zná kvalitu zboží lépe než kupující, mohou kvalitní produkty z trhu postupně vymizet, jak ukazuje příklad trhu s ojetými automobily [CITACE].
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+Pokud prodávající zná kvalitu zboží lépe než kupující, mohou kvalitní produkty z trhu postupně vymizet, jak ukazuje příklad trhu s ojetými automobily (AKERLOF, 1970).
+
+Tvrzení odpovídá teorii nepříznivého výběru (adverse selection), kterou George A. Akerlof vysvětlil právě na příkladu trhu s ojetými automobily. Pokud kupující nedokážou spolehlivě rozlišit kvalitní a nekvalitní automobily, mohou být ochotni zaplatit pouze cenu odpovídající průměrné očekávané kvalitě. To může vést k odchodu prodávajících kvalitních vozů z trhu a k poklesu průměrné kvality nabízeného zboží (AKERLOF, 1970).&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://academic.oup.com\&sz=32)
+
+Oxford Academic
+
+
+
+## 2. Seznam literatury
+
+AKERLOF, George A. The Market for “Lemons”: Quality Uncertainty and the Market Mechanism. The Quarterly Journal of Economics. 1970, roč. 84, č. 3, s. 488–500. DOI: [10.2307/1879431](https://doi.org/10.2307/1879431).&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://academic.oup.com\&sz=32)
+
+Oxford Academic
+
+
+
+## 3. Nepoužité zdroje
+
+Žádné. Byl použit jeden odborný zdroj, který přímo rozebírá informační asymetrii a její důsledky na trhu s ojetými automobily.
+
+## 4. Nejistoty
+
+- Ověření bibliografických údajů: Autor, název článku, rok vydání, ročník, číslo časopisu, rozsah stran a DOI byly ověřeny podle záznamu vydavatele Oxford University Press.
+- Přesnost formulace: Výraz „mohou kvalitní produkty z trhu postupně vymizet“ je správný, pokud je chápán jako možný důsledek informační asymetrie, nikoli jako nevyhnutelný výsledek na každém trhu. Akerlof rovněž popisuje instituce, které mohou tento problém zmírňovat.
+- ISBN: Článek v časopise má ověřené DOI; ISBN se pro tento bibliografický záznam neuvádí.

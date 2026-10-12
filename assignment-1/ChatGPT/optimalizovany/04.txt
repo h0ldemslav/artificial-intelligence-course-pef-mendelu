@@ -1,0 +1,91 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata. Výsledné tvrzení musí odpovídat rozsahu a síle důkazů citovaného zdroje.
+
+Pravidla:
+
+1. Citujte pouze zdroje, jejichž existencí a metadaty jste si jisti nebo které jste ověřili. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+
+2. Zdroj musí podporovat konkrétní tvrzení, nikoli pouze obecné téma. Přednost mají původní nebo významné odborné práce. Známá či často citovaná publikace není automaticky vhodným důkazem pro každou větu z daného oboru.
+
+3. Před použitím citace posuďte:
+   - který konkrétní závěr nebo pasáž zdroje podporuje tvrzení;
+   - zda odpovídá zkoumaná populace, prostředí, období a podmínky;
+   - zda zdroj poskytuje přímý důkaz, nebo pouze obecné teoretické východisko;
+   - zda formulace tvrzení není silnější nebo obecnější než závěr zdroje.
+
+   Nepřisuzujte zdroji obsah, který neznáte.
+
+4. Pokud zdroj podporuje tvrzení jen částečně nebo za určitých podmínek, zpřesněte přímo výsledný odstavec. Nestačí ponechat nepřesnou větu a její omezení uvést až v části Nejistoty.
+
+5. Nezaměňujte souvislost za příčinu, nezjištěný efekt za definitivní důkaz neexistence efektu ani výsledek jedné studie za univerzální pravidlo. Používejte výrazy jako „prokazuje“, „jednoznačně vyvrací“ nebo „vždy“ pouze tehdy, pokud odpovídají skutečné síle důkazů.
+
+6. U definic, přímých citátů a formulací převzatých přes dalšího autora rozlišujte původního autora a sekundární pramen. Stránku uvádějte jen tehdy, pokud odpovídá příslušné pasáži. Pokud přesnou oporu nemáte, použijte doloženou parafrázi nebo nejistotu přiznejte.
+
+7. Dodaný zdroj nepoužívejte jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+
+8. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci. Také náhradní tvrzení a věcné komentáře musí mít odpovídající oporu. Pokud ji nemáte, neprezentujte vlastní domněnku jako odborný závěr.
+
+9. Pokud mezi nabízenými zdroji není přesná opora tvrzení, tuto skutečnost uveďte. Nejbližší tematický zdroj nepředstavujte jako přímý důkaz. Respektujte přitom omezení úlohy na výběr z nabízených kandidátů.
+
+10. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu, případně s opraveným nebo zpřesněným tvrzením. Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo zjistit nebo ověřit, zejména omezení podpory tvrzení a nejasný původ definic. Tyto poznámky nesmějí odporovat výslednému odstavci.
+
+Úloha:
+
+Z nabízených zdrojů vyberte ten, který nejlépe podporuje tvrzení v odstavci, a citujte jej podle ČSN ISO 690. U každého nevybraného zdroje jednou větou zdůvodněte, proč jej nepoužijete.
+
+Odstavec: Zvýšit světovou produkci potravin a současně snížit dopady zemědělství na životní prostředí lze mimo jiné uzavřením výnosových mezer a efektivnějším využíváním vody a živin. | Kandidáti: (1) Foley, J. A. et al. (2011). Solutions for a cultivated planet. Nature. (2) He, K. et al. (2016). Deep Residual Learning for Image Recognition. CVPR. (3) Fama, E. F. (1970). Efficient Capital Markets. Journal of Finance. (4) Tilman, D. et al. (2002). Agricultural sustainability and intensive production practices. Nature.
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+Z nabízených zdrojů nejlépe podporuje tvrzení práce Foley et al. (2011), která se zabývá možnostmi zvýšení produkce potravin při současném omezení negativních dopadů zemědělství na životní prostředí. Autoři mezi navrhovaná řešení řadí mimo jiné uzavírání výnosových mezer a zvyšování efektivity využívání zdrojů, zejména vody a živin. Tvrzení je proto vhodné zachovat, avšak chápat je jako souhrn možných strategií udržitelné intenzifikace zemědělství, nikoli jako záruku, že jejich zavedení vždy současně zvýší produkci a sníží všechny environmentální dopady (Foley et al., 2011).
+
+## 2. Seznam literatury
+
+FOLEY, Jonathan A., Navin RAMANKUTTY, Kate A. BRAUMAN, Emily S. CASSIDY, James S. GERBER, Matt JOHNSTON, Nathaniel D. MUELLER, Christine O’CONNELL, Deepak K. RAY, Paul C. WEST, Christian BALZER, Elena M. BENNETT, Stephen R. CARPENTER, Jason HILL, Chad MONFREDA, Stephen POLASKY, Johan ROCKSTRÖM, John SHEEHAN, Stefan SIEBERT, David TILMAN a David P. M. ZAKS. Solutions for a cultivated planet. Nature. 2011, 478(7369), 337–342. DOI 10.1038/nature10452. [https://doi.org/10.1038/nature10452](https://doi.org/10.1038/nature10452).&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.nature.com\&sz=32)
+
+Nature
+
++1
+
+
+
+## 3. Nepoužité zdroje
+
+- (2) He, K. et al. (2016). Deep Residual Learning for Image Recognition. CVPR. Nepoužito, protože se jedná o práci zaměřenou na hluboké neuronové sítě a rozpoznávání obrazu, nikoli na zemědělskou produkci nebo environmentální udržitelnost.
+- (3) Fama, E. F. (1970). Efficient Capital Markets. Journal of Finance. Nepoužito, protože se zabývá teorií efektivních kapitálových trhů, která neposkytuje věcnou oporu pro tvrzení o výnosech zemědělství a využívání přírodních zdrojů.
+- (4) Tilman, D. et al. (2002). Agricultural sustainability and intensive production practices. Nature. Nepoužito jako hlavní zdroj, protože ačkoli se přímo věnuje udržitelnosti zemědělství a zvyšování výnosů, Foley et al. (2011) formulují vazbu mezi uzavíráním výnosových mezer a současným omezováním environmentálních dopadů výslovněji.&#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://www.nature.com\&sz=32)
+
+  Nature
+
+  +1
+
+
+
+## 4. Nejistoty
+
+- Opora pro efektivnější využívání vody a živin: Foley et al. (2011) přímo podporují uzavírání výnosových mezer a zvyšování efektivity rostlinné produkce. Konkrétní formulaci o vodě a živinách je třeba chápat jako upřesnění strategie efektivnějšího využívání zemědělských zdrojů, nikoli jako samostatně ověřený univerzální účinek obou opatření.
+- Rozsah účinku: Autoři analyzují kombinaci několika strategií a uvádějí jejich potenciál pro zvýšení světové produkce potravin a omezení environmentálních dopadů. Neprokazují tím, že každé jednotlivé opatření samo o sobě vždy přinese oba výsledky.
+- Bibliografická metadata: Název, úplný seznam autorů, ročník, číslo časopisu, stránky a DOI byly ověřeny podle záznamu vydavatele a databáze PubMed.&#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://www.nature.com\&sz=32)
+
+  Nature
+
+  +1
+

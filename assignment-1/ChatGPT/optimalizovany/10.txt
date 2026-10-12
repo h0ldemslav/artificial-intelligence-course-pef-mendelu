@@ -1,0 +1,93 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata. Výsledné tvrzení musí odpovídat rozsahu a síle důkazů citovaného zdroje.
+
+Pravidla:
+
+1. Citujte pouze zdroje, jejichž existencí a metadaty jste si jisti nebo které jste ověřili. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+
+2. Zdroj musí podporovat konkrétní tvrzení, nikoli pouze obecné téma. Přednost mají původní nebo významné odborné práce. Známá či často citovaná publikace není automaticky vhodným důkazem pro každou větu z daného oboru.
+
+3. Před použitím citace posuďte:
+   - který konkrétní závěr nebo pasáž zdroje podporuje tvrzení;
+   - zda odpovídá zkoumaná populace, prostředí, období a podmínky;
+   - zda zdroj poskytuje přímý důkaz, nebo pouze obecné teoretické východisko;
+   - zda formulace tvrzení není silnější nebo obecnější než závěr zdroje.
+
+   Nepřisuzujte zdroji obsah, který neznáte.
+
+4. Pokud zdroj podporuje tvrzení jen částečně nebo za určitých podmínek, zpřesněte přímo výsledný odstavec. Nestačí ponechat nepřesnou větu a její omezení uvést až v části Nejistoty.
+
+5. Nezaměňujte souvislost za příčinu, nezjištěný efekt za definitivní důkaz neexistence efektu ani výsledek jedné studie za univerzální pravidlo. Používejte výrazy jako „prokazuje“, „jednoznačně vyvrací“ nebo „vždy“ pouze tehdy, pokud odpovídají skutečné síle důkazů.
+
+6. U definic, přímých citátů a formulací převzatých přes dalšího autora rozlišujte původního autora a sekundární pramen. Stránku uvádějte jen tehdy, pokud odpovídá příslušné pasáži. Pokud přesnou oporu nemáte, použijte doloženou parafrázi nebo nejistotu přiznejte.
+
+7. Dodaný zdroj nepoužívejte jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+
+8. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci. Také náhradní tvrzení a věcné komentáře musí mít odpovídající oporu. Pokud ji nemáte, neprezentujte vlastní domněnku jako odborný závěr.
+
+9. Pokud mezi nabízenými zdroji není přesná opora tvrzení, tuto skutečnost uveďte. Nejbližší tematický zdroj nepředstavujte jako přímý důkaz. Respektujte přitom omezení úlohy na výběr z nabízených kandidátů.
+
+10. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu, případně s opraveným nebo zpřesněným tvrzením. Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo zjistit nebo ověřit, zejména omezení podpory tvrzení a nejasný původ definic. Tyto poznámky nesmějí odporovat výslednému odstavci.
+
+Úloha:
+
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Odstavec: Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [CITACE].
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami (MZe, [b. r.]; VÚMOP, [b. r.]). Oficiální materiály Ministerstva zemědělství popisují souvislost mezi svažitostí pozemků, pěstováním erozně nebezpečných plodin a intenzivní vodní erozí. Údaje Výzkumného ústavu monitoringu a ochrany půdy zároveň dokládají rozsah ohrožení zemědělské půdy v ČR.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://mze.gov.cz\&sz=32)
+
+MZe
+
++1
+
+
+
+## 2. Seznam literatury
+
+MINISTERSTVO ZEMĚDĚLSTVÍ. Vodní eroze půdy [online]. Praha: Ministerstvo zemědělství, [b. r.] [cit. 2026-10-12]. Dostupné z: [https://mze.gov.cz/public/portal/mze/puda/ochrana-pudy-a-krajiny/degradace-pud/vodni-eroze-pudy](https://mze.gov.cz/public/portal/mze/puda/ochrana-pudy-a-krajiny/degradace-pud/vodni-eroze-pudy)
+
+\- Podpora tvrzení: Zdroj výslovně uvádí, že na svažitých pozemcích může pěstování erozně nebezpečných plodin přispívat k intenzivní vodní erozi. Uvádí rovněž údaje o plošném rozsahu erozního ohrožení v ČR.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://mze.gov.cz\&sz=32)
+
+MZe
+
+
+
+VÝZKUMNÝ ÚSTAV MONITORINGU A OCHRANY PŮDY, v. v. i. Půda v číslech: statistiky o zemědělské půdě v České republice [online]. Praha: VÚMOP, v. v. i., 2025 [cit. 2026-10-12]. Dostupné z: [https://statistiky.vumop.cz/](https://statistiky.vumop.cz/)
+
+\- Podpora tvrzení: Statistická aplikace prezentuje údaje o potenciální ohroženosti zemědělské půdy vodní erozí, včetně výpočtů založených na univerzální rovnici ztráty půdy (USLE). Data pro rok 2025 je třeba interpretovat jako modelovaný potenciál, nikoli jako přímé měření skutečně vzniklých ztrát půdy.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://statistiky.vumop.cz\&sz=32)
+
+VÚMOP
+
+
+
+## 3. Nepoužité zdroje
+
+Žádné. Nebyl dodán seznam kandidátních zdrojů; byly vyhledány a ověřeny dva relevantní institucionální zdroje.
+
+## 4. Nejistoty
+
+- Odborná síla zdrojů: Oba zdroje pocházejí z českých odborných či státních institucí, nejde však o recenzované vědecké články.
+- Rozsah ohrožení: Konkrétní podíl ohrožené půdy závisí na použité metodice, prahových hodnotách a roku dat. Není vhodné zaměňovat potenciální ohroženost za skutečnou erozi probíhající na každém hodnoceném pozemku.
+- Bibliografická metadata: U stránky Ministerstva zemědělství nebyl ověřen rok vydání, proto je uvedeno `[b. r.]`. U obou webových zdrojů nebylo zjištěno DOI ani ISBN; u těchto online materiálů se jejich existence nepředpokládá.
+- Doporučení k formulaci: Pro maximální přesnost lze původní větu upravit na: „Významná část zemědělské půdy v Česku je potenciálně ohrožena vodní erozí; riziko se zvyšuje zejména na svažitých pozemcích při pěstování erozně nebezpečných širokořádkových plodin (Ministerstvo zemědělství, [b. r.]; Výzkumný ústav monitoringu a ochrany půdy, 2025).“ Tato formulace lépe odpovídá charakteru doložených údajů.
