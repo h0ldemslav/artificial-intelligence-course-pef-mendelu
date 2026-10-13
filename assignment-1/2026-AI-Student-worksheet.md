@@ -394,7 +394,7 @@ Výpadky serveru, chyby sítě a vyčerpání limitu bezplatné verze, protože 
 
 ### J. Kontrolní seznam logování
 
-- [x] `run_id` ve tvaru `Systém/podmínka/číslo` (např. `ChatGPT/strukturovany/01`)
+- [x] `run_id` ve tvaru `Systém/podmínka/číslo` (např. `ChatGPT/strukturovany/01`). Viz `TestRuns/`
 - [x] Identifikátor testovacího případu (`task_id`)
 - [x] Systém (ChatGPT, Gemini, Claude, Perplexity)
 - [x] Viditelný model a verze
