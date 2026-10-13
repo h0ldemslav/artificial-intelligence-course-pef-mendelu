@@ -1,0 +1,46 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Zapracujte uvedený zdroj do odstavce jako citaci podporující tvrzení a uveďte bibliografický záznam podle ČSN ISO 690.
+
+Odstavec: Nejméně kompetentní lidé hodnotí své schopnosti výše než skuteční experti [CITACE]. | Zdroj: Kruger, J.; Dunning, D. (1999). Unskilled and unaware of it. Journal of Personality and Social Psychology, 77(6), 1121–1134.
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+Nejméně kompetentní lidé mohou ve svém odhadu výkonu výrazně přeceňovat své schopnosti, zatímco skuteční experti mají tendenci svůj výkon spíše podceňovat (Kruger a Dunning, 1999). Přesněji řečeno, původní studie ukázala, že jedinci s nízkým výkonem často nedokážou rozpoznat vlastní chyby a tím přeceňují svou relativní úroveň dovedností; tvrzení by proto nemělo být formulováno jako univerzální pravidlo o „nejméně kompetentních lidech“ bez ohledu na oblast a měřený výkon (Kruger a Dunning, 1999).
+
+## 2. Seznam literatury
+
+KRUGER, J. a DUNNING, D. Unskilled and unaware of it: how difficulties in recognizing one's own incompetence lead to inflated self-assessments. *Journal of Personality and Social Psychology*. 1999, roč. 77, č. 6, s. 1121–1134. DOI 10.1037/0022-3514.77.6.1121. [pubmed.ncbi.nlm.nih](https://pubmed.ncbi.nlm.nih.gov/10626367/)
+
+## 3. Nepoužité zdroje
+
+nepoužito
+
+## 4. Nejistoty
+
+- Původní článek podporuje souvislost mezi nízkým výkonem a nadměrným sebehodnocením, ale jeho závěry se týkají konkrétních testovaných domén (humor, gramatika, logické úsudky apod.), nikoli všech schopností obecně. Doporučuji proto ponechat zjemněnou formulaci výše.
+- V bibliografickém záznamu je DOI uvedeno v kanonické podobě `10.1037/0022-3514.77.6.1121`; ve výsledcích vyhledávání se objevila i varianta s dvojitým lomítkem, která je zřejmě technickým artefaktem databáze PubMed. [pubmed.ncbi.nlm.nih](https://pubmed.ncbi.nlm.nih.gov/10626367/)

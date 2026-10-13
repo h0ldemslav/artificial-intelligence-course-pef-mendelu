@@ -1,0 +1,48 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Z nabízených zdrojů vyberte ten, který nejlépe podporuje tvrzení v odstavci, a citujte jej podle ČSN ISO 690. U každého nevybraného zdroje jednou větou zdůvodněte, proč jej nepoužijete.
+
+Odstavec: Zvýšit světovou produkci potravin a současně snížit dopady zemědělství na životní prostředí lze mimo jiné uzavřením výnosových mezer a efektivnějším využíváním vody a živin. | Kandidáti: (1) Foley, J. A. et al. (2011). Solutions for a cultivated planet. Nature. (2) He, K. et al. (2016). Deep Residual Learning for Image Recognition. CVPR. (3) Fama, E. F. (1970). Efficient Capital Markets. Journal of Finance. (4) Tilman, D. et al. (2002). Agricultural sustainability and intensive production practices. Nature.
+
+
+------------------------------------
+
+
+## Výsledný text
+
+Zvýšit světovou produkci potravin a současně snížit dopady zemědělství na životní prostředí lze mimo jiné uzavřením výnosových mezer a efektivnějším využíváním vody a živin (Foley et al., 2011).
+
+## Seznam literatury
+
+FOLEY, J. A., RAMANKUTTY, N., BRAUMAN, K. A., CASSIDY, E. S., GERBER, J. S., JOHNSTON, M., MUELLER, N. D., O’CONNELL, C., RAY, D. K., WEST, P. C., BALZER, C., BENNETT, E. M., CARPENTER, S. R., HILL, J., MONFREDA, C., POLASKY, S., ROCKSTRÖM, J., SHEEHAN, J., SIEBERT, S., TILMAN, D. a ZAKS, D. P. M. Solutions for a cultivated planet. *Nature*. 2011, roč. 478, č. 7369, s. 337–342. DOI 10.1038/nature10452. [escholarship](https://www.escholarship.org/content/qt6xw5g085/qt6xw5g085.pdf)
+
+## Nepoužité zdroje
+
+- **Tilman et al. (2002), *Agricultural sustainability and intensive production practices*** – článek je tematicky relevantní, ale Foley et al. (2011) přesněji a přímoji podporuje konkrétní kombinaci uzavírání výnosových mezer, zvýšení produkce a snížení environmentálních dopadů; Tilman et al. by šlo použít jako doplňkový zdroj. [nature](https://www.nature.com/articles/nature01014)
+- **He et al. (2016), *Deep Residual Learning for Image Recognition*** – práce o hlubokém učení a obrazové rozpoznávání, se zemědělskou produkcí ani environmentálními dopady zemědělství nesouvisí.
+- **Fama (1970), *Efficient Capital Markets*** – článek o efektivnosti kapitálových trhů, pro tvrzení o potravinové produkci a udržitelném zemědělství je tematicky nesouvisející.
+
+## Nejistoty
+
+- Výběr Foley et al. (2011) vychází z abstraktu a bibliografických metadat článku; před konečným odesláním doporučuji ověřit, že citovaná pasáž odpovídá konkrétnímu kontextu odstavce ve vašem textu. [semanticscholar](https://www.semanticscholar.org/paper/Solutions-for-a-cultivated-planet-Foley-Ramankutty/d60f337025f67823b3549f4cf6e02048885d0761)
+- Bibliografický záznam je ověřený podle údajů vydavatele a databází; číslo strany 342 a DOI jsou uvedeny konzistentně ve více zdrojích. [experts.umn](https://experts.umn.edu/en/publications/solutions-for-a-cultivated-planet/)

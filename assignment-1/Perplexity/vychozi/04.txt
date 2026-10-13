@@ -1,0 +1,22 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Z nabízených zdrojů vyberte ten, který nejlépe podporuje tvrzení v odstavci, a citujte jej podle ČSN ISO 690. U každého nevybraného zdroje jednou větou zdůvodněte, proč jej nepoužijete.
+
+Odstavec: Zvýšit světovou produkci potravin a současně snížit dopady zemědělství na životní prostředí lze mimo jiné uzavřením výnosových mezer a efektivnějším využíváním vody a živin. | Kandidáti: (1) Foley, J. A. et al. (2011). Solutions for a cultivated planet. Nature. (2) He, K. et al. (2016). Deep Residual Learning for Image Recognition. CVPR. (3) Fama, E. F. (1970). Efficient Capital Markets. Journal of Finance. (4) Tilman, D. et al. (2002). Agricultural sustainability and intensive production practices. Nature.
+
+
+------------------------------------ 
+
+
+**Vybraný zdroj:** (1) Foley, J. A. et al. (2011). *Solutions for a cultivated planet*. Nature.
+
+**Citace podle ČSN ISO 690:**
+
+FOLEY, J. A. et al. Solutions for a cultivated planet. *Nature*. 2011, vol. 478, no. 7369, p. 337–342. DOI 10.1038/nature10452. [scispace](https://scispace.com/papers/solutions-for-a-cultivated-planet-19c8aeylfp?citations_page=143)
+
+**Zdůvodnění nevybraných zdrojů:**
+
+- **(2) He, K. et al. (2016). Deep Residual Learning for Image Recognition. CVPR.** Článek se týká hlubokého učení a rozpoznávání obrazu, nikoli zemědělské produkce či životního prostředí.
+- **(3) Fama, E. F. (1970). Efficient Capital Markets. Journal of Finance.** Práce pojednává o efektivnosti finančních trhů, což s tvrzením nesouvisí.
+- **(4) Tilman, D. et al. (2002). Agricultural sustainability and intensive production practices. Nature.** Článek je relevantní pro udržitelnou intensifikaci zemědělství, ale méně přesně pokrývá konkrétní kombinaci uzavírání výnosových mezer a efektivního využívání vody a živin než Foley et al. [pubmed.ncbi.nlm.nih](https://pubmed.ncbi.nlm.nih.gov/12167873/)

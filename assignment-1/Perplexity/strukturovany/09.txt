@@ -1,0 +1,53 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Zapracujte uvedený zdroj do odstavce jako citaci podporující tvrzení a uveďte bibliografický záznam podle ČSN ISO 690.
+
+Odstavec: Po roce 1990 došlo na Vysočině k výrazné proměně venkovského osídlení [CITACE]. | Zdroj od uživatele: Králová, T. (2018). Proměny venkovského osídlení na Vysočině po roce 1990. Praha: Karolinum. Recenzovaná monografie. | Výňatek z titulní strany: Univerzita Karlova, Přírodovědecká fakulta, Katedra sociální geografie. DIPLOMOVÁ PRÁCE. Vedoucí práce: … Praha 2018.
+
+
+------------------------------------
+
+
+## 1. Výsledný text
+
+**nepoužito** – dodaný zdroj nelze na základě dostupných ověření potvrdit jako skutečně existující a jeho bibliografické údaje nelze spolehlivě doplnit. Navíc titulní strana jednoznačně uvádí, že jde o **diplomovou práci**, nikoli o „recenzovanou monografii“, jak zdroj původně označujete.
+
+Pokud existenci práce a přesná metadata ověříte (např. v archivu závěrečných prací UK nebo v katalogu Národní knihovny), lze odstavec formulovat opatrněji takto:
+
+> Po roce 1990 došlo na Vysočině k proměnám venkovského osídlení, jejichž konkrétní podoba a regionální rozdíly zkoumá Králová (2018).
+
+Bez ověřeného zdroje však tvrzení o „výrazné proměně“ nelze korektně doložit právě touto prací.
+
+## 2. Seznam literatury
+
+**nepoužito**
+
+## 3. Nepoužité zdroje
+
+- **Králová, T. (2018). Proměny venkovského osídlení na Vysočině po roce 1990.** Zdroj se nepodařilo nezávisle ověřit; titulní strana zároveň prokazuje, že jde o diplomovou práci, nikoli recenzovanou monografii, takže původní charakterizace je chybná.
+
+## 4. Nejistoty
+
+- Neověřil jsem existenci práce, jejího autora, přesný název, fakultu, rok obhajoby, typ práce či dostupný identifikátor (např. URL nebo signaturu).
+- Nelze potvrdit, že práce skutečně doloží „výraznou proměnu venkovského osídlení na Vysočině po roce 1990“; doporučuji ověřit obsah relevantní kapitoly či závěrů.
+- Před citací je třeba zjistit přesné údaje pro ČSN ISO 690: autor, přesný název, rok, univerzitu, fakultu, typ závěrečné práce, vedoucího práce (pokud se uvádí) a stabilní odkaz či signaturu.

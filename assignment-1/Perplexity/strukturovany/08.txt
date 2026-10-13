@@ -1,0 +1,58 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Vytvořte úplný a správný bibliografický záznam podle ČSN ISO 690. Pokud jsou dodaná metadata chybná nebo neúplná, opravte je a uveďte, co jste změnili.
+
+Metadata: He et al., ResNet článek z konference CVPR 2016.
+
+------------------------------------
+
+
+## Výsledný text
+
+nepoužito
+
+## Seznam literatury
+
+HE, Kaiming, ZHANG, Xiangyu, REN, Shaoqing a SUN, Jian. Deep residual learning for image recognition. In: *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*. Las Vegas: IEEE, 2016, s. 770–778. DOI: 10.1109/CVPR.2016.90. [openaccess.thecvf](https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html)
+
+Odkaz v textu: **(He et al., 2016)**
+
+## Doplněná a opravená metadata
+
+Původní údaj „He et al., ResNet článek z konference CVPR 2016“ byl doplněn o:
+
+- úplná jména autorů: Kaiming He, Xiangyu Zhang, Shaoqing Ren a Jian Sun;
+- přesný název příspěvku: *Deep Residual Learning for Image Recognition*;
+- plný název sborníku a vydavatele: *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, IEEE;
+- místo konání: Las Vegas;
+- stránky 770–778;
+- DOI 10.1109/CVPR.2016.90. [openaccess.thecvf](https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html)
+
+## Nepoužité zdroje
+
+Žádné další zdroje nebyly nabídnuty.
+
+## Nejistoty
+
+- V některých bibliografických stylech se jako název sborníku uvádí „2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)“; obsahově jde o tutéž konferenci, pouze se liší úprava názvu. [link.springer](https://link.springer.com/chapter/10.1007/978-3-031-57016-2_5?error=cookies_not_supported&code=46baeb08-a8b1-4991-bf00-0b0c00c34c2f)
+- Pokud váš citacní styl vyžaduje přesné datum konání, uvádí se 27.–30. června 2016; v základním záznamu ČSN ISO 690 obvykle stačí rok vydání. [link.springer](https://link.springer.com/chapter/10.1007/978-3-031-57016-2_5?error=cookies_not_supported&code=46baeb08-a8b1-4991-bf00-0b0c00c34c2f)

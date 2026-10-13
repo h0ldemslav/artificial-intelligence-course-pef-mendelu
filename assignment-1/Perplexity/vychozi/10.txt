@@ -1,0 +1,18 @@
+Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Odstavec: Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [CITACE].
+
+
+------------------------------------ 
+
+
+Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [GREGAR et al. 2024].
+
+**Bibliografický záznam (ČSN ISO 690):**
+
+GREGAR, Jan, Petrů, Jan, Kalibová, Jana, Ürge, Věra, Kincl, David a Vopravil, Jan. Impact of intercrops on soil loss and surface runoff from sloping maize fields. *Soil and Water Research*. 2024, roč. 19, č. 3, s. 168–175. ISSN 1801-5395. DOI: 10.17221/43/2024-SWR. [agriculturejournals](https://www.agriculturejournals.cz/pdfs/swr/2024/03/04.pdf)
+
+Zdroj přímo uvádí, že vodní eroze ohrožuje více než 50% zemědělské půdy v Česku a že kukuřice jako širokořádková plodina je na svazích zvláště náchylná k odnosu půdy. [agriculturejournals](https://www.agriculturejournals.cz/pdfs/swr/2024/03/04.pdf)

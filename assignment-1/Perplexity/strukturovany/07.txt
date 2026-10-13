@@ -1,0 +1,48 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Vytvořte úplný a správný bibliografický záznam podle ČSN ISO 690. Pokud jsou dodaná metadata chybná nebo neúplná, opravte je a uveďte, co jste změnili.
+
+Metadata: Fama, E. F. (1965). Efficient Capital Markets: A Review of Theory and Empirical Work. Journal of Business.
+
+
+------------------------------------
+
+
+1. **Výsledný text**  
+nepoužito
+
+2. **Seznam literatury**  
+FAMA, Eugene F. The behavior of stock-market prices. *The Journal of Business*. 1965, roč. 38, č. 1, s. 34–105. DOI 10.1086/294743.
+
+Pokud však má být záznamem článek „Efficient Capital Markets: A Review of Theory and Empirical Work“, správný záznam je:
+
+FAMA, Eugene F. Efficient capital markets: a review of theory and empirical work. *The Journal of Finance*. 1970, roč. 25, č. 2, s. 383–417. DOI 10.2307/2325486.
+
+**Co jsem změnil:** Metadata kombinují dva různé Famovy články. Název „Efficient Capital Markets: A Review of Theory and Empirical Work“ patří článku z roku 1970 v *The Journal of Finance*, nikoli roku 1965 v *Journal of Business*. Famův článek z roku 1965 v *Journal of Business* se jmenuje „The Behavior of Stock-Market Prices“ a má rozsah 34–105. [onlinelibrary.wiley](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.1970.tb00518.x)
+
+3. **Nepoužité zdroje**  
+- Dodaná metadata: nebyla použita v původní podobě, protože nesprávně přiřazují název a rok článku k jinému časopisu. [onlinelibrary.wiley](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.1970.tb00518.x)
+
+4. **Nejistoty**  
+- Zvolte, který ze dvou článků chcete citovat; výše jsou uvedeny obě opravené varianty.  
+- U článku z roku 1970 se v databázích objevuje DOI 10.2307/2325486 (JSTOR) i 10.1111/j.1540-6261.1970.tb00518.x (Wiley); pro jednoznačnost doporučuji použít DOI odpovídající verzi, ke které máte přístup. [onlinelibrary.wiley](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.1970.tb00518.x)

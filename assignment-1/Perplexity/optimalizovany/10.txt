@@ -1,0 +1,66 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata. Výsledné tvrzení musí odpovídat rozsahu a síle důkazů citovaného zdroje.
+
+Pravidla:
+
+1. Citujte pouze zdroje, jejichž existencí a metadaty jste si jisti nebo které jste ověřili. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+
+2. Zdroj musí podporovat konkrétní tvrzení, nikoli pouze obecné téma. Přednost mají původní nebo významné odborné práce. Známá či často citovaná publikace není automaticky vhodným důkazem pro každou větu z daného oboru.
+
+3. Před použitím citace posuďte:
+   - který konkrétní závěr nebo pasáž zdroje podporuje tvrzení;
+   - zda odpovídá zkoumaná populace, prostředí, období a podmínky;
+   - zda zdroj poskytuje přímý důkaz, nebo pouze obecné teoretické východisko;
+   - zda formulace tvrzení není silnější nebo obecnější než závěr zdroje.
+
+   Nepřisuzujte zdroji obsah, který neznáte.
+
+4. Pokud zdroj podporuje tvrzení jen částečně nebo za určitých podmínek, zpřesněte přímo výsledný odstavec. Nestačí ponechat nepřesnou větu a její omezení uvést až v části Nejistoty.
+
+5. Nezaměňujte souvislost za příčinu, nezjištěný efekt za definitivní důkaz neexistence efektu ani výsledek jedné studie za univerzální pravidlo. Používejte výrazy jako „prokazuje“, „jednoznačně vyvrací“ nebo „vždy“ pouze tehdy, pokud odpovídají skutečné síle důkazů.
+
+6. U definic, přímých citátů a formulací převzatých přes dalšího autora rozlišujte původního autora a sekundární pramen. Stránku uvádějte jen tehdy, pokud odpovídá příslušné pasáži. Pokud přesnou oporu nemáte, použijte doloženou parafrázi nebo nejistotu přiznejte.
+
+7. Dodaný zdroj nepoužívejte jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+
+8. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci. Také náhradní tvrzení a věcné komentáře musí mít odpovídající oporu. Pokud ji nemáte, neprezentujte vlastní domněnku jako odborný závěr.
+
+9. Pokud mezi nabízenými zdroji není přesná opora tvrzení, tuto skutečnost uveďte. Nejbližší tematický zdroj nepředstavujte jako přímý důkaz. Respektujte přitom omezení úlohy na výběr z nabízených kandidátů.
+
+10. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu, případně s opraveným nebo zpřesněným tvrzením. Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo zjistit nebo ověřit, zejména omezení podpory tvrzení a nejasný původ definic. Tyto poznámky nesmějí odporovat výslednému odstavci.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Odstavec: Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [CITACE].
+
+
+------------------------------------
+
+
+## Výsledný text
+
+Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami, u nichž je meziřádkový prostor v počátku vegetace vystaven eroznímu působení srážek (GREGAR et al. 2024).
+
+## Seznam literatury
+
+GREGAR, Jan, Petrů, Jan, Kalibová, Jana, Ürge, Věra, Kincl, David a Vopravil, Jan. Impact of intercrops on soil loss and surface runoff from sloping maize fields. *Soil and Water Research*. 2024, roč. 19, č. 3, s. 168–175. DOI 10.17221/43/2024-SWR.
+
+## Nepoužité zdroje
+
+- Zumr et al., *Agricultural Land Degradation in the Czech Republic* (2022): Tematicky vhodný zdroj, ale nebyly ověřeny úplné bibliografické metadata (úplný autorský kolektiv, název knihy, stránky), proto nebyl použit.
+- Ministerstvo zemědělství ČR, „Vodní eroze půdy“: Neodborný primární výzkumný zdroj; uvádí pouze indikátory politiky, nikoli přímou oporu pro souvislost s širokořádkovými plodinami.
+- JRC, *Case Study – Czech Republic*: Podporuje souvislost eroze s řádkovými plodinami a svahy, ale nejde o původní výzkumnou publikaci a chybí úplné bibliografické metadata v dostupném záznamu.
+- Ostatní nalezené články, konferenční příspěvky a zpravodajské zdroje: Buď neposkytují přímou oporu pro obě části tvrzení, nebo nejde o dostatečně ověřitelné odborné primární zdroje.
+
+## Nejistoty
+
+Citovaná studie Gregara et al. (2024) přímo uvádí, že vodní eroze ohrožuje více než 50% zemědělské půdy v Česku a že kukuřice je náchylná k erozi kvůli holému prostoru mezi řádky; experiment probíhal na svažitých pozemcích. Tvrzení o „významné části orné půdy“ je tedy záměrně formulováno obecněji než přesný podíl uvedený ve zdroji, protože zdroj pracuje se zemědělskou půdou celkově, nikoli výhradně s ornou půdou. Studie se dále vztahuje konkrétně k kukuřici; zobecnění na všechny širokořádkové plodiny vychází z jejího rámcového kontextu, nikoli z přímého měření všech těchto plodin.

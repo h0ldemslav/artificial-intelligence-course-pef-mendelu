@@ -1,0 +1,51 @@
+Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
+
+Cíl: Splňte úlohu níže tak, aby každá citace věcně podporovala konkrétní tvrzení, odkazovala na skutečně existující zdroj a měla správná bibliografická metadata.
+
+Pravidla:
+
+1. Cituj pouze zdroje, jejichž existencí a metadaty si jsi jist nebo které jsi ověřil. Nikdy nevymýšlejte autora, název, rok, časopis, stránky, DOI ani ISBN.
+2. Zdroj musí podporovat konkrétní tvrzení, ne jen téma. Přednost mají původní nebo často citované práce.
+3. Dodaný zdroj nepoužívej jako podporu, pokud je tematicky nesouvisející, stažený, neověřitelný, neodborný, chybně označený (např. jiný typ dokumentu) nebo pokud tvrzení zkresluje. Vždy uveďte důvod.
+4. Pokud je samotné tvrzení nepravdivé nebo přehnané, upozorněte na to a navrhněte opravenou formulaci.
+5. Bibliografické záznamy uvádějte podle ČSN ISO 690, odkazy v textu metodou jméno–datum.
+
+Formát odpovědi:
+
+1. Výsledný text – odstavec s odkazy v textu (případně s opraveným tvrzením). Pokud úloha text nevyžaduje, napište „nepoužito“.
+2. Seznam literatury – záznamy podle ČSN ISO 690 včetně DOI/ISBN, pokud existují.
+3. Nepoužité zdroje – každý nabídnutý, ale nepoužitý zdroj s jednovětým důvodem.
+4. Nejistoty – co se nepodařilo ověřit nebo co by měl autor zkontrolovat.
+
+Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
+
+Úloha:
+Doplňte do odstavce na místo [CITACE] vhodný odborný zdroj (max. 2) a uveďte úplný bibliografický záznam podle ČSN ISO 690 včetně DOI/ISBN, pokud existuje.
+
+Odstavec: Vodní eroze ohrožuje významnou část orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami [CITACE].
+
+
+------------------------------------
+
+
+1. **Výsledný text**
+
+Vodní eroze ohrožuje více než 50% výměry orné půdy v Česku, zejména na svažitých pozemcích s širokořádkovými plodinami, jako jsou kukuřice a cukrová řepa (VÚMOP, 2025; KUČERA, Podhrázská, Szturc a Karásek, 2021). [mapy.vumop](https://mapy.vumop.cz/)
+
+2. **Seznam literatury**
+
+VÚMOP. *Půda v mapách – Vodní eroze* [online]. Praha: Výzkumný ústav meliorací a ochrany půdy, v. v. i., 2025 [cit. 2026-10-13]. Dostupné z: [https://mapy.vumop.cz/](https://mapy.vumop.cz/). [mapy.vumop](https://mapy.vumop.cz/)
+
+KUČERA, Josef, PODHRÁZSKÁ, Jana, SZTURC, Jan a KARÁSEK, Petr. Infiltrační vlastnosti půd na erozně ohrožených pozemcích při pěstování širokořádkových plodin. *Listy cukrovarnické a řepařské*. 2021, roč. 137, č. 7–8, s. 260–262. ISSN 1210-3306. Dostupné z: http://www.cukr-listy.cz/on_line/2021/PDF/260-262.pdf. [cukr-listy](http://www.cukr-listy.cz/on_line/2021/PDF/260-262.pdf)
+
+3. **Nepoužité zdroje**
+
+- MZe, *Vodní eroze půdy* – podporuje vliv sklonitosti a délky svahu, ale neobsahuje přímé kvantifikované tvrzení o podílu orné půdy ani o širokořádkových plodinách; pro danou větu méně specifické. [mze.gov](https://mze.gov.cz/public/portal/mze/puda/ochrana-pudy-a-krajiny/degradace-pud/vodni-eroze-pudy)
+- MŽP, *Boj se suchem* – uvádí přibližně 60% ohrožené půdy, jde však o tiskovou zprávu z roku 2017 a formulace se vztahuje k půdě obecně, nikoli jednoznačně k orné půdě. [mzp.gov](https://mzp.gov.cz/cz/pro-media-a-verejnost/aktuality/archiv-tiskovych-zprav/boj-se-suchem-nase-puda-potrebuje-vratit)
+- Vyhláška č. 240/2021 Sb. – upravuje hodnocení erozního ohrožení, ale nepodporuje tvrzení o rozsahu ohrožené orné půdy ani širokořádkových plodinách. [e-sbirka.gov](https://e-sbirka.gov.cz/sb/2021/240/2027-07-01)
+
+4. **Nejistoty**
+
+- U článku Kučera et al. (2021) jsem ověřil autory, ročník, čísla, strany a ISSN z PDF; DOI jsem nenašel, proto jej neuvádím. [cukr-listy](http://www.cukr-listy.cz/on_line/2021/PDF/260-262.pdf)
+- VÚMOP neuvádí na citované stránce přesné datum aktualizace; rok 2025 jsem odvodil z uvedení „© VÚMOP, v. v. i., 2025“. Autor by měl před odesláním textu ověřit aktuální verzi stránky a případně doplnit datum citace. [mapy.vumop](https://mapy.vumop.cz/)
+- Formulace „zejména na svažitých pozemcích s širokořádkovými plodinami“ je věcně podpořena, ale jde o rizikový kontext, nikoli tvrzení, že eroze se vyskytuje výhradně v těchto podmínkách. [mapy.vumop](https://mapy.vumop.cz/)
