@@ -469,28 +469,22 @@ Zda se výsledek pilotu přenese na testovací sadu a na všechny čtyři systé
 
 ## L. Tabulka výsledků
 
-| Systém      | Podmínka        | _N_ | Hlavní skóre | Interval nebo variabilita | Vedlejší skóre | Medián latence | Náklady | Úspěch na první pokus |
-| ----------- | --------------- | --- | ------------ | ------------------------- | -------------- | -------------- | ------- | --------------------- |
-| ChatGPT     | Výchozí         | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| ChatGPT     | Strukturovaný   | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| ChatGPT     | Optimalizovaný  | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| Gemini      | Výchozí         | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| Gemini      | Strukturovaný   | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| Gemini      | Optimalizovaný  | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| Claude      | Výchozí         | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| Claude      | Strukturovaný   | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| Claude      | Optimalizovaný  | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| Claude Code | Výchozí         |     |              |                           |                |                |         |                       |
-| Claude Code | Strukturovaný   |     |              |                           |                |                |         |                       |
-| Claude Code | Optimalizovaný  |     |              |                           |                |                |         |                       |
-| Grok        | Výchozí         |     |              |                           |                |                |         |                       |
-| Grok        | Strukturovaný   |     |              |                           |                |                |         |                       |
-| Grok        | Optimalizovaný  |     |              |                           |                |                |         |                       |
-| Perplexity  | Výchozí         | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| Perplexity  | Strukturovaný   | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
-| Perplexity  | Optimalizovaný  | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| Systém | Podmínka | _N_ | Hlavní skóre | Interval nebo variabilita | Vedlejší skóre | Medián latence | Náklady | Úspěch na první pokus |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ChatGPT | Výchozí | 10 | 7,10 | SD 2,48; min–max 2–9,50 | M2 formální 1,00 (bez identifikátoru 2×); M2 ref. 1,00; M3 1/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| ChatGPT | Strukturovaný | 10 | 9,05 | SD 0,44; min–max 8,50–9,50 | M2 formální 1,00 (bez identifikátoru 1×); M2 ref. 0,86; M3 4/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| ChatGPT | Optimalizovaný | 10 | 9,45 | SD 0,55; min–max 8,50–10 | M2 formální 1,00 (bez identifikátoru 2×); M2 ref. 0,83; M3 4/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| Gemini | Výchozí | 10 | 6,45 | SD 2,43; min–max 1,50–9,50 | M2 formální 1,00 (bez identifikátoru 3×); M2 ref. 0,64; M3 1/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| Gemini | Strukturovaný | 10 | 7,85 | SD 2,14; min–max 2,50–9,50 | M2 formální 1,00 (bez identifikátoru 1×); M2 ref. 0,93; M3 3/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| Gemini | Optimalizovaný | 10 | 7,70 | SD 2,24; min–max 2,50–10 | M2 formální 0,94 (bez identifikátoru 1×); M2 ref. 0,86; M3 3/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| Claude | Výchozí | 10 | 6,90 | SD 2,49; min–max 2–9,50 | M2 formální 1,00 (bez identifikátoru 5×); M2 ref. 0,71; M3 2/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| Claude | Strukturovaný | 10 | 8,65 | SD 0,97; min–max 7–10 | M2 formální 1,00 (bez identifikátoru 3×); M2 ref. 0,93; M3 3/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| Claude | Optimalizovaný | 10 | 9,20 | SD 1,51; min–max 5–10 | M2 formální 1,00 (bez identifikátoru 3×); M2 ref. 1,00; M3 4/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| Perplexity | Výchozí | 10 | 6,80 | SD 2,36; min–max 2–9,50 | M2 formální 1,00 (bez identifikátoru 4×); M2 ref. 0,71; M3 1/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| Perplexity | Strukturovaný | 10 | 8,50 | SD 0,71; min–max 7,50–9,50 | M2 formální 1,00 (bez identifikátoru 2×); M2 ref. 0,90; M3 4/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| Perplexity | Optimalizovaný | 10 | 9,15 | SD 0,71; min–max 7,50–10 | M2 formální 1,00 (bez identifikátoru 1×); M2 ref. 0,93; M3 4/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
 
-Hlavní skóre = průměr M1 (1–10); vedlejší skóre = průměr M2a (0,0–1,0) a podíl úspěchů M3. Interval = rozptyl nebo minimum–maximum M1 přes 10 případů. Výsledky budou doplněny po vyhodnocení.
+Hlavní skóre = průměr M1 (m1_final, průměr dvou hodnotitelů, škála 1–10) přes 10 testovacích případů. M2 formální = průměrný podíl platných DOI/ISBN u odpovědí, které identifikátor obsahují; odpovědi bez identifikátoru jsou vykázány zvlášť. M2 ref. = průměrná Jaccardova shoda s referenčními DOI u případů v režimu match_ref. M3 = počet správně odmítnutých nebo rozpoznaných nevhodných zdrojů ze 4 hraničních případů (B07, C07, C08, E07). Latenci webová rozhraní neumožňují srovnatelně měřit; všechny běhy proběhly na první pokus. Shoda hodnotitelů M1: kvadraticky vážený Cohenův kappa 0,56.
 
 ---
 
