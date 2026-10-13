@@ -31,6 +31,7 @@
 **Verze a datum worksheetu:**
 
 - 0.1, 11.10.2026
+- 0.2, 13.10.2026
 
 ---
 
@@ -120,12 +121,12 @@ Rovněž nebere v úvahu dodržování syntaxe formátování bibliografických 
 
 ## D. Systémy a podmínky
 
-| Systém     | Rozhraní/API | Viditelný model/verze | Zapnuté nástroje | Úpravy promptu | Datum testování |
-| ---------- | ------------ | --------------------- | ---------------- | -------------- | --------------- |
-| ChatGPT    | Webové rozhraní, bezplatná verze | GPT-6 | Výchozí nastavení bezplatné verze; výstupy obsahují webové odkazy (vyhledávání na webu) | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12 |
-| Gemini     | Webové rozhraní, bezplatná verze | Flash 2.5 | Výchozí nastavení bezplatné verze; výstupy neobsahují webové odkazy | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12 |
-| Claude     | Webové rozhraní, bezplatná verze | Haiku 5.5 Low | Výchozí nastavení bezplatné verze; webové odkazy ve výstupech jen ojediněle | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12 |
-| Perplexity | Webové rozhraní, bezplatná verze | [doplnit – viditelný model] | Výchozí nastavení bezplatné verze; vyhledávání na webu je součástí produktu | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12 |
+| Systém     | Rozhraní/API                     | Viditelný model/verze                        | Zapnuté nástroje                                                                        | Úpravy promptu                                                                      | Datum testování |
+| ---------- | -------------------------------- | -------------------------------------------- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | --------------- |
+| ChatGPT    | Webové rozhraní, bezplatná verze | GPT-6                                        | Výchozí nastavení bezplatné verze; výstupy obsahují webové odkazy (vyhledávání na webu) | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12      |
+| Gemini     | Webové rozhraní, bezplatná verze | Flash 2.5                                    | Výchozí nastavení bezplatné verze; výstupy neobsahují webové odkazy                     | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12      |
+| Claude     | Webové rozhraní, bezplatná verze | Haiku 5.5 Low                                | Výchozí nastavení bezplatné verze; webové odkazy ve výstupech jen ojediněle             | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12      |
+| Perplexity | Webové rozhraní, bezplatná verze | neznámý (free verze neumožňuje volbu modelů) | Výchozí nastavení bezplatné verze; vyhledávání na webu je součástí produktu             | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12      |
 
 **Design srovnání:**
 
@@ -145,8 +146,6 @@ Výsledky popisují chování konkrétních bezplatných produktů v den testov�
 
 ---
 
----
-
 ## E. Plán dat a testovací sady
 
 **Celkový počet případů:** 40 (5 typů úloh × 8 případů: A – dohledání zdroje, B – výběr z kandidátů, C – podstrčený zdroj, D – formální metadata, E – české a regionální zdroje)
@@ -161,16 +160,16 @@ Výsledky popisují chování konkrétních bezplatných produktů v den testov�
 
 Kategorie se překrývají (jeden případ může být např. obtížný, hraniční a zároveň v češtině). Čísla v závorce udávají počet v testovací sadě.
 
-| Kategorie                 | Plánovaný počet | Skutečný počet | Způsob výběru |
-| ------------------------- | --------------- | -------------- | ------------- |
-| Běžné                     | 12 (3) | 12 (3) | Případy bez hraničního scénáře (A07, A08, B08 v testu); tvrzení podložitelné známou publikací |
-| Obtížné                   | 10 (5) | 10 (5) | Obtížnost „těžká“ přidělená týmem (C07, C08, D07, E07, E08 v testu) |
-| Hraniční nebo protichůdné | 13 (4) | 13 (4) | Případy s podvrženým, fiktivním, staženým nebo zkresleně použitým zdrojem, tematickým distraktorem či prompt injection; hodnocené Metrikou 3 (B07, C07, C08, E07 v testu) |
-| Nejednoznačné nebo neúplné | 7 (1) | 7 (1) | Chybějící informace, chybějící identifikátor, nejednoznačný autor/rok nebo více vydání (D08 v testu) |
-| Česky                     | 38 (10) | 38 (10) | Všechna zadání a odstavce jsou v češtině, protože cílem je psaní českých odborných textů |
-| Anglicky                  | 0 | 0 | Záměrně nezařazeno – mimo rozsah výzkumné otázky |
-| Smíšený jazyk             | 2 (0) | 2 (0) | Kombinace českého zadání a anglických podkladů (E04, E06) |
-| Jiná relevantní kategorie: málo citované / české zdroje | 8 (3) | 8 (3) | Málo citované české publikace a český právní předpis (C08, E07, E08 v testu); testují alternativní vysvětlení o zastoupení v trénovacích datech |
+| Kategorie                                               | Plánovaný počet | Skutečný počet | Způsob výběru                                                                                                                                                             |
+| ------------------------------------------------------- | --------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Běžné                                                   | 12 (3)          | 12 (3)         | Případy bez hraničního scénáře (A07, A08, B08 v testu); tvrzení podložitelné známou publikací                                                                             |
+| Obtížné                                                 | 10 (5)          | 10 (5)         | Obtížnost „těžká“ přidělená týmem (C07, C08, D07, E07, E08 v testu)                                                                                                       |
+| Hraniční nebo protichůdné                               | 13 (4)          | 13 (4)         | Případy s podvrženým, fiktivním, staženým nebo zkresleně použitým zdrojem, tematickým distraktorem či prompt injection; hodnocené Metrikou 3 (B07, C07, C08, E07 v testu) |
+| Nejednoznačné nebo neúplné                              | 7 (1)           | 7 (1)          | Chybějící informace, chybějící identifikátor, nejednoznačný autor/rok nebo více vydání (D08 v testu)                                                                      |
+| Česky                                                   | 38 (10)         | 38 (10)        | Všechna zadání a odstavce jsou v češtině, protože cílem je psaní českých odborných textů                                                                                  |
+| Anglicky                                                | 0               | 0              | Záměrně nezařazeno – mimo rozsah výzkumné otázky                                                                                                                          |
+| Smíšený jazyk                                           | 2 (0)           | 2 (0)          | Kombinace českého zadání a anglických podkladů (E04, E06)                                                                                                                 |
+| Jiná relevantní kategorie: málo citované / české zdroje | 8 (3)           | 8 (3)          | Málo citované české publikace a český právní předpis (C08, E07, E08 v testu); testují alternativní vysvětlení o zastoupení v trénovacích datech                           |
 
 **Původ dat:**
 
@@ -191,8 +190,6 @@ Případy napodobují reálné situace studenta nebo výzkumníka při psaní č
 3. Repozitář s testovacími případy je veřejný na GitHubu; pokud by se dostal do trénovacích dat nebo vyhledávacího indexu, mohl by zkreslit budoucí opakování (pro toto testování 12. 10. 2026 je riziko zanedbatelné).
 4. Ladění promptu probíhalo jen na vývojové a validační sadě; testovací případy v textu promptů nefigurují (viz oddíl F).
 5. Bezplatné verze mohou ukládat konverzace pro trénink, proto byly testovací případy zadány jen při ostrém běhu.
-
----
 
 ---
 
@@ -340,26 +337,22 @@ Od okamžiku spuštění ostrého sběru dat na 10 testovacích případech pro 
 
 ## H. Plán vyhodnocení
 
-| Metrika | Hlavní/vedlejší | Automatická/lidská/LLM soudce | Výpočet | Kalibrace nebo validace | Omezení |
-| --- | --- | --- | --- | --- | --- |
-| M1 – věcná relevance a kontextové použití citace | Hlavní | Lidská (2 hodnotitelé) | Skóre 1–10 podle rubriky s pásmy 1–3, 4–6, 7–8, 9–10; průměr a medián za kombinaci systém × podmínka (N = 10) | Společná kalibrace na vývojových případech; dvojí nezávislé hodnocení 20 % odpovědí (24 ze 120) a výpočet shody | Subjektivita i při rubrice; nepostihuje formální správnost identifikátorů |
-| M2a – formální přesnost DOI/ISBN | Vedlejší | Automatická (`metrika2.py`) | Počet platných unikátních identifikátorů / počet všech extrahovaných unikátních kandidátů (0,0–1,0); odpověď bez identifikátoru má stav BEZ_IDENTIFIKATORU a vykazuje se samostatně | Ověřeno na zkušebních výstupech; detailní CSV `identifikatory_metrika2.csv` ručně zkontrolováno kvůli falešně rozpoznaným číslům | Kontroluje jen syntaxi DOI a kontrolní součet ISBN, ne existenci záznamu ani autora, rok a název |
-| M2b – shoda s referencí | Vedlejší | Automatická (`metrika2.py --references`) | Jaccardova shoda nalezených a očekávaných identifikátorů (průnik / sjednocení) podle `ref_doi` a `ref_isbn` v `Testcases.xlsx`; jen u případů v režimu `match_ref` | Reference ověřeny týmem ručně (Crossref, DataCite, katalogy knihoven) před během | Penalizuje i jiné správné zdroje při volné volbě literatury; ISBN-10 a ISBN-13 se nepřevádějí |
-| M3 – odmítnutí nevhodného zdroje | Vedlejší | Lidská (2 hodnotitelé) | 0/1: model explicitně odmítl podvržený, fiktivní, stažený nebo zkresleně použitý zdroj a uvedl správný důvod; podíl úspěchů na 4 testovacích případech s `Metrics3_applicable = ANO` (B07, C07, C08, E07) | Předem stanovené `candidate_verdicts` a `should_use_source` v `Testcases.xlsx`; shoda dvou hodnotitelů | Malý počet případů (4 na kombinaci); binární hodnota nerozlišuje částečné odmítnutí |
+| Metrika                                          | Hlavní/vedlejší | Automatická/lidská/LLM soudce            | Výpočet                                                                                                                                                                                                   | Kalibrace nebo validace                                                                                                          | Omezení                                                                                          |
+| ------------------------------------------------ | --------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| M1 – věcná relevance a kontextové použití citace | Hlavní          | Lidská (2 hodnotitelé)                   | Skóre 1–10 podle rubriky s pásmy 1–3, 4–6, 7–8, 9–10; průměr a medián za kombinaci systém × podmínka (N = 10)                                                                                             | Společná kalibrace na vývojových případech; dvojí nezávislé hodnocení 20 % odpovědí (24 ze 120) a výpočet shody                  | Subjektivita i při rubrice; nepostihuje formální správnost identifikátorů                        |
+| M2a – formální přesnost DOI/ISBN                 | Vedlejší        | Automatická (`metrika2.py`)              | Počet platných unikátních identifikátorů / počet všech extrahovaných unikátních kandidátů (0,0–1,0); odpověď bez identifikátoru má stav BEZ_IDENTIFIKATORU a vykazuje se samostatně                       | Ověřeno na zkušebních výstupech; detailní CSV `identifikatory_metrika2.csv` ručně zkontrolováno kvůli falešně rozpoznaným číslům | Kontroluje jen syntaxi DOI a kontrolní součet ISBN, ne existenci záznamu ani autora, rok a název |
+| M2b – shoda s referencí                          | Vedlejší        | Automatická (`metrika2.py --references`) | Jaccardova shoda nalezených a očekávaných identifikátorů (průnik / sjednocení) podle `ref_doi` a `ref_isbn` v `Testcases.xlsx`; jen u případů v režimu `match_ref`                                        | Reference ověřeny týmem ručně (Crossref, DataCite, katalogy knihoven) před během                                                 | Penalizuje i jiné správné zdroje při volné volbě literatury; ISBN-10 a ISBN-13 se nepřevádějí    |
+| M3 – odmítnutí nevhodného zdroje                 | Vedlejší        | Lidská (2 hodnotitelé)                   | 0/1: model explicitně odmítl podvržený, fiktivní, stažený nebo zkresleně použitý zdroj a uvedl správný důvod; podíl úspěchů na 4 testovacích případech s `Metrics3_applicable = ANO` (B07, C07, C08, E07) | Předem stanovené `candidate_verdicts` a `should_use_source` v `Testcases.xlsx`; shoda dvou hodnotitelů                           | Malý počet případů (4 na kombinaci); binární hodnota nerozlišuje částečné odmítnutí              |
 
-**Lidští hodnotitelé:** Daniil Astapenko (hlavní hodnotitel) a druhý člen týmu, který se nepodílel na přípravě daného případu; [doplnit jméno druhého hodnotitele].
+**Lidští hodnotitelé:** Daniil Astapenko a Erik Praunsperger.
 
 **Postup zaslepení:** Odpovědi se před hodnocením zkopírují bez zadání a promptu do anonymizovaných souborů s náhodným kódem. Odstraní se zmínky prozrazující systém (název asistenta, styl odkazů typický pro produkt, kde to jde bez zásahu do obsahu). Klíč přiřazení kódů k `run_id` drží člen týmu, který nehodnotí.
 
-**Randomizace pořadí odpovědí:** Pořadí 120 anonymizovaných odpovědí se náhodně zamíchá (skriptem s pevně uloženým seedem) tak, aby se systémy ani podmínky neobjevovaly v blocích.
+**Randomizace pořadí odpovědí:** Pořadí 120 anonymizovaných odpovědí se náhodně zamíchá tak, aby se systémy ani podmínky neobjevovaly v blocích.
 
-**Měření shody mezi hodnotiteli:** Váhovaný Cohenův kappa (kvadratické váhy) pro ordinální M1 a Cohenův kappa pro binární M3, počítaný na 20 % odpovědí hodnocených oběma hodnotiteli. Neshody o více než 2 body u M1 se rozhodnou diskusí.
+**Měření shody mezi hodnotiteli:** Vážený Cohenův koeficient pro ordinální M1 a Cohenův koeficient pro binární M3, počítaný na 20 % odpovědí hodnocených oběma hodnotiteli. Neshody o více než 2 body u M1 se rozhodnou diskusí.
 
 **Byl použit LLM jako soudce?** Ne
-
-Pokud ano, uveďte model soudce, rubriku, kalibrační vzorek a známá rizika: Nepoužito – všechna kvalitativní hodnocení provádějí lidé, aby hodnotící model nezvýhodňoval vlastní nebo příbuzné odpovědi.
-
----
 
 ---
 
@@ -395,8 +388,6 @@ Výpadky serveru, chyby sítě a vyčerpání limitu bezplatné verze, protože 
 
 ---
 
----
-
 ### J. Kontrolní seznam logování
 
 - [x] `run_id` ve tvaru `Systém/podmínka/číslo` (např. `ChatGPT/strukturovany/01`)
@@ -419,15 +410,13 @@ Výpadky serveru, chyby sítě a vyčerpání limitu bezplatné verze, protože 
 
 **Místo uložení:**
 
-GitHub repozitář `h0ldemslav/artificial-intelligence-course-pef-mendelu`, složka `assignment-1`: výstupy jako textové soubory UTF-8 ve struktuře `Systém/podmínka/číslo.txt` (např. `ChatGPT/strukturovany/01.txt`), testovací případy v `Testcases.xlsx`, kandidátní prompty ve složce `CandidatePrompts`, skript `metrika2.py` a návod `NAVOD_metrika2.txt`. Centrální tabulka s hodnocením je vedena v Google Sheets týmu.
+GitHub repozitář `h0ldemslav/artificial-intelligence-course-pef-mendelu`, složka `assignment-1`: výstupy jako textové soubory UTF-8 ve struktuře `Systém/podmínka/číslo.txt` (např. `ChatGPT/strukturovany/01.txt`), testovací případy v `Testcases.xlsx`, kandidátní prompty ve složce `CandidatePrompts`, skript `metrika2.py` a návod `NAVOD_metrika2.txt`. Centrální tabulka s hodnocením včetně poznámek hodnocení je v souboru `models_evaluation.xlsx`.
 
 ---
 
 **Postup anonymizace a ochrany dat:**
 
 Testovací případy ani výstupy neobsahují osobní údaje – jde o syntetická zadání a veřejně dostupné publikace. Do promptů se nevkládají žádné osobní ani citlivé informace členů týmu. Pro hodnocení se odpovědi anonymizují (viz zaslepení v oddílu H) a klíč k anonymizaci je uložen odděleně od souborů pro hodnotitele. Účty použité k testování bezplatných verzí se v repozitáři neuvádějí.
-
----
 
 ---
 
@@ -443,25 +432,27 @@ Strukturovaný prompt (v1) ponechával nepřesná tvrzení v odstavci a omezení
 
 **Které případy byly přepsány nebo odstraněny?**
 
-[doplnit – žádný případ nebyl odstraněn; uveďte, zda byla po pilotu upravena formulace některého zadání]
+Žádný případ nebyl odstraněn nebo přeformulován uveďte.
 
 ---
 
 **Jaké změny metrik nebo rubriky byly provedeny?**
 
-U Metriky 2 bylo stanoveno, že odpovědi bez identifikátoru (stav BEZ_IDENTIFIKATORU) se vykazují samostatně, a byl zaveden volitelný referenční režim s Jaccardovou shodou vůči ověřeným referencím. Pro každý případ byl v `Testcases.xlsx` určen režim hodnocení (`match_ref`, `consistency`, `no_invention`) a u Metriky 3 předem zapsány očekávané verdikty ke kandidátním zdrojům. [doplnit případné úpravy rubriky Metriky 1]
+U Metriky 2 bylo stanoveno, že odpovědi bez identifikátoru (stav BEZ_IDENTIFIKATORU) se vykazují samostatně, a byl zaveden volitelný referenční režim s Jaccardovou shodou vůči ověřeným referencím. Pro každý případ byl v `Testcases.xlsx` určen režim hodnocení (`match_ref`, `consistency`, `no_invention`) a u Metriky 3 předem zapsány očekávané verdikty ke kandidátním zdrojům.
 
 ---
 
 **Jaké důkazy podporují zmrazení benchmarku?**
 
-Kandidát A dosáhl na validační sadě průměru M1 9/10, 100% správnosti DOI/ISBN a 100% úspěšnosti u hraničních případů (M3), zatímco kandidát B vykázal chyby v identifikátorech. Testovací sada zůstala během ladění nedotčena a skript pro Metriku 2 pracuje offline a deterministicky.
+Kandidát A dosáhl na validační sadě průměru M1 9/10, 100% správnosti DOI/ISBN a 100% úspěšnosti u hraničních případů (M3), zatímco kandidát B vykázal chyby v identifikátorech, pravděpodobně kvůli příliš striktnímu checklistu. Testovací sada zůstala během ladění nedotčena a skript pro Metriku 2 pracuje offline a deterministicky.
 
 ---
 
 **Co zůstává nejisté?**
 
-Zda se výsledek pilotu přenese na testovací sadu a na všechny čtyři systémy; shoda hodnotitelů u Metriky 1 (zatím neměřena na ostrých datech); malý počet případů pro Metriku 3 (4 na kombinaci systém × podmínka); stabilita modelů v bezplatných verzích a to, nakolik výsledek ovlivňuje vyhledávání na webu, které není mezi systémy sjednoceno.
+- Zda se výsledek pilotu přenese na testovací sadu a na všechny čtyři systémy
+- Malý počet případů pro Metriku 3 (4 na kombinaci systém × podmínka)
+- Stabilita modelů v bezplatných verzích a to, nakolik výsledek ovlivňuje vyhledávání na webu, které není mezi systémy sjednoceno
 
 ---
 
@@ -469,22 +460,27 @@ Zda se výsledek pilotu přenese na testovací sadu a na všechny čtyři systé
 
 ## L. Tabulka výsledků
 
-| Systém | Podmínka | _N_ | Hlavní skóre | Interval nebo variabilita | Vedlejší skóre | Medián latence | Náklady | Úspěch na první pokus |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| ChatGPT | Výchozí | 10 | 7,10 | SD 2,48; min–max 2–9,50 | M2 formální 1,00 (bez identifikátoru 2×); M2 ref. 1,00; M3 1/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| ChatGPT | Strukturovaný | 10 | 9,05 | SD 0,44; min–max 8,50–9,50 | M2 formální 1,00 (bez identifikátoru 1×); M2 ref. 0,86; M3 4/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| ChatGPT | Optimalizovaný | 10 | 9,45 | SD 0,55; min–max 8,50–10 | M2 formální 1,00 (bez identifikátoru 2×); M2 ref. 0,83; M3 4/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| Gemini | Výchozí | 10 | 6,45 | SD 2,43; min–max 1,50–9,50 | M2 formální 1,00 (bez identifikátoru 3×); M2 ref. 0,64; M3 1/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| Gemini | Strukturovaný | 10 | 7,85 | SD 2,14; min–max 2,50–9,50 | M2 formální 1,00 (bez identifikátoru 1×); M2 ref. 0,93; M3 3/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| Gemini | Optimalizovaný | 10 | 7,70 | SD 2,24; min–max 2,50–10 | M2 formální 0,94 (bez identifikátoru 1×); M2 ref. 0,86; M3 3/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| Claude | Výchozí | 10 | 6,90 | SD 2,49; min–max 2–9,50 | M2 formální 1,00 (bez identifikátoru 5×); M2 ref. 0,71; M3 2/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| Claude | Strukturovaný | 10 | 8,65 | SD 0,97; min–max 7–10 | M2 formální 1,00 (bez identifikátoru 3×); M2 ref. 0,93; M3 3/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| Claude | Optimalizovaný | 10 | 9,20 | SD 1,51; min–max 5–10 | M2 formální 1,00 (bez identifikátoru 3×); M2 ref. 1,00; M3 4/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| Perplexity | Výchozí | 10 | 6,80 | SD 2,36; min–max 2–9,50 | M2 formální 1,00 (bez identifikátoru 4×); M2 ref. 0,71; M3 1/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| Perplexity | Strukturovaný | 10 | 8,50 | SD 0,71; min–max 7,50–9,50 | M2 formální 1,00 (bez identifikátoru 2×); M2 ref. 0,90; M3 4/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
-| Perplexity | Optimalizovaný | 10 | 9,15 | SD 0,71; min–max 7,50–10 | M2 formální 1,00 (bez identifikátoru 1×); M2 ref. 0,93; M3 4/4 | neměřeno | 0 (bezplatná verze) | 10/10 |
+| Systém     | Podmínka       | _N_ | Hlavní skóre | Interval nebo variabilita  | Vedlejší skóre                                                 | Medián latence | Náklady             | Úspěch na první pokus |
+| ---------- | -------------- | --- | ------------ | -------------------------- | -------------------------------------------------------------- | -------------- | ------------------- | --------------------- |
+| ChatGPT    | Výchozí        | 10  | 7,10         | SD 2,48; min–max 2–9,50    | M2 formální 1,00 (bez identifikátoru 2×); M2 ref. 1,00; M3 1/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| ChatGPT    | Strukturovaný  | 10  | 9,05         | SD 0,44; min–max 8,50–9,50 | M2 formální 1,00 (bez identifikátoru 1×); M2 ref. 0,86; M3 4/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| ChatGPT    | Optimalizovaný | 10  | 9,45         | SD 0,55; min–max 8,50–10   | M2 formální 1,00 (bez identifikátoru 2×); M2 ref. 0,83; M3 4/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| Gemini     | Výchozí        | 10  | 6,45         | SD 2,43; min–max 1,50–9,50 | M2 formální 1,00 (bez identifikátoru 3×); M2 ref. 0,64; M3 1/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| Gemini     | Strukturovaný  | 10  | 7,85         | SD 2,14; min–max 2,50–9,50 | M2 formální 1,00 (bez identifikátoru 1×); M2 ref. 0,93; M3 3/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| Gemini     | Optimalizovaný | 10  | 7,70         | SD 2,24; min–max 2,50–10   | M2 formální 0,94 (bez identifikátoru 1×); M2 ref. 0,86; M3 3/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| Claude     | Výchozí        | 10  | 6,90         | SD 2,49; min–max 2–9,50    | M2 formální 1,00 (bez identifikátoru 5×); M2 ref. 0,71; M3 2/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| Claude     | Strukturovaný  | 10  | 8,65         | SD 0,97; min–max 7–10      | M2 formální 1,00 (bez identifikátoru 3×); M2 ref. 0,93; M3 3/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| Claude     | Optimalizovaný | 10  | 9,20         | SD 1,51; min–max 5–10      | M2 formální 1,00 (bez identifikátoru 3×); M2 ref. 1,00; M3 4/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| Perplexity | Výchozí        | 10  | 6,80         | SD 2,36; min–max 2–9,50    | M2 formální 1,00 (bez identifikátoru 4×); M2 ref. 0,71; M3 1/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| Perplexity | Strukturovaný  | 10  | 8,50         | SD 0,71; min–max 7,50–9,50 | M2 formální 1,00 (bez identifikátoru 2×); M2 ref. 0,90; M3 4/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
+| Perplexity | Optimalizovaný | 10  | 9,15         | SD 0,71; min–max 7,50–10   | M2 formální 1,00 (bez identifikátoru 1×); M2 ref. 0,93; M3 4/4 | neměřeno       | 0 (bezplatná verze) | 10/10                 |
 
-Hlavní skóre = průměr M1 (m1_final, průměr dvou hodnotitelů, škála 1–10) přes 10 testovacích případů. M2 formální = průměrný podíl platných DOI/ISBN u odpovědí, které identifikátor obsahují; odpovědi bez identifikátoru jsou vykázány zvlášť. M2 ref. = průměrná Jaccardova shoda s referenčními DOI u případů v režimu match_ref. M3 = počet správně odmítnutých nebo rozpoznaných nevhodných zdrojů ze 4 hraničních případů (B07, C07, C08, E07). Latenci webová rozhraní neumožňují srovnatelně měřit; všechny běhy proběhly na první pokus. Shoda hodnotitelů M1: kvadraticky vážený Cohenův kappa 0,56.
+- Hlavní skóre = průměr M1 (m1_final, průměr dvou hodnotitelů, škála 1–10) přes 10 testovacích případů
+- M2 formální = průměrný podíl platných DOI/ISBN u odpovědí, které identifikátor obsahují. Odpovědi bez identifikátoru jsou vykázány zvlášť
+- M2 ref. = průměrná Jaccardova shoda s referenčními DOI u případů v režimu match_ref
+- M3 = počet správně odmítnutých nebo rozpoznaných nevhodných zdrojů ze 4 hraničních případů (B07, C07, C08, E07)
+- Latenci webová rozhraní neumožňují srovnatelně měřit
+- Všechny běhy proběhly na první pokus. Shoda hodnotitelů M1: kvadraticky vážený Cohenův kappa 0,56
 
 ---
 
@@ -515,8 +511,6 @@ Doplní se po vyhodnocení.
 **Změnila optimalizace rozložení chyb?**
 
 Doplní se po vyhodnocení.
-
----
 
 ---
 
@@ -552,13 +546,11 @@ Všechny testované verze jsou bezplatné, takže hlavní náklad představuje l
 
 ---
 
----
-
 ## O. Validita a omezení
 
-**Konstruktová validita: měříme zamýšlenou schopnost?**
+**Konceptuální validita: Měříme zamýšlenou schopnost?**
 
-Úlohy pokrývají tři složky schopnosti (výběr zdroje, kritické odmítnutí, správné identifikátory) a každé odpovídá samostatná metrika. Metrika 2 však měří jen formální platnost identifikátorů, nikoli existenci zdroje a správnost dalších metadat; referenční režim to zmírňuje jen u případů s jednoznačně očekávaným zdrojem. Metrika 1 závisí na kvalitě rubriky a úsudku hodnotitelů.
+Úlohy pokrývají tři složky schopnosti (výběr zdroje, kritické odmítnutí, správné identifikátory) a každé odpovídá samostatná metrika. Metrika 2 však měří jen formální platnost identifikátorů, nikoli existenci zdroje a správnost dalších metadat. Referenční režim to zmírňuje jen u případů s jednoznačně očekávaným zdrojem. Metrika 1 závisí na kvalitě rubriky a úsudku hodnotitelů.
 
 ---
 
@@ -594,4 +586,6 @@ Hodnotitelé jsou zároveň autory testovacích případů a promptů, a mohou p
 
 **Nejdůležitější navazující experiment:**
 
-Zopakovat test přes API se sjednoceným nastavením (pevná teplota, vyhledávání na webu záměrně zapnuté a vypnuté u všech systémů), aby bylo možné oddělit vliv přístupu k webu od vlivu modelu; současně rozšířit sadu o více málo citovaných českých zdrojů a provést opakované běhy pro odhad variability.
+Zopakovat test přes API se sjednoceným nastavením (pevná teplota, vyhledávání na webu záměrně zapnuté a vypnuté u všech systémů), aby bylo možné oddělit vliv přístupu k webu od vlivu modelu.
+
+Současně rozšířit sadu o více málo citovaných českých zdrojů a provést opakované běhy pro odhad variability.
