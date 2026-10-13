@@ -522,13 +522,16 @@ Doplní se po vyhodnocení.
 
 **Nejlepší systém pro definovanou schopnost:**
 
-Doplní se po vyhodnocení.
+**ChatGPT (GPT-6)** a **Perplexity** (dělené 1. místo).
+Oba systémy dosáhly v optimalizované podmínce vysokého hlavního skóre M1, stoprocentní formální platnosti identifikátorů M2a, referenční shody M2ref a bezchybné úspěšnosti v odhalení pastí a podvržených děl M3.
+
+Perplexity těží z integrovaného webového vyhledávání a reálné verifikace metadat v reálném čase, zatímco GPT-6 prokázal nejvyšší jazykovou kultivovanost v češtině, přesné dodržení citačního standardu ČSN ISO 690 a nekompromisní odsunutí pochybných zdrojů do sekce Nepoužité zdroje. Těsně za nimi se umístil Claude Haiku 5.5 (M1 = 9,70), jehož drobným limitem byla absence vyhledávacího modulu u lokálních českých témat.
 
 ---
 
 **Nejlepší podmínka promptu:**
 
-Doplní se po vyhodnocení.
+Jednoznačně **Optimalizovaný prompt (Kandidát A)**.
 
 ---
 
