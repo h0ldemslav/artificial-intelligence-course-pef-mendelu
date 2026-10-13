@@ -83,7 +83,11 @@ Naše hypotéza by byla zpochybněna nebo vyvrácena, pokud by:
 
 Kvalita citací a podložení tvrzení je definována jako míra, do jaké AI systém generuje český akademický odstavec, v němž každá citace aktivně a přesně podpoří dané tvrzení, odkazuje na ověřitelnou vědeckou literaturu, správně zachází s podezřelými nebo chybnými vstupními zdroji a poskytuje syntakticky správná bibliografická metadata v souladu s normou ČSN ISO 690. Toto se kvantifikuje na testovací sadě vyňaté z trénovacího souboru prostřednictvím tří dimenzí:
 
-1. **Metrika 1 (Hlavní metrika)**: Skóre kontextové relevance (1–10) stanovené lidským hodnotitelem na základě explicitní hodnotící rubriky, která měří opodstatněnost argumentů a významnost zdrojů.
+1. **Metrika 1 (Hlavní metrika)**: Skóre kontextové relevance (1–10) stanovené lidským hodnotitelem na základě explicitní hodnotící rubriky, která měří opodstatněnost argumentů a významnost zdrojů. Rubrika vypadá následovně:
+    - **1–3 body (Nízké skóre)**: Citace je věcně zcela mimo téma, nebo zdroj vůbec nepodporuje dané tvrzení, případně byl ocitován bulvární web či neověřitelný blog.
+    - **4–6 bodů (Střední skóre)**: Zdroj se sice tématu rámcově dotýká, ale tvrzení podporuje jen velmi vágně, nebo autoritativnost zdroje je slabá a text v odstavci zkresluje původní myšlenku.
+    - **7–8 bodů (Dobré skóre)**: Zdroj věcně odpovídá a tvrzení podporuje, jde o odborný článek či monografii, interpretace v odstavci je v pořádku, ale zdroj nepatří k zásadním pracím v oboru.
+    - **9–10 bodů (Vysoké skóre)**: Perfektní shoda. Jde o klíčovou, vysoce citovanou studii nebo oficiální autoritu, tvrzení v textu je přesně a věcně podloženo.
 
 2. **Metrika 2 (Vedlejší metrika 1)**: Programové skóre generované pomocí skriptu (0,0–1,0), které ověřuje syntaxi a kontrolní součty extrahovaných identifikátorů DOI a ISBN, případně také přesnou Jaccardovu překrývací míru s referenčními zdroji.
 
