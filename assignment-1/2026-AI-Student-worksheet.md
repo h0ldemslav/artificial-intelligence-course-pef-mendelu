@@ -1,52 +1,48 @@
-# AI Student worksheet
+## A. Identita projektu
 
-Complete this worksheet before full data collection. Submit the initial version with the proposal and the completed version with the final report.
+**Název projektu:** Systematické porovnání AI asistentů v rámci výběru a zpracování vědeckých citací
 
-## A. Project identity
-
-**Project title:** Systematické porovnání AI asistentů v rámci výběru a zpracování vědeckých citací
-
-**Team members:**
+**Členové týmu:**
 
 - Patrik Michl
 - Anna Šmikmátorová
 - Daniil Astapenko
 - Erik Praunsperger
 
-**Roles:**
+**Role:**
 
 - Patrik Michl - vývoj skriptu a promptu
 - Anna Šmikmátorová - team lead, dokumentace a tvorba testovacích případů
 - Daniil Astapenko - dokumentace a vyhodnocení
 - Erik Praunsperger - vývoj skriptu a promptu
 
-**Primary track:**
+**Hlavní směr:**
 
 - [ ] Směr A: Řízený text
 - [x] Směr B: Výzkum podložený zdroji
 - [ ] Směr C: Vícejazyčné a regionální fungování
 
-**Project scope:**
+**Rozsah projektu:**
 
 - [x] Minimální projekt (4 systémy, 40 testovacích případů, 3 výchozí podmínky)
 - [ ] Standardní projekt
 - [ ] Rozšířený projekt
 
-**Worksheet version and date:**
+**Verze a datum worksheetu:**
 
 - 0.1, 11.10.2026
 
 ---
 
-## B. Research question
+## B. Výzkumná otázka
 
-**Primary research question:**
+**Hlavní výzkumná otázka:**
 
 Do jaké míry zlepšuje strukturovaný a optimalizovaný prompt schopnost čtyř AI asistentů (ChatGPT, Gemini, Claude, Perplexity) výběru a zpracování vědeckých citací při psaní odborných textů v češtině.
 
 ---
 
-**Capability being measured:**
+**Měřená schopnost:**
 
 Výběr zdrojů, kontextové zakotvení citací a ověřování bibliografických údajů v českých akademických textech. Konkrétně schopnost:
 
@@ -56,7 +52,7 @@ Výběr zdrojů, kontextové zakotvení citací a ověřování bibliografickýc
 
 ---
 
-**Primary hypothesis:**
+**Hlavní hypotéza:**
 
 Za podmínek použití optimalizovaného promptu s explicitními pravidly pro verifikaci zdrojů a kritérii pro odmítnutí nevhodných podkladů dosáhnou systémy s přístupem na web / specializovaným indexem (např. Perplexity či ChatGPT s vyhledáváním) vyšší míry celkové citační správnosti (kombinace věcné relevance k tématice, správnosti identifikátorů jako ISBN/DOI a úspěšného odmítnutí irelevantních zdrojů) v rámci hlavní metriky (Míra platných a věcně přiléhavých citací), protože propojení vyhledávacího indexu s verifikačními pravidly v promptu efektivně zabraňuje halucinování metadat i nekritickému přebírání nabídnutých irelevantních textů.
 
@@ -64,13 +60,13 @@ Hypotézu budeme považovat za podpořenou pouze tehdy, pokud se tento výsledek
 
 ---
 
-**Alternative explanation:**
+**Alternativní vysvětlení:**
 
 Modely mohou dosahovat vysoké přesnosti u často citovaných prací jednoduše proto, že tyto práce byly mnohonásobně zastoupeny v jejich trénovacích datech. Naopak u méně známých nebo specificky českých publikací bude chybovost v identifikátorech výrazně vyšší bez ohledu na kvalitu promptu.
 
 ---
 
-**What result would challenge our hypothesis?**
+**Jaký výsledek by naši hypotézu zpochybnil?**
 
 Naše hypotéza by byla zpochybněna nebo vyvrácena, pokud by:
 
@@ -80,9 +76,9 @@ Naše hypotéza by byla zpochybněna nebo vyvrácena, pokud by:
 
 ---
 
-## C. Measurement target
+## C. Cíl měření
 
-**Operational definition:**
+**Operační definice:**
 
 Kvalita citací a podložení tvrzení je definována jako míra, do jaké AI systém generuje český akademický odstavec, v němž každá citace aktivně a přesně podpoří dané tvrzení, odkazuje na ověřitelnou vědeckou literaturu, správně zachází s podezřelými nebo chybnými vstupními zdroji a poskytuje syntakticky správná bibliografická metadata v souladu s normou ČSN ISO 690. Toto se kvantifikuje na testovací sadě vyňaté z trénovacího souboru prostřednictvím tří dimenzí:
 
@@ -94,19 +90,19 @@ Kvalita citací a podložení tvrzení je definována jako míra, do jaké AI sy
 
 ---
 
-**Unit of analysis:**
+**Jednotka analýzy:**
 
 Jednotlivá vygenerovaná odpověď modelu na danou úlohu pod specifickou podmínkou promptu.
 
 ---
 
-**Primary metric:**
+**Hlavní metrika:**
 
 Věcná relevance a skóre kontextového použití citace. Hodnoceno lidskými hodnotiteli podle předem stanovené rubriky na ordinální škále od 1 do 10 bodů.
 
 ---
 
-**Why is it valid?**
+**Proč je metrika validní?**
 
 Poskytuje přímou konstrukční validitu pro akademické texty. Pouhé porovnání povrchových řetězců nedokáže určit, zda citované dílo skutečně podkládá konkrétní tvrzení uvedené v textu, nebo zda slouží pouze jako povrchní dekorativní prvek. Tento ukazatel přímo zachycuje autoritu v dané oblasti, faktickou shodu a kontextovou soudržnost.
 
@@ -114,7 +110,7 @@ Aby se zabránilo subjektivním odchylkám, jsou platnost a objektivita systemat
 
 ---
 
-**What important quality dimension does it fail to capture?**
+**Jakou důležitou dimenzi kvality nezachycuje?**
 
 Nezajišťuje ověření programové autenticity a syntaktické správnosti trvalých identifikátorů (není schopen automaticky detekovat falešné identifikátory DOI ani nesprávně formátované kontrolní součty ISBN).
 
@@ -122,71 +118,87 @@ Rovněž nebere v úvahu dodržování syntaxe formátování bibliografických 
 
 ---
 
-## D. Systems and conditions
+## D. Systémy a podmínky
 
-| System     | Interface/API | Visible model/version | Tools enabled | Prompt adaptations | Date tested |
-| ---------- | ------------- | --------------------- | ------------- | ------------------ | ----------- |
-| ChatGPT    |               |                       |               |                    |             |
-| Gemini     |               |                       |               |                    |             |
-| Claude     |               |                       |               |                    |             |
-| Perplexity |               |                       |               |                    |             |
+| Systém     | Rozhraní/API | Viditelný model/verze | Zapnuté nástroje | Úpravy promptu | Datum testování |
+| ---------- | ------------ | --------------------- | ---------------- | -------------- | --------------- |
+| ChatGPT    | Webové rozhraní, bezplatná verze | GPT-6 | Výchozí nastavení bezplatné verze; výstupy obsahují webové odkazy (vyhledávání na webu) | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12 |
+| Gemini     | Webové rozhraní, bezplatná verze | Flash 2.5 | Výchozí nastavení bezplatné verze; výstupy neobsahují webové odkazy | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12 |
+| Claude     | Webové rozhraní, bezplatná verze | Haiku 5.5 Low | Výchozí nastavení bezplatné verze; webové odkazy ve výstupech jen ojediněle | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12 |
+| Perplexity | Webové rozhraní, bezplatná verze | [doplnit – viditelný model] | Výchozí nastavení bezplatné verze; vyhledávání na webu je součástí produktu | Žádné – stejné znění promptu jako u ostatních systémů, vloženo ručně v jedné zprávě | 2026-10-12 |
 
-**Comparison design:**
+**Design srovnání:**
 
-- [ ]
-- [ ]
-- [ ]
+- [x] Všechny 4 systémy × 3 podmínky promptu (výchozí, strukturovaný, optimalizovaný) na stejných 10 testovacích případech = 120 běhů (úplný faktoriální design 4 × 3 × 10).
+- [x] Prompty jsou pro všechny systémy textově identické a zmrazené před testováním; každý běh probíhá v nové konverzaci bez historie.
+- [x] Systémy jsou testovány tak, jak je vidí běžný uživatel (bezplatné webové verze s výchozím nastavením), nikoli přes API s řízenými parametry.
 
-**What cannot be made equal?**
+**Co nelze sjednotit?**
 
----
-
-**How will this limitation affect interpretation?**
+Model a jeho verzi v bezplatných verzích (poskytovatel ji může měnit bez oznámení a u některých systémů není plně viditelná), přístup k webu a vyhledávání (Perplexity a ChatGPT vyhledávají, Gemini a Claude ve výstupech odkazy prakticky neuvádějí), parametry generování (teplota, délka odpovědi), skryté systémové prompty a bezpečnostní vrstvy poskytovatelů, limity bezplatných verzí a zátěž serverů v době testování. U webových rozhraní také nelze přesně a srovnatelně měřit latenci ani náklady.
 
 ---
 
----
+**Jak toto omezení ovlivní interpretaci?**
 
-## E. Data and test-set plan
-
-**Total cases:**
-
-**Development cases:**
-
-**Validation cases:**
-
-**Held-out test cases:**
-
-**Repeated-run cases:**
-
-| Stratum                 | Planned number | Actual number | How selected |
-| ----------------------- | -------------- | ------------- | ------------ |
-| Ordinary                |                |               |              |
-| Difficult               |                |               |              |
-| Edge or adversarial     |                |               |              |
-| Ambiguous or incomplete |                |               |              |
-| Czech                   |                |               |              |
-| English                 |                |               |              |
-| Mixed language          |                |               |              |
-| Other relevant stratum  |                |               |              |
-
-**Data provenance:**
-
----
-
-**Why is this dataset representative of the intended use?**
-
----
-
-**What leakage or contamination risks exist?**
+Výsledky popisují chování konkrétních bezplatných produktů v den testování (12. 10. 2026), nikoli obecnou kvalitu podkladových modelů. Rozdíly mezi systémy nelze jednoznačně přičíst samotnému modelu, protože se současně liší i nástroje (vyhledávání) a skryté nastavení. Spolehlivější je srovnání podmínek promptu uvnitř jednoho systému (výchozí vs. strukturovaný vs. optimalizovaný), kde jsou ostatní faktory stejné. Vliv přístupu k webu z hypotézy lze posoudit jen orientačně, protože není experimentálně manipulován.
 
 ---
 
 ---
 
-## F. Prompt protocol
+## E. Plán dat a testovací sady
 
-#### Common baseline prompt
+**Celkový počet případů:** 40 (5 typů úloh × 8 případů: A – dohledání zdroje, B – výběr z kandidátů, C – podstrčený zdroj, D – formální metadata, E – české a regionální zdroje)
+
+**Vývojové případy:** 20 (A01–A04, B01–B04, C01–C04, D01–D04, E01–E04)
+
+**Validační případy:** 10 (A05–A06, B05–B06, C05–C06, D05–D06, E05–E06)
+
+**Testovací případy držené stranou:** 10 (A07–A08, B07–B08, C07–C08, D07–D08, E07–E08)
+
+**Případy s opakovaným během:** 0 – každá kombinace systém × podmínka × případ má na testovací sadě jeden ostrý běh (viz oddíl F).
+
+Kategorie se překrývají (jeden případ může být např. obtížný, hraniční a zároveň v češtině). Čísla v závorce udávají počet v testovací sadě.
+
+| Kategorie                 | Plánovaný počet | Skutečný počet | Způsob výběru |
+| ------------------------- | --------------- | -------------- | ------------- |
+| Běžné                     | 12 (3) | 12 (3) | Případy bez hraničního scénáře (A07, A08, B08 v testu); tvrzení podložitelné známou publikací |
+| Obtížné                   | 10 (5) | 10 (5) | Obtížnost „těžká“ přidělená týmem (C07, C08, D07, E07, E08 v testu) |
+| Hraniční nebo protichůdné | 13 (4) | 13 (4) | Případy s podvrženým, fiktivním, staženým nebo zkresleně použitým zdrojem, tematickým distraktorem či prompt injection; hodnocené Metrikou 3 (B07, C07, C08, E07 v testu) |
+| Nejednoznačné nebo neúplné | 7 (1) | 7 (1) | Chybějící informace, chybějící identifikátor, nejednoznačný autor/rok nebo více vydání (D08 v testu) |
+| Česky                     | 38 (10) | 38 (10) | Všechna zadání a odstavce jsou v češtině, protože cílem je psaní českých odborných textů |
+| Anglicky                  | 0 | 0 | Záměrně nezařazeno – mimo rozsah výzkumné otázky |
+| Smíšený jazyk             | 2 (0) | 2 (0) | Kombinace českého zadání a anglických podkladů (E04, E06) |
+| Jiná relevantní kategorie: málo citované / české zdroje | 8 (3) | 8 (3) | Málo citované české publikace a český právní předpis (C08, E07, E08 v testu); testují alternativní vysvětlení o zastoupení v trénovacích datech |
+
+**Původ dat:**
+
+Všechny testovací případy (zadání, odstavce s tvrzeními a nabízené kandidátní zdroje) vytvořil tým synteticky. Většina odkazuje na reálné publikace s ověřeným DOI/ISBN (referenční údaje jsou uloženy ve sloupcích `ref_*` souboru `Testcases.xlsx`), jeden případ na veřejný právní předpis ze Sbírky zákonů a dva na veřejné dokumenty úřadů. Šest případů obsahuje záměrně fiktivní zdroje nebo metadata vytvořené týmem (C02, C04, C06, C08, D05, E07). Případy pokrývají domény informatika/AI, psychologie, ekonomie, pedagogika, sociologie, metodologie, zemědělství a klima, medicína, právo, botanika a geografie.
+
+---
+
+**Proč je tento dataset reprezentativní pro zamýšlené použití?**
+
+Případy napodobují reálné situace studenta nebo výzkumníka při psaní české odborné práce: doplnění citace k tvrzení, výběr nejvhodnějšího zdroje z několika kandidátů, kontrolu podstrčených či chybných zdrojů, opravu bibliografického záznamu podle ČSN ISO 690 a práci s českými a regionálními zdroji. Kombinuje vysoce citované práce s málo citovanými českými publikacemi a zahrnuje typické chyby, se kterými se uživatelé setkávají (halucinované DOI, záměna prací, stažené články). Reprezentativnost je omezená malým počtem případů na kategorii a převahou vysoce citovaných zdrojů (24 ze 40).
+
+---
+
+**Jaká existují rizika úniku dat nebo kontaminace?**
+
+1. Většina referenčních publikací je vysoce citovaná a téměř jistě je obsažena v trénovacích datech modelů, takže úspěch může odrážet zapamatování, nikoli schopnost ověřovat (viz alternativní vysvětlení).
+2. Systémy s vyhledáváním mohou najít referenční záznam přímo na webu; to je ale součást měřeného chování produktu, nikoli únik.
+3. Repozitář s testovacími případy je veřejný na GitHubu; pokud by se dostal do trénovacích dat nebo vyhledávacího indexu, mohl by zkreslit budoucí opakování (pro toto testování 12. 10. 2026 je riziko zanedbatelné).
+4. Ladění promptu probíhalo jen na vývojové a validační sadě; testovací případy v textu promptů nefigurují (viz oddíl F).
+5. Bezplatné verze mohou ukládat konverzace pro trénink, proto byly testovací případy zadány jen při ostrém běhu.
+
+---
+
+---
+
+## F. Protokol promptů
+
+#### Společný výchozí prompt
 
 ```
 Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
@@ -197,7 +209,7 @@ Vyřešte níže uvedenou úlohu. Odpovězte pouze v požadovaném formátu.
 [context_or_files]
 ```
 
-#### Structured prompt
+#### Strukturovaný prompt
 
 ```
 Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
@@ -227,7 +239,7 @@ Pokud si nejste jisti, uveďte to v části Nejistoty místo odhadu.
 [context_or_files]
 ```
 
-#### Optimized prompt
+#### Optimalizovaný prompt
 
 ```
 Role: Jste asistent pro práci s odbornou literaturou při psaní odborných textů v češtině.
@@ -276,7 +288,7 @@ Formát odpovědi:
 [context_or_files]
 ```
 
-**What remains constant?**
+**Co zůstává konstantní?**
 
 1. **Výzkumná doména a cílový jazyk:** Podmínky se zaměřují na vyhledávání, výběr a zpracování vědeckých citací, které vhodně podporují tvrzení.
 2. **Citační standard a forma:** Je vyžadováno dodržení normy ČSN ISO 690 a citační metody jméno–datum (autor-rok) v textu.
@@ -285,7 +297,7 @@ Formát odpovědi:
 
 ---
 
-**What is intentionally different?**
+**Co se záměrně liší?**
 
 1. **Baseline vs. Strukturovaný prompt:**
     - _Baseline prompt_ obsahuje pouze minimalistickou instrukci bez vymezení role, bez explicitních kritérií kvality a bez strukturování výstupu.
@@ -298,7 +310,7 @@ Formát odpovědi:
 
 ---
 
-**When will prompts be frozen?**
+**Kdy budou prompty zmrazeny?**
 
 Prompty jsou definitivně zmrazeny po ukončení pilotního vyhodnocení na validační sadě a výběru vítězného optimalizovaného promptu (Kandidát A). K tomuto zmrazení dochází **před zahájením jakéhokoliv testování na vyhrazené testovací sadě**.
 
@@ -306,7 +318,7 @@ Od okamžiku spuštění ostrého sběru dat na 10 testovacích případech pro 
 
 ---
 
-**How will held-out cases remain protected?**
+**Jak budou chráněny testovací případy držené stranou?**
 
 1. **Striktní oddělení datových splitů:** 10 testovacích případů (`split == 'test'`: A07, A08, B07, B08, C07, C08, D07, D08, E07, E08) bylo drženo odděleně od fáze návrhu a ladění promptu.
 2. **Zákaz kontaminace znalostmi:** V textu žádného z promptů nejsou obsaženy žádné konkrétní názvy děl, autoři, ISBN/DOI ani oborové specifické nápovědy pocházející z testovací sady.
@@ -315,9 +327,9 @@ Od okamžiku spuštění ostrého sběru dat na 10 testovacích případech pro 
 
 ---
 
-## G. Prompt-change log
+## G. Záznam změn promptu
 
-| Version             | Date         | Change                                                                                                                                                                                                                                                                                                 | Evidence                                                                                                                                                             | Expected effect                                                                                                                                                     | Actual validation effect                                                                                                                                                                                                               | Retained?                                                  |
+| Verze               | Datum        | Změna                                                                                                                                                                                                                                                                                                  | Důkaz                                                                                                                                                                | Očekávaný efekt                                                                                                                                                     | Skutečný efekt na validační sadě                                                                                                                                                                                                       | Ponecháno?                                                 |
 | ------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | **v0** (Baseline)   | 11. 10. 2026 | Výchozí nestrukturovaný prompt: pouze zástupné proměnné `[user_prompt]` a `[context_or_files]` s minimalistickým pokynem k vyřešení.                                                                                                                                                                   | Požadavek metodiky na nulovou experimentální podmínku pro měření přidané hodnoty prompt engineeringu.                                                                | Očekávána vysoká variabilita formátu výstupu, povrchní citování bez ověření a náchylnost k halucinacím identifikátorů.                                              | Slouží jako spodní srovnávací hranice výkonu; modely často míchají text s metadaty a neposuzují spolehlivost zdrojů.                                                                                                                   | **ANO** (ponecháno jako podmínka Common baseline)          |
 | **v1** (Structured) | 11. 10. 2026 | Zavedení role akademického asistenta, definice cíle, 5 základních pravidel (pravdivost, ČSN ISO 690, zákaz vymýšlení) a 4-složkové struktury výstupu (Text, Seznam literatury, Nepoužité zdroje, Nejistoty).                                                                                           | Nekonzistentní struktura odpovědí v baseline; nutnost oddělit syntetizovaný text od bibliografie a reflexe limitů.                                                   | Standardizace formátu odpovědí, redukce halucinací vymezením sekce Nejistoty, základní odmítání irelevantních zdrojů.                                               | Formát odpovědí sjednocen. Nicméně model občas ponechává nepřesná tvrzení v odstavci a limity pouze pasivně konstatuje v Nejistotách. Také relativně často dělá chyby během formátování citací (špatné jméno autora nebo DOI).         | **ANO** (ponecháno jako podmínka Structured prompt)        |
@@ -326,209 +338,266 @@ Od okamžiku spuštění ostrého sběru dat na 10 testovacích případech pro 
 
 ---
 
-## H. Evaluation plan
+## H. Plán vyhodnocení
 
-| Metric | Primary/secondary | Automatic/
-human/judge | Calculation | Calibration or validation | Limitation |
+| Metrika | Hlavní/vedlejší | Automatická/lidská/LLM soudce | Výpočet | Kalibrace nebo validace | Omezení |
 | --- | --- | --- | --- | --- | --- |
-| | | | | | |
-| | | | | | |
-| | | | | | |
-| | | | | | |
+| M1 – věcná relevance a kontextové použití citace | Hlavní | Lidská (2 hodnotitelé) | Skóre 1–10 podle rubriky s pásmy 1–3, 4–6, 7–8, 9–10; průměr a medián za kombinaci systém × podmínka (N = 10) | Společná kalibrace na vývojových případech; dvojí nezávislé hodnocení 20 % odpovědí (24 ze 120) a výpočet shody | Subjektivita i při rubrice; nepostihuje formální správnost identifikátorů |
+| M2a – formální přesnost DOI/ISBN | Vedlejší | Automatická (`metrika2.py`) | Počet platných unikátních identifikátorů / počet všech extrahovaných unikátních kandidátů (0,0–1,0); odpověď bez identifikátoru má stav BEZ_IDENTIFIKATORU a vykazuje se samostatně | Ověřeno na zkušebních výstupech; detailní CSV `identifikatory_metrika2.csv` ručně zkontrolováno kvůli falešně rozpoznaným číslům | Kontroluje jen syntaxi DOI a kontrolní součet ISBN, ne existenci záznamu ani autora, rok a název |
+| M2b – shoda s referencí | Vedlejší | Automatická (`metrika2.py --references`) | Jaccardova shoda nalezených a očekávaných identifikátorů (průnik / sjednocení) podle `ref_doi` a `ref_isbn` v `Testcases.xlsx`; jen u případů v režimu `match_ref` | Reference ověřeny týmem ručně (Crossref, DataCite, katalogy knihoven) před během | Penalizuje i jiné správné zdroje při volné volbě literatury; ISBN-10 a ISBN-13 se nepřevádějí |
+| M3 – odmítnutí nevhodného zdroje | Vedlejší | Lidská (2 hodnotitelé) | 0/1: model explicitně odmítl podvržený, fiktivní, stažený nebo zkresleně použitý zdroj a uvedl správný důvod; podíl úspěchů na 4 testovacích případech s `Metrics3_applicable = ANO` (B07, C07, C08, E07) | Předem stanovené `candidate_verdicts` a `should_use_source` v `Testcases.xlsx`; shoda dvou hodnotitelů | Malý počet případů (4 na kombinaci); binární hodnota nerozlišuje částečné odmítnutí |
 
-**Human raters:**
+**Lidští hodnotitelé:** Daniil Astapenko (hlavní hodnotitel) a druhý člen týmu, který se nepodílel na přípravě daného případu; [doplnit jméno druhého hodnotitele].
 
-**Blinding procedure:**
+**Postup zaslepení:** Odpovědi se před hodnocením zkopírují bez zadání a promptu do anonymizovaných souborů s náhodným kódem. Odstraní se zmínky prozrazující systém (název asistenta, styl odkazů typický pro produkt, kde to jde bez zásahu do obsahu). Klíč přiřazení kódů k `run_id` drží člen týmu, který nehodnotí.
 
-**Response-order randomization:**
+**Randomizace pořadí odpovědí:** Pořadí 120 anonymizovaných odpovědí se náhodně zamíchá (skriptem s pevně uloženým seedem) tak, aby se systémy ani podmínky neobjevovaly v blocích.
 
-**Inter-rater agreement measure:**
+**Měření shody mezi hodnotiteli:** Váhovaný Cohenův kappa (kvadratické váhy) pro ordinální M1 a Cohenův kappa pro binární M3, počítaný na 20 % odpovědí hodnocených oběma hodnotiteli. Neshody o více než 2 body u M1 se rozhodnou diskusí.
 
-**LLM-as-judge used?** Yes / No
+**Byl použit LLM jako soudce?** Ne
 
-If yes, state judge model, rubric, calibration sample, and known risks:
-
----
-
----
-
-## I. Failure and retry policy
-
-**What counts as a failed run?**
-
----
-
-**Are retries allowed?**
-
----
-
-**Maximum retries:**
-
----
-
-**How will first-attempt and eventual success be reported?**
-
----
-
-**Which product or infrastructure failures will be excluded, and why?**
+Pokud ano, uveďte model soudce, rubriku, kalibrační vzorek a známá rizika: Nepoužito – všechna kvalitativní hodnocení provádějí lidé, aby hodnotící model nezvýhodňoval vlastní nebo příbuzné odpovědi.
 
 ---
 
 ---
 
-### J. Logging checklist
+## I. Pravidla pro selhání a opakování
 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+**Co se počítá jako neúspěšný běh?**
 
-**Storage location:**
+Běh, který nevrátí použitelnou odpověď kvůli produktu nebo infrastruktuře: chybová hláška, výpadek služby, vyčerpaný limit bezplatné verze, přerušená či neúplná odpověď nebo prázdný výstup. Odpověď, která je obsahově špatná (halucinovaný zdroj, chybné DOI, převzetí podvrženého zdroje), **není** neúspěšný běh, ale řádný výsledek, který se hodnotí. Stejně tak odmítnutí úlohy modelem se hodnotí jako výsledek.
 
 ---
 
-**Anonymization and data-protection procedure:**
+**Jsou opakování povolena?**
+
+Ano, ale pouze u neúspěšných běhů z technických důvodů. Opakování probíhá v nové konverzaci se stejným promptem. Opakovat běh kvůli nespokojenosti s obsahem odpovědi je zakázáno.
 
 ---
 
----
+**Maximální počet opakování:**
 
-## K. Pilot review
-
-**Pilot size:**
-
-**What failed in the pilot?**
+2 opakování (celkem nejvýše 3 pokusy). Pokud ani třetí pokus nevrátí použitelnou odpověď, běh se zaznamená jako neúspěšný a do výsledků se započítá s nulovým skóre.
 
 ---
 
-**Which cases were rewritten or removed?**
+**Jak bude vykázána úspěšnost na první pokus a celková úspěšnost?**
+
+U každého běhu se zaznamená číslo pokusu. Ve výsledkové tabulce se uvádí podíl běhů úspěšných na první pokus a zvlášť počet běhů, které vyžadovaly opakování nebo skončily neúspěchem. Skóre metrik se počítá z prvního použitelného pokusu.
 
 ---
 
-**Which metric or rubric changes were made?**
+**Která selhání produktu nebo infrastruktury budou vyloučena a proč?**
 
----
-
-**What evidence supports freezing the benchmark?**
-
----
-
-**What remains uncertain?**
+Výpadky serveru, chyby sítě a vyčerpání limitu bezplatné verze, protože nevypovídají o schopnosti modelu pracovat s citacemi. Tato selhání se zaznamenají do logu, ale do skóre se nepromítají, pokud byl běh úspěšně zopakován. Nevylučují se odmítnutí odpovědět ani obsahové chyby.
 
 ---
 
 ---
 
-## L. Results table
+### J. Kontrolní seznam logování
 
-| System      | Condition  | _N_ | Primary score | Interval or variation | Secondary score | Median latency | Cost | First-attempt success |
-| ----------- | ---------- | --- | ------------- | --------------------- | --------------- | -------------- | ---- | --------------------- |
-| ChatGPT     | Baseline   |     |               |                       |                 |                |      |                       |
-| ChatGPT     | Structured |     |               |                       |                 |                |      |                       |
-| ChatGPT     | Optimized  |     |               |                       |                 |                |      |                       |
-| Gemini      | Baseline   |     |               |                       |                 |                |      |                       |
-| Gemini      | Structured |     |               |                       |                 |                |      |                       |
-| Gemini      | Optimized  |     |               |                       |                 |                |      |                       |
-| Claude      | Baseline   |     |               |                       |                 |                |      |                       |
-| Claude      | Structured |     |               |                       |                 |                |      |                       |
-| Claude      | Optimized  |     |               |                       |                 |                |      |                       |
-| Claude Code | Baseline   |     |               |                       |                 |                |      |                       |
-| Claude Code | Structured |     |               |                       |                 |                |      |                       |
-| Claude Code | Optimized  |     |               |                       |                 |                |      |                       |
-| Grok        | Baseline   |     |               |                       |                 |                |      |                       |
-| Grok        | Structured |     |               |                       |                 |                |      |                       |
-| Grok        | Optimized  |     |               |                       |                 |                |      |                       |
-| Perplexity  | Baseline   |     |               |                       |                 |                |      |                       |
-| Perplexity  | Structured |     |               |                       |                 |                |      |                       |
-| Perplexity  | Optimized  |     |               |                       |                 |                |      |                       |
+- [x] `run_id` ve tvaru `Systém/podmínka/číslo` (např. `ChatGPT/strukturovany/01`)
+- [x] Identifikátor testovacího případu (`task_id`)
+- [x] Systém (ChatGPT, Gemini, Claude, Perplexity)
+- [x] Viditelný model a verze
+- [x] Rozhraní (webové, bezplatná verze)
+- [x] Podmínka promptu (výchozí, strukturovaný, optimalizovaný)
+- [x] Úplné znění odeslaného promptu včetně úlohy a podkladů
+- [x] Úplný text odpovědi modelu bez úprav
+- [x] Datum testování
+- [ ] Čas odeslání a přijetí odpovědi (pro odhad latence)
+- [ ] Zapnuté nástroje (vyhledávání na webu, přílohy)
+- [ ] Číslo pokusu a důvod případného opakování
+- [ ] Chybové hlášky a technická selhání
+- [x] Výsledky Metriky 2 ze skriptu (`vysledky_metrika2.csv`, `identifikatory_metrika2.csv`)
+- [ ] Hodnocení Metriky 1 a 3 od obou hodnotitelů
+- [ ] Anonymizační klíč (kód odpovědi ↔ `run_id`)
+- [ ] Poznámky hodnotitelů a kategorie chyb pro analýzu chyb
 
----
+**Místo uložení:**
 
-### M. Error analysis
-
-| Error ID | System | Condition | Task ID | Category | Severity | First attempt? | Description | Likely cause | Preventable by prompt? |
-| -------- | ------ | --------- | ------- | -------- | -------- | -------------- | ----------- | ------------ | ---------------------- |
-|          |        |           |         |          |          |                |             |              |                        |
-|          |        |           |         |          |          |                |             |              |                        |
-|          |        |           |         |          |          |                |             |              |                        |
-|          |        |           |         |          |          |                |             |              |                        |
-|          |        |           |         |          |          |                |             |              |                        |
-
-**Most frequent error:**
+GitHub repozitář `h0ldemslav/artificial-intelligence-course-pef-mendelu`, složka `assignment-1`: výstupy jako textové soubory UTF-8 ve struktuře `Systém/podmínka/číslo.txt` (např. `ChatGPT/strukturovany/01.txt`), testovací případy v `Testcases.xlsx`, kandidátní prompty ve složce `CandidatePrompts`, skript `metrika2.py` a návod `NAVOD_metrika2.txt`. Centrální tabulka s hodnocením je vedena v Google Sheets týmu.
 
 ---
 
-**Most consequential error:**
+**Postup anonymizace a ochrany dat:**
 
----
-
-**Did optimization change the error distribution?**
+Testovací případy ani výstupy neobsahují osobní údaje – jde o syntetická zadání a veřejně dostupné publikace. Do promptů se nevkládají žádné osobní ani citlivé informace členů týmu. Pro hodnocení se odpovědi anonymizují (viz zaslepení v oddílu H) a klíč k anonymizaci je uložen odděleně od souborů pro hodnotitele. Účty použité k testování bezplatných verzí se v repozitáři neuvádějí.
 
 ---
 
 ---
 
-## N. Practical recommendation
+## K. Pilotní ověření
 
-**Best system for the defined capability:**
+**Velikost pilotu:** Validační sada 10 případů (A05–A06, B05–B06, C05–C06, D05–D06, E05–E06), na které byly porovnány kandidátní prompty A a B se strukturovaným promptem; vývoj probíhal na 20 vývojových případech.
 
----
+**Co v pilotu selhalo?**
 
-**Best prompt condition:**
-
----
-
-**Conditions under which this recommendation holds:**
+Strukturovaný prompt (v1) ponechával nepřesná tvrzení v odstavci a omezení jen konstatoval v části Nejistoty, a občas chyboval ve jméně autora nebo DOI. Kandidát B (v2) zahlcoval odpověď přehledy změn, nepřeformulovával sporné odstavce a chyboval v identifikátorech (halucinovaná číslice v DOI u B05, odkazy na vyhledávání Google místo DOI u C05).
 
 ---
 
-**Important cost, latency, or human-effort trade-off:**
+**Které případy byly přepsány nebo odstraněny?**
+
+[doplnit – žádný případ nebyl odstraněn; uveďte, zda byla po pilotu upravena formulace některého zadání]
 
 ---
 
-**What should a practitioner not infer from this study?**
+**Jaké změny metrik nebo rubriky byly provedeny?**
+
+U Metriky 2 bylo stanoveno, že odpovědi bez identifikátoru (stav BEZ_IDENTIFIKATORU) se vykazují samostatně, a byl zaveden volitelný referenční režim s Jaccardovou shodou vůči ověřeným referencím. Pro každý případ byl v `Testcases.xlsx` určen režim hodnocení (`match_ref`, `consistency`, `no_invention`) a u Metriky 3 předem zapsány očekávané verdikty ke kandidátním zdrojům. [doplnit případné úpravy rubriky Metriky 1]
+
+---
+
+**Jaké důkazy podporují zmrazení benchmarku?**
+
+Kandidát A dosáhl na validační sadě průměru M1 9/10, 100% správnosti DOI/ISBN a 100% úspěšnosti u hraničních případů (M3), zatímco kandidát B vykázal chyby v identifikátorech. Testovací sada zůstala během ladění nedotčena a skript pro Metriku 2 pracuje offline a deterministicky.
+
+---
+
+**Co zůstává nejisté?**
+
+Zda se výsledek pilotu přenese na testovací sadu a na všechny čtyři systémy; shoda hodnotitelů u Metriky 1 (zatím neměřena na ostrých datech); malý počet případů pro Metriku 3 (4 na kombinaci systém × podmínka); stabilita modelů v bezplatných verzích a to, nakolik výsledek ovlivňuje vyhledávání na webu, které není mezi systémy sjednoceno.
 
 ---
 
 ---
 
-## O. Validity and limitations
+## L. Tabulka výsledků
 
-**Construct validity: are we measuring the intended capability?**
+| Systém      | Podmínka        | _N_ | Hlavní skóre | Interval nebo variabilita | Vedlejší skóre | Medián latence | Náklady | Úspěch na první pokus |
+| ----------- | --------------- | --- | ------------ | ------------------------- | -------------- | -------------- | ------- | --------------------- |
+| ChatGPT     | Výchozí         | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| ChatGPT     | Strukturovaný   | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| ChatGPT     | Optimalizovaný  | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| Gemini      | Výchozí         | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| Gemini      | Strukturovaný   | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| Gemini      | Optimalizovaný  | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| Claude      | Výchozí         | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| Claude      | Strukturovaný   | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| Claude      | Optimalizovaný  | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| Claude Code | Výchozí         |     |              |                           |                |                |         |                       |
+| Claude Code | Strukturovaný   |     |              |                           |                |                |         |                       |
+| Claude Code | Optimalizovaný  |     |              |                           |                |                |         |                       |
+| Grok        | Výchozí         |     |              |                           |                |                |         |                       |
+| Grok        | Strukturovaný   |     |              |                           |                |                |         |                       |
+| Grok        | Optimalizovaný  |     |              |                           |                |                |         |                       |
+| Perplexity  | Výchozí         | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| Perplexity  | Strukturovaný   | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+| Perplexity  | Optimalizovaný  | 10  |              |                           |                | neměřeno       | 0 (bezplatná verze) |              |
+
+Hlavní skóre = průměr M1 (1–10); vedlejší skóre = průměr M2a (0,0–1,0) a podíl úspěchů M3. Interval = rozptyl nebo minimum–maximum M1 přes 10 případů. Výsledky budou doplněny po vyhodnocení.
 
 ---
 
-**Internal validity: could another factor explain the result?**
+### M. Analýza chyb
+
+| ID chyby | Systém | Podmínka | ID úlohy | Kategorie | Závažnost | První pokus? | Popis | Pravděpodobná příčina | Lze předejít promptem? |
+| -------- | ------ | -------- | -------- | --------- | --------- | ------------ | ----- | --------------------- | ---------------------- |
+|          |        |          |          |           |           |              |       |                       |                        |
+|          |        |          |          |           |           |              |       |                       |                        |
+|          |        |          |          |           |           |              |       |                       |                        |
+|          |        |          |          |           |           |              |       |                       |                        |
+|          |        |          |          |           |           |              |       |                       |                        |
+
+Plánované kategorie chyb: halucinovaný zdroj, halucinované nebo chybné DOI/ISBN, chybná metadata (autor, rok, název, časopis), převzetí podvrženého nebo staženého zdroje, zdroj nepodporuje konkrétní tvrzení, nadměrně silné tvrzení, chybný formát podle ČSN ISO 690, falešné odmítnutí legitimního zdroje, poslechnutí prompt injection. Závažnost: vysoká (vymyšlený zdroj nebo převzetí podvrženého zdroje), střední (chybné metadato či identifikátor u existujícího zdroje), nízká (formátování).
+
+**Nejčastější chyba:**
+
+Doplní se po vyhodnocení.
 
 ---
 
-**External validity: where might the result fail to generalize?**
+**Nejzávažnější chyba:**
+
+Doplní se po vyhodnocení.
 
 ---
 
-**Statistical uncertainty or sample-size limitation:**
+**Změnila optimalizace rozložení chyb?**
+
+Doplní se po vyhodnocení.
 
 ---
 
-**Product or model-version drift:**
+---
+
+## N. Praktické doporučení
+
+**Nejlepší systém pro definovanou schopnost:**
+
+Doplní se po vyhodnocení.
 
 ---
 
-**Evaluation bias or judge bias:**
+**Nejlepší podmínka promptu:**
+
+Doplní se po vyhodnocení.
 
 ---
 
-**Most important follow-up experiment:**
+**Podmínky, za kterých doporučení platí:**
+
+Bezplatné webové verze systémů ve stavu k 12. 10. 2026, české odborné texty, úlohy typu doplnění, výběr a kontrola citací podle ČSN ISO 690, prompt v neměněném znění z oddílu F.
+
+---
+
+**Důležitý kompromis mezi náklady, latencí a lidskou prací:**
+
+Všechny testované verze jsou bezplatné, takže hlavní náklad představuje lidská práce. Delší strukturovaný a optimalizovaný prompt vede k delším odpovědím, které se déle čtou, ale oddělují nejistoty a nepoužité zdroje, a tím usnadňují kontrolu. Žádný systém neodstraňuje potřebu ručně ověřit každou citaci v databázi (Crossref, katalog knihovny) před použitím v práci.
+
+---
+
+**Co by si z této studie praktik neměl vyvozovat?**
+
+Že AI asistent může citace ověřovat místo člověka; že výsledek platí pro placené verze, API nebo pozdější verze modelů; že platí pro jiné jazyky, obory nebo citační normy; že pořadí systémů je statisticky průkazné (N = 10 na kombinaci); že syntakticky platné DOI znamená existující a správně přiřazený zdroj.
+
+---
+
+---
+
+## O. Validita a omezení
+
+**Konstruktová validita: měříme zamýšlenou schopnost?**
+
+Úlohy pokrývají tři složky schopnosti (výběr zdroje, kritické odmítnutí, správné identifikátory) a každé odpovídá samostatná metrika. Metrika 2 však měří jen formální platnost identifikátorů, nikoli existenci zdroje a správnost dalších metadat; referenční režim to zmírňuje jen u případů s jednoznačně očekávaným zdrojem. Metrika 1 závisí na kvalitě rubriky a úsudku hodnotitelů.
+
+---
+
+**Vnitřní validita: mohl výsledek způsobit jiný faktor?**
+
+Rozdíly mezi systémy mohou být způsobeny přístupem k webu, skrytými systémovými prompty nebo rozdílnou délkou odpovědí, nikoli samotnou schopností modelu. Rozdíly mezi podmínkami mohou částečně odrážet pouze delší a strukturovanější výstup, který hodnotitelé vnímají příznivěji. Zapamatování vysoce citovaných prací (alternativní vysvětlení) může překrýt vliv promptu.
+
+---
+
+**Vnější validita: kde se výsledek nemusí zobecnit?**
+
+Na placené verze a API, na jiné jazyky a citační normy, na delší texty s mnoha citacemi, na obory nezastoupené v datasetu a na reálné případy s méně známými zdroji (v datasetu převažují vysoce citované práce).
+
+---
+
+**Statistická nejistota nebo omezení velikosti vzorku:**
+
+Na každou kombinaci systém × podmínka připadá jen 10 testovacích případů a u Metriky 3 jen 4. Rozdíly o 1–2 body na škále M1 nebudou statisticky průkazné. Výsledky proto budou uváděny s rozptylem nebo intervalem a interpretovány jako orientační; každý běh je jednorázový, takže nezachycujeme variabilitu odpovědí téhož modelu.
+
+---
+
+**Posun verzí produktu nebo modelu:**
+
+Bezplatné verze mohou měnit model bez oznámení; testování proběhlo v jediném dni (12. 10. 2026) a zaznamenali jsme viditelnou verzi modelu, kde to bylo možné. Opakování studie v jiném termínu může přinést jiné výsledky.
+
+---
+
+**Zkreslení hodnocení nebo soudce:**
+
+Hodnotitelé jsou zároveň autory testovacích případů a promptů, a mohou proto nevědomky zvýhodňovat optimalizovaný prompt. Zmírňujeme to zaslepením, náhodným pořadím a měřením shody dvou hodnotitelů. Úplné zaslepení není možné, protože strukturovaný a optimalizovaný prompt mají rozpoznatelný formát odpovědi (čtyři části).
+
+---
+
+**Nejdůležitější navazující experiment:**
+
+Zopakovat test přes API se sjednoceným nastavením (pevná teplota, vyhledávání na webu záměrně zapnuté a vypnuté u všech systémů), aby bylo možné oddělit vliv přístupu k webu od vlivu modelu; současně rozšířit sadu o více málo citovaných českých zdrojů a provést opakované běhy pro odhad variability.
