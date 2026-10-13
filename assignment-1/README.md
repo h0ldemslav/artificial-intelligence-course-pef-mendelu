@@ -490,31 +490,30 @@ Kandidát A dosáhl na validační sadě průměru M1 9/10, 100% správnosti DOI
 
 ### M. Analýza chyb
 
-| ID chyby | Systém | Podmínka | ID úlohy | Kategorie | Závažnost | První pokus? | Popis | Pravděpodobná příčina | Lze předejít promptem? |
-| -------- | ------ | -------- | -------- | --------- | --------- | ------------ | ----- | --------------------- | ---------------------- |
-|          |        |          |          |           |           |              |       |                       |                        |
-|          |        |          |          |           |           |              |       |                       |                        |
-|          |        |          |          |           |           |              |       |                       |                        |
-|          |        |          |          |           |           |              |       |                       |                        |
-|          |        |          |          |           |           |              |       |                       |                        |
-
-Plánované kategorie chyb: halucinovaný zdroj, halucinované nebo chybné DOI/ISBN, chybná metadata (autor, rok, název, časopis), převzetí podvrženého nebo staženého zdroje, zdroj nepodporuje konkrétní tvrzení, nadměrně silné tvrzení, chybný formát podle ČSN ISO 690, falešné odmítnutí legitimního zdroje, poslechnutí prompt injection. Závažnost: vysoká (vymyšlený zdroj nebo převzetí podvrženého zdroje), střední (chybné metadato či identifikátor u existujícího zdroje), nízká (formátování).
+| ID chyby | Systém             | Podmínka       | ID úlohy | Kategorie                                  | Závažnost | První pokus? | Popis                                                                                                                                     | Pravděpodobná příčina                                                                            | Lze předejít promptem? |
+| -------- | ------------------ | -------------- | -------- | ------------------------------------------ | --------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------- |
+| ERR-01   | ChatGPT (GPT-6)    | Výchozí        | C07      | nadměrně silné tvrzení                     | střední   | ANO          | Nekritické převzetí přehnaného tvrzení o Dunning-Krugerově efektu (přisouzení nezlomné sebedůvěry nekompetentním bez metodických výhrad). | Absence kritického zhodnocení v promptu; model slepě konfirmoval předložený text.                | ANO                    |
+| ERR-02   | ChatGPT (GPT-6)    | Výchozí        | C08      | převzetí podvrženého nebo staženého zdroje | vysoká    | ANO          | Nekritické převzetí fiktivního článku Dvořáková (2019) v Pedagogické orientaci a jeho zařazení do literatury jako reálného zdroje.        | Model ve výchozím režimu neověřoval existenci zdroje a konformně vygeneroval citaci.             | ANO                    |
+| ERR-03   | Claude (Haiku 5.5) | Výchozí        | C07      | nadměrně silné tvrzení                     | střední   | ANO          | Nekritické potvrzení mýtu o Dunning-Krugerově efektu a připojení citace bez zmírnění formulace.                                           | Chybějící instrukce ke kritickému čtení a odhalení metodologických limitů.                       | ANO                    |
+| ERR-04   | Claude (Haiku 5.5) | Výchozí        | C08      | převzetí podvrženého nebo staženého zdroje | vysoká    | ANO          | Nekritická akceptace vymyšleného článku Dvořáková (2019) a jeho ocitování v textu.                                                        | Výchozí prompt nevyzývá k ověření pravosti ani odmítnutí neexistujícího zdroje.                  | ANO                    |
+| ERR-05   | Gemini (Flash 2.5) | Výchozí        | C07      | nadměrně silné tvrzení                     | střední   | ANO          | Převzetí nadsazeného tvrzení o nekvalifikovaných jedincích bez kontextualizace původní práce Krugera a Dunninga.                          | Asociační dosazení citace k předloženému textu bez verifikace sémantické věrnosti.               | ANO                    |
+| ERR-06   | Gemini (Flash 2.5) | Výchozí        | C08      | převzetí podvrženého nebo staženého zdroje | vysoká    | ANO          | Převzetí podvrženého zdroje Dvořáková (2019) jako platného akademického článku.                                                           | Model bez specifických instrukcí předpokládá validitu vstupu od uživatele.                       | ANO                    |
+| ERR-07   | Gemini (Flash 2.5) | Strukturovaný  | C08      | halucinované nebo chybné DOI/ISBN          | vysoká    | ANO          | Vygenerování formálně platného, ale zcela fiktivního DOI `10.5817/pedor2019-4-512` k neexistujícímu článku.                               | Halucinace parametrické paměti v generování identifikátoru z prefixu Masarykovy univerzity.      | NE                     |
+| ERR-08   | Gemini (Flash 2.5) | Optimalizovaný | C08      | halucinované nebo chybné DOI/ISBN          | vysoká    | ANO          | Model sice v textu zpochybnil platnost článku, ale v bibliografii jej ponechal a znovu vyhalucinoval fiktivní DOI.                        | Hluboce zakořeněný halucinační vzor v modelu pro zadaný název/časopis; selhání filtrace výstupu. | NE                     |
+| ERR-09   | Perplexity         | Výchozí        | C07      | nadměrně silné tvrzení                     | střední   | ANO          | Převzetí nepodloženého tvrzení o Dunning-Krugerově efektu bez upozornění na novější replikační studie.                                    | Výchozí prompt bez požadavku na kritické zhodnocení textu.                                       | ANO                    |
+| ERR-10   | Perplexity         | Výchozí        | C08      | převzetí podvrženého nebo staženého zdroje | vysoká    | ANO          | Ocitování neexistujícího článku Dvořáková (2019) navzdory vyhledávacím schopnostem.                                                       | Model ve výchozím režimu upřednostnil vyhovění promptu před odmítnutím neexistujícího díla.      | ANO                    |
 
 **Nejčastější chyba:**
 
-Doplní se po vyhodnocení.
+Ve výchozím stavu (baseline) byly nejčastějšími chybami **nekritické převzetí přehnaného tvrzení** (úloha C07 – 4 výskyty, u všech 4 modelů) a **převzetí podvrženého nebo neexistujícího zdroje** (úloha C08 – 4 výskyty, u všech 4 modelů). Celkem tyto dvě kategorie tvoří 80 % všech zaznamenaných chyb v datasetu (8 z 10). Modely bez explicitního pokynu ke kritické kontrole mají silnou tendenci uživateli konformně přitakat a ocitovat i smyšlené či metodicky sporné práce.
 
 ---
 
 **Nejzávažnější chyba:**
 
-Doplní se po vyhodnocení.
-
 ---
 
 **Změnila optimalizace rozložení chyb?**
-
-Doplní se po vyhodnocení.
 
 ---
 
