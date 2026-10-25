@@ -1,8 +1,11 @@
 # Project Proposal: Multiagentní systém pro vývoj registračního systému akcí Junáka
 
 **Tým:** Anna Šmikmátorová, Patrik Michl, Erik Praunsperger, Daniil Astapenko
+
 **Uživatel / partner:** Junák – český skaut, z. s.
+
 **Typ projektu:** semestrální týmový projekt
+
 **Výstup:** MVP registračního systému akcí vytvořené multiagentním systémem + vyhodnocení postupu
 
 ---
