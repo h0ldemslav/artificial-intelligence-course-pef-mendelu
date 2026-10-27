@@ -6,7 +6,7 @@
 
 **Typ projektu:** semestrální týmový projekt
 
-**Výstup:** MVP registračního systému akcí vytvořené multiagentním systémem + vyhodnocení postupu
+**Výstup:** tři verze MVP registračního systému akcí (dva multiagentní systémy a jeden single agent) + srovnávací vyhodnocení postupu
 
 ---
 
@@ -14,7 +14,7 @@
 
 Junák – český skaut dnes pro registrace na velké akce používá dva různé systémy a každá akce si musí vybrat jeden z nich. Žádný nepokrývá všechny potřeby, takže pořadatelé vždy dělají kompromis. Nad jedním z obou systémů navíc organizace nemá kontrolu. Junák proto připravuje výběrové řízení na nový registrační systém.
 
-V našem projektu ověříme, zda multiagentní systém (MAS) postavený na volně dostupných nástrojích dokáže z takto komplexního, reálného zadání vytvořit funkční MVP. Člověk v tomto procesu jen kontroluje a schvaluje milníky. Cílem není produkční systém. Chceme **změřit, jak dobře MAS zvládne komplikované zadání**, a vytvořit **převzatelný základ**, na kterém lze dál stavět.
+V našem projektu ověříme, zda multiagentní systém (MAS) postavený na volně dostupných nástrojích dokáže z takto komplexního, reálného zadání vytvořit funkční MVP. Stejné MVP necháme vytvořit **třemi přístupy: dvěma různými MAS a jedním single agentem** jako srovnávací základnou (baseline). U všech tří vyhodnotíme stejnou sadu metrik. Člověk v tomto procesu jen kontroluje a schvaluje milníky. Cílem není produkční systém. Chceme **změřit, jak dobře MAS zvládne komplikované zadání a zda přináší oproti jednomu agentovi měřitelný přínos**, a vytvořit **převzatelný základ**, na kterém lze dál stavět.
 
 ---
 
@@ -45,14 +45,14 @@ V našem projektu ověříme, zda multiagentní systém (MAS) postavený na voln
 
 ### 2.4 Jaké je nejmenší řešení, které můžeme otestovat?
 
-Řešení testujeme ve dvou krocích:
+Nejmenším testovatelným řešením je **MVP v rozsahu z kap. 5**, které nabízí registraci jednotlivců, skupiny i programy v **jednom** systému pod správou Junáka, takže akce už nemusí volit mezi dvěma systémy.
 
-1. **Pilot (spike):** všechny tři navržené varianty MAS (kap. 6) necháme vytvořit tutéž malou funkci, tedy registraci jednotlivce s připojením do skupiny. Podle zjednodušené sady metrik vybereme variantu pro celé MVP.
-2. **MVP:** vybraná varianta vytvoří MVP v rozsahu z kap. 5, které nabízí registraci jednotlivců, skupiny i programy v **jednom** systému pod správou Junáka, takže akce už nemusí volit mezi dvěma systémy.
+Toto MVP vytvoří **nezávisle všechny tři varianty** z kap. 6 (MAS A, MAS B a single agent C) ze stejných vstupů a za stejných podmínek. Každou výslednou verzi pak hodnotíme podle **všech metrik** z kap. 8, takže je můžeme přímo porovnat.
 
 ### 2.5 Jaké důkazy nám řeknou, že to funguje?
 
 - MVP projde **akceptačními testy**, které tým napíše nezávisle na agentech (kap. 8.1).
+- Alespoň jedna varianta MAS dosáhne v klíčových metrikách lepších výsledků než single agent (kap. 7.2).
 - Systém pod souběžnou zátěží **nepřečerpá kapacitu** ani nevytvoří duplicitní registrace (kap. 8.3).
 - Žádný nezletilý účastník nedokončí registraci bez přiřazení k vedoucímu.
 - Kód splní stanovené prahy kvality a pokrytí testy (kap. 8.2).
@@ -69,7 +69,7 @@ Generativní AI slibuje, že zlevní a zrychlí vývoj software. Většina ukáz
 Projekt přinese:
 
 - **měřitelnou odpověď** na otázku, kolik z reálného zadání zvládne MAS s minimálním lidským zásahem a kde selhává,
-- **srovnání tří volně dostupných přístupů** k MAS, použitelné i pro jiné neziskové organizace bez rozpočtu na vývoj,
+- **srovnání dvou multiagentních přístupů se single agentem** na stejném zadání, tedy odpověď na otázku, zda se složitější orchestrace více agentů vyplatí; srovnání je použitelné i pro jiné neziskové organizace bez rozpočtu na vývoj,
 - **převzatelný základ registračního systému** s dokumentací, testy a záznamem rozhodnutí agentů,
 - **metodiku hodnocení** (metriky a skripty), kterou lze znovu použít na další projekty.
 
@@ -114,34 +114,43 @@ Kompletní zadání Junáka není veřejné, proto **není součástí veřejné
 
 ---
 
-## 6. Navrhované varianty multiagentního systému
+## 6. Srovnávané varianty: dva multiagentní systémy a single agent
+
+Porovnáváme tři varianty: **dva multiagentní systémy** s odlišným přístupem k orchestraci a **jednoho single agenta**, který slouží jako srovnávací základna (baseline). Každá varianta vytvoří **celé MVP** v rozsahu kap. 5.
 
 Všechny varianty jsou postavené na **volně dostupných (open-source) nástrojích** a **bezplatných LLM**. Bezplatné LLM znamenají lokální modely přes Ollama nebo volné úrovně API, např. Google Gemini, GitHub Models nebo OpenRouter. Limity volných úrovní se často mění, proto je ověříme na začátku projektu.
 
-Ve všech variantách je **člověk pouze kontrolor milníků**. Schvaluje výstup každé fáze (požadavky → návrh → implementace → testy), ale sám kód nepíše. Každý zásah evidujeme jako metriku.
+### 6.1 Férové podmínky srovnání
 
-### Varianta A: Hotový „softwarový tým“ (MetaGPT nebo ChatDev)
+Aby byly výsledky porovnatelné, mají všechny tři varianty:
+
+- **stejný vstup:** stejné odvozené uživatelské příběhy a akceptační kritéria (kap. 5),
+- **stejný jazykový model** (nebo stejnou sadu modelů), pokud to nástroj umožňuje,
+- **stejné milníky a stejná pravidla pro lidské zásahy:** člověk je **pouze kontrolor milníků**, schvaluje výstup každé fáze (požadavky → návrh → implementace → testy), ale sám kód nepíše,
+- **stejný časový rozpočet** a evidenci spotřeby (volání modelu, tokeny, čas),
+- **stejnou sadu metrik a skrytých akceptačních testů** (kap. 8),
+- **oddělený repozitář nebo větev**, aby se varianty navzájem neovlivňovaly.
+
+### Varianta A (MAS): Hotový „softwarový tým“ (MetaGPT nebo ChatDev)
 
 Open-source frameworky, které simulují softwarovou firmu s předdefinovanými rolemi (produktový manažer, architekt, programátor, tester).
 
 - **+** rychlý start, role i proces jsou připravené, výstupem jsou i dokumenty (PRD, návrh architektury)
 - **−** méně kontroly nad procesem, horší zvládání velkých projektů a iterací, výstup může být spíš demo než udržovatelný kód
 
-### Varianta B: Vlastní orchestrace (CrewAI nebo LangGraph)
+### Varianta B (MAS): Vlastní orchestrace (CrewAI nebo LangGraph)
 
 Vlastní MAS, ve kterém sami definujeme agenty (analytik, architekt, backend, frontend, tester, reviewer), jejich nástroje a tok práce, včetně bodů pro schválení člověkem.
 
 - **+** plná kontrola nad rolemi a procesem, snadno se do něj vloží kontrolní body a měření
 - **−** nejvíc vlastní práce na začátku; kvalitu výsledku ovlivňuje i kvalita našeho návrhu orchestrace
 
-### Varianta C: Agentní vývojové prostředí (např. OpenHands)
+### Varianta C (single agent, baseline): Agentní vývojové prostředí (OpenHands nebo Aider)
 
-Open-source agentní platforma, ve které agent pracuje přímo v repozitáři: spouští kód, testy a příkazy, přičemž dílčí úkoly může delegovat dalším agentům.
+Jeden open-source kódovací agent, který pracuje přímo v repozitáři: čte a upravuje kód, spouští testy a příkazy. Nástroj nastavíme v režimu **jednoho agenta bez delegování dílčích úkolů** dalším agentům, aby šlo o čistou srovnávací základnu.
 
-- **+** agent si vlastní výstup ověřuje spuštěním testů, pracuje s reálným repozitářem a gitem
-- **−** spíše jeden silný agent než pestrý tým rolí; spotřebuje víc volání modelu a rychle narazí na limity volných úrovní
-
-**Výběr:** o variantě rozhodne pilot (kap. 2.4) podle těchto metrik: podíl splněných akceptačních kritérií pilotní funkce, počet lidských zásahů, úspěšnost testů a spotřeba volání modelu.
+- **+** jednoduché nastavení, agent si vlastní výstup ověřuje spuštěním testů, pracuje s reálným repozitářem a gitem
+- **−** chybí dělba rolí a vzájemná kontrola agentů; u rozsáhlého zadání může ztrácet přehled o kontextu
 
 ---
 
@@ -149,17 +158,18 @@ Open-source agentní platforma, ve které agent pracuje přímo v repozitáři: 
 
 ### 7.1 Výzkumná otázka
 
-> **Do jaké míry dokáže multiagentní systém postavený na volně dostupných nástrojích, s člověkem pouze v roli kontrolora milníků, vytvořit z reálného komplexního zadání MVP registračního systému, které je funkční, chrání data a je převzatelné k dalšímu vývoji?**
+> **Do jaké míry dokáže multiagentní systém postavený na volně dostupných nástrojích, s člověkem pouze v roli kontrolora milníků, vytvořit z reálného komplexního zadání MVP registračního systému, které je funkční, chrání data a je převzatelné k dalšímu vývoji, a jak si v tom vede ve srovnání s jedním agentem?**
 
 Dílčí otázky:
 
-- **VO1:** Která ze tří variant MAS je pro tento typ zadání nejvhodnější?
-- **VO2:** Ve kterých typech požadavků MAS selhává nejčastěji (např. souběžnost, oprávnění, business pravidla)?
-- **VO3:** Jak velký lidský zásah je k dosažení funkčního MVP potřeba?
+- **VO1:** Přináší multiagentní systém oproti single agentovi měřitelně lepší výsledek (funkčnost, kvalita kódu, UI, převzatelnost)? A za jakou cenu (spotřeba zdrojů, lidské zásahy)?
+- **VO2:** Která ze dvou variant MAS je pro tento typ zadání vhodnější?
+- **VO3:** Ve kterých typech požadavků jednotlivé varianty selhávají nejčastěji (např. souběžnost, oprávnění, business pravidla)?
+- **VO4:** Jak velký lidský zásah je k dosažení funkčního MVP u jednotlivých variant potřeba?
 
 ### 7.2 Hypotézy
 
-Ke každé hypotéze uvádíme nulovou (H0) a alternativní (H1) hypotézu. Prahy vycházejí z běžných doporučení pro kvalitu kódu a z požadavků zadání.
+Ke každé hypotéze uvádíme nulovou (H0) a alternativní (H1) hypotézu. Prahy vycházejí z běžných doporučení pro kvalitu kódu a z požadavků zadání. Hypotézy **H1–H5 vyhodnocujeme zvlášť pro každou ze tří variant**. Hypotézy **H6–H7 porovnávají varianty mezi sebou**.
 
 | # | H0 (nulová) | H1 (alternativní) | Metrika |
 |---|-------------|-------------------|---------|
@@ -168,15 +178,16 @@ Ke každé hypotéze uvádíme nulovou (H0) a alternativní (H1) hypotézu. Prah
 | **H3** | Kód vytvořený MAS **nedosáhne** pokrytí testy ≥ 70 % a hodnocení udržovatelnosti A. | Kód vytvořený MAS **dosáhne** pokrytí ≥ 70 % a hodnocení udržovatelnosti A. | M4, M7 |
 | **H4** | Systém **umožní** neoprávněný přístup k chráněné kategorii údajů v alespoň jednom testovacím scénáři. | Systém **zablokuje 100 %** neoprávněných přístupů v testovacích scénářích. | M3 |
 | **H5** | K dosažení MVP je potřeba **více než 5** lidských zásahů na milník. | K dosažení MVP stačí **nejvýše 5** lidských zásahů na milník. | M20 |
-| **H6** | Výběr varianty MAS **neovlivňuje** výsledek pilotu (rozdíl v M1 < 15 p. b.). | Výběr varianty MAS **ovlivňuje** výsledek pilotu (rozdíl v M1 ≥ 15 p. b.). | M1, M20, M22 (pilot) |
+| **H6** | Žádná varianta MAS **nedosáhne** vyššího podílu splněných akceptačních kritérií než single agent o alespoň 10 p. b. | Alespoň jedna varianta MAS **dosáhne** vyššího podílu splněných akceptačních kritérií než single agent o alespoň 10 p. b. | M1 (A, B vs. C) |
+| **H7** | Varianta MAS s lepším výsledkem v M1 **nepotřebuje** méně lidských zásahů než single agent. | Varianta MAS s lepším výsledkem v M1 **potřebuje** méně lidských zásahů než single agent. | M20 (A, B vs. C) |
 
-*Poznámka k H6:* pilot má jen tři varianty a jedno opakování, proto výsledky hodnotíme popisně, nikoli statistickým testem. Pokud to limity dovolí, pilot zopakujeme 2–3× a uvedeme rozptyl výsledků.
+*Poznámka k H6–H7:* srovnáváme tři varianty, každou v jednom běhu, proto výsledky hodnotíme popisně, nikoli statistickým testem. Rozdíly doplníme o kvalitativní rozbor selhání (VO3). Spotřebu zdrojů (M22) uvádíme vedle výsledků, aby bylo vidět, zda případný lepší výsledek MAS nevyvažuje výrazně vyšší cena.
 
 ---
 
 ## 8. Metriky a způsob hodnocení
 
-Metriky dělíme do šesti oblastí. Pokud to jde, měříme je **automaticky a opakovatelně** (skripty a CI v GitHub Actions). Manuální hodnocení provádějí **alespoň dva hodnotitelé nezávisle** a uvádíme jejich shodu.
+Metriky dělíme do šesti oblastí. **Všechny metriky měříme pro každou ze tří variant (A, B, C)** stejným postupem a výsledky uvádíme ve srovnávací tabulce. Pokud to jde, měříme je **automaticky a opakovatelně** (skripty a CI v GitHub Actions). Manuální hodnocení provádějí **alespoň dva hodnotitelé nezávisle** a uvádíme jejich shodu. Hodnotitelé u manuálních metrik pokud možno nevědí, kterou variantou byla daná verze vytvořena (slepé hodnocení).
 
 ### 8.1 Funkčnost a splnění požadavků
 
@@ -217,8 +228,8 @@ Metriky dělíme do šesti oblastí. Pokud to jde, měříme je **automaticky a 
 | M15 | Lighthouse skóre (Performance, Accessibility, Best Practices, SEO) | Lighthouse CI na klíčových obrazovkách, mobil i desktop | každá kategorie ≥ 90 |
 | M16 | Porušení přístupnosti | axe-core v E2E testech; počet porušení WCAG úrovně A/AA | 0 kritických a závažných |
 | M17 | Shoda s návrhovými guidelines | **manuální checklist** podle Google Material Design 3 a Apple Human Interface Guidelines (např. min. velikost dotykových prvků 48 dp / 44 pt, kontrast textu ≥ 4,5 : 1, čitelná velikost písma, konzistentní navigace, zpětná vazba na akce, srozumitelné chybové hlášky); 2 hodnotitelé nezávisle, každá položka splněno / nesplněno | ≥ 85 % položek; shoda hodnotitelů (Cohenovo kappa) ≥ 0,6 |
-| M18 | Úspěšnost úkolů v uživatelském testu | 5 testerů (skauti, ideálně vedoucí i účastník) plní scénáře (registrace, připojení do skupiny, výběr programu); podíl úspěšně dokončených úkolů a čas na úkol | ≥ 80 % úkolů bez pomoci |
-| M19 | System Usability Scale (SUS) | standardizovaný dotazník po uživatelském testu | ≥ 68 (nadprůměr) |
+| M18 | Úspěšnost úkolů v uživatelském testu | 5 testerů (skauti, ideálně vedoucí i účastník) plní stejné scénáře (registrace, připojení do skupiny, výběr programu) ve všech třech verzích, v náhodném pořadí verzí; podíl úspěšně dokončených úkolů a čas na úkol | ≥ 80 % úkolů bez pomoci |
+| M19 | System Usability Scale (SUS) | standardizovaný dotazník po testu každé verze | ≥ 68 (nadprůměr) |
 
 ### 8.5 Proces multiagentního systému a převzatelnost
 
@@ -226,15 +237,15 @@ Metriky dělíme do šesti oblastí. Pokud to jde, měříme je **automaticky a 
 |----|---------|------------|-----|
 | M20 | Počet lidských zásahů | evidence v deníku milníků: každé vrácení, oprava zadání nebo ruční úprava | ≤ 5 na milník |
 | M21 | Míra přepracování | podíl výstupů agentů vrácených při kontrole milníku | sledujeme, bez pevného cíle |
-| M22 | Spotřeba zdrojů | počet volání modelu a tokenů, čas běhu; náklady v Kč (u volných úrovní 0 Kč, ale sledujeme narážení na limity) | sledujeme a porovnáváme varianty |
+| M22 | Spotřeba zdrojů | počet volání modelu a tokenů, čas běhu; náklady v Kč (u volných úrovní 0 Kč, ale sledujeme narážení na limity) | sledujeme a porovnáváme varianty (MAS vs. single agent) |
 | M23 | Úplnost dokumentace | checklist: README, návod na lokální spuštění, popis architektury, záznamy rozhodnutí (ADR), provozní dokumentace, popis API | 100 % položek |
-| M24 | Čas do prvního spuštění pro člověka zvenku | vývojář mimo tým spustí projekt jen podle README; měříme čas a počet dotazů | ≤ 30 min, 0 dotazů |
+| M24 | Čas do prvního spuštění pro člověka zvenku | vývojář mimo tým spustí každou verzi jen podle README; měříme čas a počet dotazů | ≤ 30 min, 0 dotazů |
 
 ### 8.6 Validace s uživatelem
 
 | ID | Metrika | Jak měříme | Cíl |
 |----|---------|------------|-----|
-| M25 | Hodnocení zástupcem Junáka | ukázka MVP + krátký strukturovaný dotazník (škála 1–5: pokryl by potřeby akce bez kompromisu mezi dvěma systémy? je jasná vazba nezletilý ↔ vedoucí? je to dobrý základ pro další vývoj?) | průměr ≥ 3,5 |
+| M25 | Hodnocení zástupcem Junáka | ukázka všech tří verzí MVP + krátký strukturovaný dotazník ke každé verzi (škála 1–5: pokryl by potřeby akce bez kompromisu mezi dvěma systémy? je jasná vazba nezletilý ↔ vedoucí? je to dobrý základ pro další vývoj?) | průměr ≥ 3,5 |
 
 ---
 
@@ -244,13 +255,13 @@ Harmonogram je v týdnech od schválení proposalu. Upravíme ho podle termínů
 
 | Týden | Milník | Výstup | Kontrola člověkem |
 |-------|--------|--------|-------------------|
-| 1 | **M0 – Příprava** | odvozené uživatelské příběhy a akceptační kritéria MVP, skryté akceptační testy, repozitář s CI, ověření volných LLM služeb | schválení rozsahu |
-| 2–3 | **M1 – Pilot** | tři varianty MAS vytvoří pilotní funkci; vyhodnocení a výběr varianty | výběr varianty (H6) |
-| 4 | **M2 – Návrh** | MAS vytvoří architekturu, datový model a wireframy | schválení návrhu |
-| 5–7 | **M3 – Implementace** | MAS implementuje F1–F9 v iteracích | průběžné milníky po funkcích |
-| 8 | **M4 – Testování** | automatizované metriky (M1–M16), zátěžový test | kontrola výsledků |
-| 9 | **M5 – Uživatelská validace** | uživatelský test se skauty (M17–M19), ukázka Junáku (M25), test převzatelnosti (M24) | – |
-| 10 | **M6 – Vyhodnocení** | závěrečná zpráva: odpovědi na výzkumné otázky, vyhodnocení hypotéz, doporučení pro Junák | odevzdání |
+| 1 | **M0 – Příprava** | odvozené uživatelské příběhy a akceptační kritéria MVP, skryté akceptační testy, repozitář s CI pro všechny tři varianty, ověření volných LLM služeb | schválení rozsahu |
+| 2 | **M1 – Nastavení variant** | zprovoznění MAS A, MAS B a single agenta C se stejným modelem a vstupy | kontrola férových podmínek |
+| 3 | **M2 – Návrh** | každá varianta vytvoří architekturu, datový model a wireframy | schválení návrhu u každé varianty |
+| 4–7 | **M3 – Implementace** | každá varianta implementuje F1–F9 v iteracích | průběžné milníky po funkcích u každé varianty |
+| 8 | **M4 – Testování** | automatizované metriky (M1–M16) a zátěžový test pro všechny tři verze | kontrola výsledků |
+| 9 | **M5 – Uživatelská validace** | uživatelský test se skauty (M17–M19), ukázka Junáku (M25), test převzatelnosti (M24) pro všechny tři verze | – |
+| 10 | **M6 – Vyhodnocení** | závěrečná zpráva: srovnání variant, odpovědi na výzkumné otázky, vyhodnocení hypotéz, doporučení pro Junák | odevzdání |
 
 ---
 
@@ -261,7 +272,7 @@ Konkrétní obsazení rolí ještě není rozděleno. Projekt potřebuje tyto ro
 | Role | Náplň |
 |------|-------|
 | **Product owner / kontakt s Junákem** | správa požadavků, akceptační kritéria, ukázka a validace s Junákem |
-| **Orchestrátor MAS** | nastavení a provoz multiagentního systému, kontrola milníků, deník zásahů |
+| **Orchestrátor variant** | nastavení a provoz obou MAS i single agenta, dodržení férových podmínek, kontrola milníků, deník zásahů |
 | **QA a metriky** | skryté akceptační testy, CI, nástroje pro automatické metriky, zátěžový test |
 | **UX a dokumentace** | hodnocení UI podle guidelines, uživatelský test, SUS, závěrečná zpráva |
 
@@ -273,7 +284,9 @@ Konkrétní obsazení rolí ještě není rozděleno. Projekt potřebuje tyto ro
 
 | Riziko | Dopad | Opatření |
 |--------|-------|----------|
-| Limity volných LLM služeb nestačí | MAS se zastaví uprostřed práce | kombinace více poskytovatelů, lokální modely (Ollama), menší úkoly pro agenty |
+| Limity volných LLM služeb nestačí na tři varianty | některá varianta se zastaví uprostřed práce | kombinace více poskytovatelů, lokální modely (Ollama), menší úkoly pro agenty, rozložení běhů variant v čase |
+| Trojnásobná práce s hodnocením | tým nestihne změřit všechny metriky u všech verzí | maximum metrik automatizovat v CI tak, aby běžely na všech verzích stejně; manuální hodnocení plánovat dopředu |
+| Nesrovnatelné podmínky variant | zkreslené srovnání | stejný model, vstupy, milníky a pravidla zásahů (kap. 6.1); odchylky evidovat a uvést ve zprávě |
 | Únik důvěrného zadání přes volné API | porušení důvěry Junáka | agentům předáváme jen odvozené uživatelské příběhy, nikdy původní dokument |
 | MAS vytvoří neudržovatelný kód | MVP nelze převzít | průběžné měření kvality (M4–M10) v CI, kontrola na milnících |
 | Agenti „optimalizují na testy“ | zkreslené výsledky | akceptační testy jsou před agenty skryté |
@@ -284,7 +297,7 @@ Konkrétní obsazení rolí ještě není rozděleno. Projekt potřebuje tyto ro
 
 ## 12. Očekávané výstupy
 
-1. **MVP registračního systému** ve veřejném repozitáři (bez původního zadání).
-2. **Konfigurace multiagentního systému** a deník milníků a zásahů.
+1. **Tři verze MVP registračního systému** (MAS A, MAS B, single agent C) ve veřejném repozitáři (bez původního zadání).
+2. **Konfigurace všech tří variant** a deník milníků a zásahů.
 3. **Sada metrik a skriptů** pro automatické hodnocení (CI v GitHub Actions).
-4. **Závěrečná zpráva:** odpověď na výzkumnou otázku, vyhodnocení hypotéz H1–H6, srovnání variant a doporučení pro Junák a další vývoj.
+4. **Závěrečná zpráva:** odpověď na výzkumnou otázku, vyhodnocení hypotéz H1–H7, srovnání MAS se single agentem i obou MAS mezi sebou a doporučení pro Junák a další vývoj.
