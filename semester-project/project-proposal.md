@@ -237,7 +237,7 @@ Metriky dělíme do šesti oblastí. **Všechny metriky měříme pro každou ze
 
 | ID | Metrika | Jak měříme | Cíl |
 |----|---------|------------|-----|
-| M20 | Počet lidských zásahů | evidence v deníku milníků: každé vrácení, oprava zadání nebo ruční úprava | ≤ 5 na milník |
+| M20 | Počet lidských zásahů | evidence v deníku milníků: každé vrácení, restart, oprava zadání nebo ruční úprava | ≤ 5 na milník |
 | M21 | Míra přepracování | podíl výstupů agentů vrácených při kontrole milníku | sledujeme, bez pevného cíle |
 | M22 | Spotřeba zdrojů | počet volání modelu a tokenů, čas běhu; náklady v Kč (u volných úrovní 0 Kč, ale sledujeme narážení na limity) | sledujeme a porovnáváme varianty (MAS vs. single agent) |
 | M23 | Úplnost dokumentace | checklist: README, návod na lokální spuštění, popis architektury, záznamy rozhodnutí (ADR), provozní dokumentace, popis API | 100 % položek |
@@ -247,7 +247,7 @@ Metriky dělíme do šesti oblastí. **Všechny metriky měříme pro každou ze
 
 | ID | Metrika | Jak měříme | Cíl |
 |----|---------|------------|-----|
-| M25 | Hodnocení zástupcem Junáka | ukázka všech tří verzí MVP + krátký strukturovaný dotazník ke každé verzi (škála 1–5: pokryl by potřeby akce bez kompromisu mezi dvěma systémy? je jasná vazba nezletilý ↔ vedoucí? je to dobrý základ pro další vývoj?) | průměr ≥ 3,5 |
+| M25 | Hodnocení zástupcem Junáka | ukázka všech tří verzí MVP + krátký strukturovaný dotazník ke každé verzi (škála 1–5: pokryl by potřeby akce bez kompromisu mezi dvěma systémy? je to dobrý základ pro další vývoj?) | průměr ≥ 3,5 |
 
 ---
 
