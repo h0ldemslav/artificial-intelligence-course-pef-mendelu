@@ -127,6 +127,7 @@ Aby byly výsledky porovnatelné, mají všechny tři varianty:
 - **stejný vstup:** stejné odvozené uživatelské příběhy a akceptační kritéria (kap. 5),
 - **stejný jazykový model** (nebo stejnou sadu modelů), pokud to nástroj umožňuje,
 - **stejné milníky a stejná pravidla pro lidské zásahy:** člověk je **pouze kontrolor milníků**, schvaluje výstup každé fáze (požadavky → návrh → implementace → testy), ale sám kód nepíše,
+    - **co se považuje za zásah**: veškeré dodatečné zprávy pro agenta (např. vysvětlení, když se agent zasekne/nezvládne dodělat úkol), který člověk mu v průběhu může zadat; pokud agent není schopen dokončit úkol i po těchto zprávách -> nová konverzace, kde úkol je zredukován, resp. rozdělen do podúkolů,
 - **stejný časový rozpočet** a evidenci spotřeby (volání modelu, tokeny, čas),
 - **stejnou sadu metrik a skrytých akceptačních testů** (kap. 8),
 - **oddělený repozitář nebo větev**, aby se varianty navzájem neovlivňovaly.
@@ -181,7 +182,7 @@ Ke každé hypotéze uvádíme nulovou (H0) a alternativní (H1) hypotézu. Prah
 | **H6** | Žádná varianta MAS **nedosáhne** vyššího podílu splněných akceptačních kritérií než single agent o alespoň 10 p. b. | Alespoň jedna varianta MAS **dosáhne** vyššího podílu splněných akceptačních kritérií než single agent o alespoň 10 p. b. | M1 (A, B vs. C) |
 | **H7** | Varianta MAS s lepším výsledkem v M1 **nepotřebuje** méně lidských zásahů než single agent. | Varianta MAS s lepším výsledkem v M1 **potřebuje** méně lidských zásahů než single agent. | M20 (A, B vs. C) |
 
-*Poznámka k H6–H7:* srovnáváme tři varianty, každou v jednom běhu, proto výsledky hodnotíme popisně, nikoli statistickým testem. Rozdíly doplníme o kvalitativní rozbor selhání (VO3). Spotřebu zdrojů (M22) uvádíme vedle výsledků, aby bylo vidět, zda případný lepší výsledek MAS nevyvažuje výrazně vyšší cena.
+*Poznámka k H6–H7:* srovnáváme tři varianty, každou v jednom běhu, ve kterém dostanou celé zadání, a proto výsledky hodnotíme popisně, nikoli statistickým testem. Rozdíly doplníme o kvalitativní rozbor selhání (VO3). Spotřebu zdrojů (M22) uvádíme vedle výsledků, aby bylo vidět, zda případný lepší výsledek MAS nevyvažuje výrazně vyšší cena.
 
 ---
 
@@ -227,7 +228,8 @@ Metriky dělíme do šesti oblastí. **Všechny metriky měříme pro každou ze
 |----|---------|------------|-----|
 | M15 | Lighthouse skóre (Performance, Accessibility, Best Practices, SEO) | Lighthouse CI na klíčových obrazovkách, mobil i desktop | každá kategorie ≥ 90 |
 | M16 | Porušení přístupnosti | axe-core v E2E testech; počet porušení WCAG úrovně A/AA | 0 kritických a závažných |
-| M17 | Shoda s návrhovými guidelines | **manuální checklist** podle Google Material Design 3 a Apple Human Interface Guidelines (např. min. velikost dotykových prvků 48 dp / 44 pt, kontrast textu ≥ 4,5 : 1, čitelná velikost písma, konzistentní navigace, zpětná vazba na akce, srozumitelné chybové hlášky); 2 hodnotitelé nezávisle, každá položka splněno / nesplněno | ≥ 85 % položek; shoda hodnotitelů (Cohenovo kappa) ≥ 0,6 |
+| M17a | Shoda s návrhovými guidelines (LLM + DOM extrakce) | Skript (Playwright) vyexportuje vypočtené CSS styly z klíčových stránek (bounding boxy interaktivních prvků, fonty, HTML strukturu). LLM dostane strukturovaná data + screenshot a vyhodnotí checklist Material Design/Human Interface Guidelines (velikost prvků, hierarchie, stavy komponent: disabled/hover/error, srozumitelnost systémových hlášek) | ≥ 85 % splněných pravidel |
+| M17b | Heuristická shoda a UX soudržnost | 1 lidský hodnotitel projde aplikaci podle zkráceného seznamu Nielsenových heuristik (konzistence navigace, prevence chyb, odezva systému). LLM poslouží jako asistent, který připraví souhrn z M17a, a člověk verifikuje celkový UX dojem | Průměr ≥ 4,0 / 5 |
 | M18 | Úspěšnost úkolů v uživatelském testu | 5 testerů (skauti, ideálně vedoucí i účastník) plní stejné scénáře (registrace, připojení do skupiny, výběr programu) ve všech třech verzích, v náhodném pořadí verzí; podíl úspěšně dokončených úkolů a čas na úkol | ≥ 80 % úkolů bez pomoci |
 | M19 | System Usability Scale (SUS) | standardizovaný dotazník po testu každé verze | ≥ 68 (nadprůměr) |
 
