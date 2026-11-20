@@ -516,7 +516,7 @@ paths:
         '404': { $ref: '#/components/responses/NotFound' }
     post:
       tags: [programs]
-      summary: Vytvoření programu (US-F7.1)
+      summary: Vytvoření programu; člen týmu programu, pořadatel, admin (US-F7.1)
       requestBody:
         required: true
         content:
@@ -532,6 +532,52 @@ paths:
         '403': { $ref: '#/components/responses/Forbidden' }
         '404': { $ref: '#/components/responses/NotFound' }
         '422': { $ref: '#/components/responses/ValidationError' }
+
+  /events/{eventId}/programs/occupancy:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    get:
+      tags: [programs]
+      summary: Přehled obsazenosti programů bez osobních údajů; člen týmu programu, pořadatel, admin (US-F7.6)
+      parameters:
+        - name: sort
+          in: query
+          schema: { type: string, enum: [startsAt, -startsAt, fillRate, -fillRate], default: startsAt }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, totals]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      required: [programId, name, startsAt, endsAt, location, capacity, signedUpCount, freeSpots, fillRate]
+                      properties:
+                        programId: { type: string, format: uuid }
+                        name: { type: string }
+                        startsAt: { type: string, format: date-time }
+                        endsAt: { type: string, format: date-time }
+                        location: { type: string }
+                        capacity: { type: integer, minimum: 1 }
+                        signedUpCount: { type: integer, minimum: 0 }
+                        freeSpots: { type: integer, minimum: 0 }
+                        fillRate: { type: number, minimum: 0, maximum: 1 }
+                  totals:
+                    type: object
+                    required: [programCount, capacity, signedUpCount]
+                    properties:
+                      programCount: { type: integer }
+                      capacity: { type: integer }
+                      signedUpCount: { type: integer }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
 
   /events/{eventId}/programs/{programId}:
     parameters:
@@ -555,7 +601,7 @@ paths:
         '404': { $ref: '#/components/responses/NotFound' }
     patch:
       tags: [programs]
-      summary: Úprava programu (US-F7.1)
+      summary: Úprava programu; člen týmu programu, pořadatel, admin (US-F7.1)
       requestBody:
         required: true
         content:
@@ -574,7 +620,7 @@ paths:
         '422': { $ref: '#/components/responses/ValidationError' }
     delete:
       tags: [programs]
-      summary: Smazání programu včetně přihlášek
+      summary: Smazání programu včetně přihlášek; jen pořadatel a admin
       responses:
         '204': { description: Smazáno }
         '401': { $ref: '#/components/responses/Unauthenticated' }
@@ -610,7 +656,7 @@ paths:
         '409': { $ref: '#/components/responses/Conflict' }
     get:
       tags: [programs]
-      summary: Přihlášení na programu; lektor programu, pořadatel, admin (US-F6.3)
+      summary: Jmenný seznam přihlášených na programu; jen pořadatel a admin (US-F7.6)
       responses:
         '200':
           description: OK
@@ -792,13 +838,13 @@ paths:
                       lisky: { type: string, format: uuid }
                   programIds:
                     type: object
-                    required: [lanove, lukostrelba, navazujici, zatez, jenLektori]
+                    required: [lanove, lukostrelba, navazujici, zatez, jenVedouci]
                     properties:
                       lanove: { type: string, format: uuid }
                       lukostrelba: { type: string, format: uuid }
                       navazujici: { type: string, format: uuid }
                       zatez: { type: string, format: uuid }
-                      jenLektori: { type: string, format: uuid }
+                      jenVedouci: { type: string, format: uuid }
                   userIds:
                     type: object
                     additionalProperties: { type: string, format: uuid }
@@ -984,10 +1030,10 @@ components:
 
     BaseRole:
       type: string
-      enum: [participant, group_leader, lecturer]
+      enum: [participant, group_leader]
     Role:
       type: string
-      enum: [participant, group_leader, lecturer, medic, organizer]
+      enum: [participant, group_leader, medic, program_team, organizer]
     RegistrationStatus:
       type: string
       enum: [completed, awaiting_group]
@@ -1046,7 +1092,7 @@ components:
           type: array
           uniqueItems: true
           items: { $ref: '#/components/schemas/BaseRole' }
-          default: [participant, group_leader, lecturer]
+          default: [participant, group_leader]
 
     EventInput:
       allOf:
@@ -1258,7 +1304,6 @@ components:
         endsAt: { type: string, format: date-time }
         location: { type: string, minLength: 1, maxLength: 200 }
         capacity: { type: integer, minimum: 1 }
-        lecturerRegistrationId: { type: [string, 'null'], format: uuid }
         availableForRoles:
           type: array
           uniqueItems: true
@@ -1275,7 +1320,6 @@ components:
         endsAt: { type: string, format: date-time }
         location: { type: string, minLength: 1, maxLength: 200 }
         capacity: { type: integer, minimum: 1 }
-        lecturerRegistrationId: { type: [string, 'null'], format: uuid }
         availableForRoles:
           type: array
           uniqueItems: true
@@ -1285,13 +1329,13 @@ components:
       allOf:
         - $ref: '#/components/schemas/ProgramInput'
         - type: object
-          required: [id, eventId, signedUpCount, freeSpots, lecturerName, availableForRoles]
+          required: [id, eventId, signedUpCount, freeSpots, fillRate, availableForRoles]
           properties:
             id: { type: string, format: uuid }
             eventId: { type: string, format: uuid }
             signedUpCount: { type: integer, minimum: 0 }
             freeSpots: { type: integer, minimum: 0 }
-            lecturerName: { type: [string, 'null'] }
+            fillRate: { type: number, minimum: 0, maximum: 1, description: 'signedUpCount / capacity, 2 desetinná místa' }
 
     ScheduleItem:
       type: object
