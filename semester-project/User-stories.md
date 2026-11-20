@@ -36,33 +36,25 @@ Role:
 
 ## F1 – Uživatelský účet a přihlášení
 
-### US-F1.1 Účet přes e-mail · Must
-**Jako** člověk mimo skautskou organizaci **chci** založit účet a přihlásit se e-mailem, **abych** se mohl/a zaregistrovat na akci i bez skautského účtu.
+Do systému se lze přihlásit **pouze přes skautIS**. Přihlášení e-mailem ani účty bez skautISu MVP neumožňuje. V MVP se skautIS **simuluje** (mock), skutečné napojení je mimo rozsah.
+
+### US-F1.1 Přihlášení přes skautIS (simulace) · Must
+**Jako** člen skautské organizace **chci** se přihlásit přes skautIS, **abych** nemusel/a zakládat další účet a údaje o mně se předvyplnily.
 
 AK:
-1. Když zadám platný e-mail a heslo (min. 8 znaků), pak se mi založí účet a jsem přihlášen/a.
-2. Když zadám e-mail, který už má účet, pak systém účet znovu nezaloží a nabídne přihlášení.
-3. Když zadám neplatný formát e-mailu nebo příliš krátké heslo, pak se zobrazí srozumitelná chybová hláška u příslušného pole.
-4. Hesla se ukládají pouze jako bezpečný hash, nikdy v čitelné podobě.
+1. Přihlašovací stránka nabízí jedinou volbu: „Přihlásit přes skautIS (simulace)“. Formulář pro e-mail a heslo neexistuje.
+2. Simulace nabídne výběr z předem připravených smyšlených osob. Každá má jméno, příjmení, datum narození, e-mail a jednotku.
+3. Když vyberu osobu poprvé, systém mi založí účet a přihlásí mě. Při dalším přihlášení stejnou osobou se použije stejný účet.
+4. Po přihlášení má registrační formulář předvyplněné údaje z „skautISu“ (jméno, příjmení, datum narození, e-mail). Mohu je zkontrolovat a doplnit chybějící.
+5. Simulace se nepřipojuje k žádnému reálnému systému.
 
-### US-F1.2 Přihlášení a odhlášení · Must
-**Jako** uživatel **chci** se přihlásit a odhlásit, **abych** měl/a přístup jen ke svým údajům.
-
-AK:
-1. Když zadám správný e-mail a heslo, pak jsem přihlášen/a a vidím svůj profil.
-2. Když zadám špatné heslo, pak přihlášení selže. Hláška neprozradí, jestli účet s tímto e-mailem existuje.
-3. Když se odhlásím, pak už nemám přístup na stránky vyžadující přihlášení.
-4. Nepřihlášený uživatel, který otevře chráněnou stránku, je přesměrován na přihlášení.
-
-### US-F1.3 Simulované přihlášení přes skautIS · Must
-**Jako** člen skautské organizace **chci** se přihlásit „přes skautIS“, **aby** se mi údaje o mně předvyplnily a nemusel/a je psát ručně.
+### US-F1.2 Odhlášení a ochrana stránek · Must
+**Jako** uživatel **chci** se odhlásit a mít jistotu, že bez přihlášení nikdo neuvidí moje údaje, **aby** byly chráněné i na sdíleném zařízení.
 
 AK:
-1. Na přihlašovací stránce je volba „Přihlásit přes skautIS (simulace)“.
-2. Simulace nabídne výběr z předem připravených testových osob. Každá má jméno, příjmení, datum narození, e-mail, příslušnost k jednotce a příznak aktivního členství.
-3. Když vyberu testovou osobu, pak jsem přihlášen/a a registrační formulář má předvyplněné údaje této osoby. Mohu je zkontrolovat a doplnit.
-4. Simulace se nepřipojuje k žádnému reálnému systému. Testové osoby jsou smyšlené.
-5. Uživatel přihlášený přes simulaci má u účtu uložený příznak „ověřený člen“.
+1. Když se odhlásím, pak už nemám přístup na stránky ani data vyžadující přihlášení.
+2. Nepřihlášený uživatel, který otevře chráněnou stránku, je přesměrován na přihlášení.
+3. Veřejně dostupné bez přihlášení je jen: přihlašovací stránka, informace o akci a seznam programů (US-F7.2).
 
 ---
 
@@ -400,6 +392,7 @@ AK:
 ## Mimo rozsah MVP
 
 Tyto části zadání agenti **neimplementují:**
+- přihlášení e-mailem a účty pro osoby bez skautISu (hosté),
 - reálné napojení na skautIS a na banku, párování plateb, vratky, potvrzení o platbě,
 - stravování a přítomnost na akci, merch, podakce,
 - vlastní otázky ve formuláři a podmíněná logika polí,
@@ -415,7 +408,7 @@ Tyto části zadání agenti **neimplementují:**
 
 | Funkce | Must | Should | Could |
 |---|---|---|---|
-| F1 Účet a přihlášení | US-F1.1, F1.2, F1.3 | – | – |
+| F1 Účet a přihlášení | US-F1.1, F1.2 | – | – |
 | F2 Registrace jednotlivce | US-F2.1, F2.2, F2.3 | US-F2.4, F2.5 | – |
 | F3 Identifikační kód | US-F3.1, F3.2 | – | – |
 | F4 Skupiny a vedoucí | US-F4.1, F4.2, F4.3 | US-F4.4 | – |
@@ -425,4 +418,4 @@ Tyto části zadání agenti **neimplementují:**
 | F8 Administrace akce | US-F8.1, F8.2, F8.4 | US-F8.3 | – |
 | F9 Historie operací | US-F9.1 | US-F9.2 | – |
 | Volitelné | – | – | US-X.1, X.2 |
-| **Celkem** | **22** | **9** | **2** |
+| **Celkem** | **21** | **9** | **2** |
