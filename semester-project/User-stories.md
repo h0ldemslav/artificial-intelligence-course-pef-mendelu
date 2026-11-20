@@ -27,7 +27,7 @@ Role:
 |---|---|
 | **Účastník** | Osoba, která se na akci registruje sama za sebe. |
 | **Vedoucí skupiny** | Plnoletá osoba, která zodpovídá za skupinu účastníků. |
-| **Lektor** | Osoba, která vede program. |
+| **Člen týmu programu** | Připravuje program akce: vytváří a upravuje programy a sleduje, kolik lidí je kam přihlášeno. |
 | **Zdravotník** | Člen týmu akce, který potřebuje znát zdravotní údaje. |
 | **Pořadatel** | Spravuje akci. Vidí a upravuje vše v rámci své akce. |
 | **Administrátor** | Spravuje celý systém, zakládá akce a přiřazuje pořadatele. |
@@ -64,7 +64,7 @@ AK:
 **Jako** účastník **chci** vyplnit registrační formulář akce, **abych** byl/a na akci přihlášen/a.
 
 AK:
-1. Za předpokladu, že je registrace na akci otevřená, mohu si vybrat jednu z rolí, které pořadatel pro registraci zpřístupnil (minimálně účastník, vedoucí skupiny, lektor).
+1. Za předpokladu, že je registrace na akci otevřená, mohu si vybrat jednu z rolí, které pořadatel pro registraci zpřístupnil (účastník, vedoucí skupiny).
 2. Formulář je rozdělený do 4 kategorií:
    - **základní** (jméno, příjmení, datum narození),
    - **kontaktní** (e-mail, telefon),
@@ -203,7 +203,7 @@ AK: přístup se řídí touto maticí.
 |---|---|:-:|:-:|:-:|:-:|
 | Účastník | jen sebe | ✔ | ✔ | ✔ | ✔ |
 | Vedoucí skupiny | sebe + členy své skupiny | ✔ | ✔ | ✔ * | ✔ |
-| Lektor | účastníky přihlášené na svůj program | ✔ | ✘ | ✘ | ✘ |
+| Člen týmu programu | jen sebe; u programů jen **počty** přihlášených, žádná jména | ✔ | ✔ | ✔ | ✔ |
 | Zdravotník | všechny registrované na akci | ✔ | ✔ | ✔ | ✘ |
 | Pořadatel | všechny registrované na své akci | ✔ | ✔ | ✔ | ✔ |
 | Administrátor | všechny ve všech akcích | ✔ | ✔ | ✔ | ✔ |
@@ -215,32 +215,27 @@ AK: přístup se řídí touto maticí.
 3. Uživatel jedné akce nevidí žádná data jiné akce, pokud tam nemá roli.
 
 ### US-F6.2 Přiřazení rolí pořadatelem · Must
-**Jako** pořadatel **chci** přiřadit registrované osobě roli zdravotníka nebo pořadatele, **abych** mohl/a sestavit tým akce.
+**Jako** pořadatel **chci** přiřadit registrované osobě roli zdravotníka, člena týmu programu nebo pořadatele, **abych** mohl/a sestavit tým akce.
 
 AK:
-1. Pořadatel může registrované osobě na své akci přiřadit nebo odebrat roli zdravotník nebo pořadatel.
-2. Role vedoucí skupiny, lektor a účastník vznikají při registraci (F2). Pořadatel je může změnit, přičemž stále platí pravidla F5.
+1. Pořadatel může registrované osobě na své akci přiřadit nebo odebrat roli zdravotník, člen týmu programu nebo pořadatel.
+2. Role vedoucí skupiny a účastník vznikají při registraci (F2). Pořadatel je může změnit, přičemž stále platí pravidla F5.
 3. Pořadatele akce určuje administrátor (US-F8.1).
 4. Každá změna role se zapíše do historie operací (F9).
-
-### US-F6.3 Lektor vidí účastníky svého programu · Should
-**Jako** lektor **chci** vidět seznam lidí přihlášených na můj program, **abych** věděl/a, s kým počítat.
-
-AK:
-1. Lektor vidí jméno, příjmení a identifikační kód účastníků přihlášených na programy, u kterých je uveden jako lektor.
-2. Účastníky jiných programů ani jejich další kategorie údajů nevidí.
 
 ---
 
 ## F7 – Programy s kapacitou
 
-### US-F7.1 Vytvoření programu · Must
-**Jako** pořadatel **chci** vytvořit program akce, **aby** si účastníci mohli vybrat, čeho se zúčastní.
+### US-F7.1 Vytvoření a úprava programu · Must
+**Jako** člen týmu programu **chci** vytvářet a upravovat programy akce, **aby** si účastníci mohli vybrat, čeho se zúčastní.
 
 AK:
-1. Program má povinně název, začátek, konec, místo a kapacitu (celé kladné číslo). Volitelně má popis, lektora (registrovaná osoba v roli lektor) a seznam rolí, pro které je dostupný.
-2. Konec programu musí být po jeho začátku.
-3. Pořadatel může program upravit nebo smazat. Kapacitu nelze snížit pod aktuální počet přihlášených.
+1. Program může vytvořit a upravit **člen týmu programu** nebo pořadatel. Ostatní role ne.
+2. Program má povinně název, začátek, konec, místo a kapacitu (celé kladné číslo). Volitelně má popis a seznam rolí, pro které je dostupný.
+3. Konec programu musí být po jeho začátku.
+4. Kapacitu nelze snížit pod aktuální počet přihlášených.
+5. Smazat program může jen pořadatel.
 
 ### US-F7.2 Veřejný přehled programů · Should
 **Jako** zájemce o akci **chci** vidět programy ještě před přihlášením, **abych** se mohl/a rozhodnout, jestli na akci jet.
@@ -274,6 +269,15 @@ AK:
 AK:
 1. Harmonogram obsahuje všechny moje programy s názvem, časem a místem, seřazené chronologicky.
 2. Z harmonogramu se dostanu na detail programu.
+
+### US-F7.6 Přehled obsazenosti programů · Must
+**Jako** člen týmu programu **chci** vidět, kolik lidí je přihlášeno na který program, **abych** mohl/a upravit kapacity nebo přidat další termín u žádaných programů.
+
+AK:
+1. Člen týmu programu vidí přehled všech programů akce: název, čas, místo, kapacitu, počet přihlášených, počet volných míst a zaplněnost v procentech.
+2. Přehled lze seřadit podle zaplněnosti a času.
+3. Člen týmu programu **nevidí jména ani jiné údaje** přihlášených, jen počty.
+4. Pořadatel vidí u každého programu navíc seznam přihlášených (jméno, příjmení, identifikační kód).
 
 ---
 
@@ -413,9 +417,9 @@ Tyto části zadání agenti **neimplementují:**
 | F3 Identifikační kód | US-F3.1, F3.2 | – | – |
 | F4 Skupiny a vedoucí | US-F4.1, F4.2, F4.3 | US-F4.4 | – |
 | F5 Pravidlo pro nezletilé | US-F5.1, F5.2 | – | – |
-| F6 Role a oprávnění | US-F6.1, F6.2 | US-F6.3 | – |
-| F7 Programy s kapacitou | US-F7.1, F7.3, F7.4 | US-F7.2, F7.5 | – |
+| F6 Role a oprávnění | US-F6.1, F6.2 | – | – |
+| F7 Programy s kapacitou | US-F7.1, F7.3, F7.4, F7.6 | US-F7.2, F7.5 | – |
 | F8 Administrace akce | US-F8.1, F8.2, F8.4 | US-F8.3 | – |
 | F9 Historie operací | US-F9.1 | US-F9.2 | – |
 | Volitelné | – | – | US-X.1, X.2 |
-| **Celkem** | **21** | **9** | **2** |
+| **Celkem** | **22** | **7** | **2** |
