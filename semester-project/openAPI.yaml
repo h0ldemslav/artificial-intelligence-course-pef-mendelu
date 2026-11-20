@@ -1,0 +1,1417 @@
+openapi: 3.1.0
+info:
+  title: Registrační systém akcí – MVP API kontrakt
+  version: 1.0.0
+  description: |
+    Společný API kontrakt pro všechny tři varianty (MAS A, MAS B, single agent C).
+    Lidsky čitelný popis s pravidly a příklady je v souboru api-contract.md.
+    Pokud se dokumenty liší, platí tento soubor.
+servers:
+  - url: http://localhost:8080/api/v1
+tags:
+  - name: auth
+  - name: events
+  - name: registrations
+  - name: groups
+  - name: programs
+  - name: exports
+  - name: audit
+  - name: test-support
+security:
+  - bearerAuth: []
+
+paths:
+  /auth/register:
+    post:
+      tags: [auth]
+      summary: Založení účtu e-mailem (US-F1.1)
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string, minLength: 8 }
+                displayName: { type: string, maxLength: 200 }
+      responses:
+        '201':
+          description: Účet založen
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationError' }
+
+  /auth/login:
+    post:
+      tags: [auth]
+      summary: Přihlášení e-mailem a heslem (US-F1.2)
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string }
+                password: { type: string }
+      responses:
+        '200':
+          description: Přihlášen
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+
+  /auth/logout:
+    post:
+      tags: [auth]
+      summary: Odhlášení, zneplatní token (US-F1.2)
+      responses:
+        '204': { description: Odhlášen }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+
+  /auth/me:
+    get:
+      tags: [auth]
+      summary: Aktuální uživatel a jeho registrace
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [user, registrations]
+                properties:
+                  user: { $ref: '#/components/schemas/User' }
+                  registrations:
+                    type: array
+                    items:
+                      type: object
+                      required: [eventId, eventName, registrationId, roles, status]
+                      properties:
+                        eventId: { type: string, format: uuid }
+                        eventName: { type: string }
+                        registrationId: { type: string, format: uuid }
+                        roles: { type: array, items: { $ref: '#/components/schemas/Role' } }
+                        status: { $ref: '#/components/schemas/RegistrationStatus' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+
+  /auth/skautis-mock/persons:
+    get:
+      tags: [auth]
+      summary: Testové osoby simulace skautISu (US-F1.3)
+      security: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/SkautisMockPerson' }
+
+  /auth/skautis-mock/login:
+    post:
+      tags: [auth]
+      summary: Přihlášení simulací skautISu (US-F1.3)
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [personId]
+              properties:
+                personId: { type: string }
+      responses:
+        '200':
+          description: Přihlášen, s předvyplněnými údaji
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/AuthResponse'
+                  - type: object
+                    required: [prefill]
+                    properties:
+                      prefill:
+                        type: object
+                        properties:
+                          basic: { $ref: '#/components/schemas/BasicData' }
+                          contact:
+                            type: object
+                            properties:
+                              email: { type: string }
+                              phone: { type: [string, 'null'] }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /events:
+    get:
+      tags: [events]
+      summary: Seznam akcí
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/PageMeta'
+                  - type: object
+                    required: [items]
+                    properties:
+                      items: { type: array, items: { $ref: '#/components/schemas/Event' } }
+    post:
+      tags: [events]
+      summary: Založení akce administrátorem (US-F8.1)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/EventInput' }
+      responses:
+        '201':
+          description: Akce založena
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Event' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '422': { $ref: '#/components/responses/ValidationError' }
+
+  /events/{eventId}:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    get:
+      tags: [events]
+      summary: Detail akce
+      security: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Event' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      tags: [events]
+      summary: Úprava akce (US-F2.3, F2.5, F4.4); organizerUserIds smí měnit jen admin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/EventPatch' }
+      responses:
+        '200':
+          description: Upraveno
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Event' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '422': { $ref: '#/components/responses/ValidationError' }
+
+  /events/{eventId}/registrations:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    post:
+      tags: [registrations]
+      summary: Registrace na akci (US-F2.1, F2.2, F2.5, F3.1, F5.1, F5.2)
+      description: |
+        Pořadí kontrol: VALIDATION_ERROR, REGISTRATION_CLOSED, ROLE_NOT_OPEN, ALREADY_REGISTERED,
+        LEADER_MUST_BE_ADULT, GROUP_CODE_INVALID, GROUP_FULL, EVENT_FULL.
+        Nezletilý bez groupCode dostane 201 se status=awaiting_group.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [role, data]
+              properties:
+                role: { $ref: '#/components/schemas/BaseRole' }
+                groupCode: { type: [string, 'null'] }
+                data: { $ref: '#/components/schemas/RegistrationDataInput' }
+      responses:
+        '201':
+          description: Registrace vytvořena
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Registration' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationError' }
+    get:
+      tags: [registrations]
+      summary: Přehled registrací pro zdravotníka, pořadatele a admina (US-F8.2)
+      parameters:
+        - name: role
+          in: query
+          schema: { type: array, items: { $ref: '#/components/schemas/Role' } }
+          style: form
+          explode: true
+        - name: groupId
+          in: query
+          description: UUID skupiny nebo "none" pro registrace bez skupiny
+          schema: { type: string }
+        - name: status
+          in: query
+          schema: { $ref: '#/components/schemas/RegistrationStatus' }
+        - name: minorWithoutGroup
+          in: query
+          schema: { type: boolean }
+        - name: q
+          in: query
+          description: Hledání v jméně, příjmení, e-mailu a kódu; bez ohledu na velikost písmen a diakritiku
+          schema: { type: string }
+        - name: sort
+          in: query
+          schema: { type: string, enum: [lastName, -lastName, createdAt, -createdAt], default: lastName }
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/PageMeta'
+                  - type: object
+                    required: [items]
+                    properties:
+                      items: { type: array, items: { $ref: '#/components/schemas/RegistrationListItem' } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /events/{eventId}/registrations/me:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    get:
+      tags: [registrations]
+      summary: Vlastní registrace (US-F3.2)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Registration' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      tags: [registrations]
+      summary: Úprava vlastních údajů (US-F2.4)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data: { $ref: '#/components/schemas/RegistrationDataPatch' }
+      responses:
+        '200':
+          description: Upraveno
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Registration' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationError' }
+
+  /events/{eventId}/registrations/me/schedule:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    get:
+      tags: [programs]
+      summary: Můj harmonogram, řazený podle startsAt (US-F7.5)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/ScheduleItem' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /events/{eventId}/registrations/{registrationId}:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+      - $ref: '#/components/parameters/RegistrationId'
+    get:
+      tags: [registrations]
+      summary: Detail registrace (US-F8.3, F6.1)
+      parameters:
+        - name: categories
+          in: query
+          description: Požadované kategorie; nepovolená kategorie vrací 403
+          schema: { type: array, items: { $ref: '#/components/schemas/DataCategory' } }
+          style: form
+          explode: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Registration'
+                  - type: object
+                    required: [programs]
+                    properties:
+                      programs:
+                        type: array
+                        items:
+                          type: object
+                          required: [programId, name, startsAt, endsAt]
+                          properties:
+                            programId: { type: string, format: uuid }
+                            name: { type: string }
+                            startsAt: { type: string, format: date-time }
+                            endsAt: { type: string, format: date-time }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /events/{eventId}/registrations/{registrationId}/roles:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+      - $ref: '#/components/parameters/RegistrationId'
+    put:
+      tags: [registrations]
+      summary: Změna rolí pořadatelem (US-F6.2)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [roles]
+              properties:
+                roles:
+                  type: array
+                  minItems: 1
+                  uniqueItems: true
+                  items: { $ref: '#/components/schemas/Role' }
+      responses:
+        '200':
+          description: Upraveno
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Registration' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationError' }
+
+  /events/{eventId}/groups:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    post:
+      tags: [groups]
+      summary: Založení skupiny vedoucím (US-F4.1)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name: { type: string, minLength: 1, maxLength: 100 }
+      responses:
+        '201':
+          description: Skupina založena
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/GroupDetail' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationError' }
+    get:
+      tags: [groups]
+      summary: Seznam skupin; pořadatel a admin vidí všechny, ostatní jen svou (US-F8.2)
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/PageMeta'
+                  - type: object
+                    required: [items]
+                    properties:
+                      items: { type: array, items: { $ref: '#/components/schemas/Group' } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /events/{eventId}/groups/join:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    post:
+      tags: [groups]
+      summary: Připojení do skupiny kódem (US-F4.2, F5.1)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [code]
+              properties:
+                code: { type: string, description: Porovnává se bez ohledu na velikost písmen a s oříznutím mezer }
+      responses:
+        '200':
+          description: Připojeno; vrací vlastní registraci
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Registration' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+
+  /events/{eventId}/groups/{groupId}:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+      - $ref: '#/components/parameters/GroupId'
+    get:
+      tags: [groups]
+      summary: Detail skupiny se členy; vedoucí skupiny, pořadatel, admin (US-F4.3)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/GroupDetail' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /events/{eventId}/groups/{groupId}/members/{registrationId}:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+      - $ref: '#/components/parameters/GroupId'
+      - $ref: '#/components/parameters/RegistrationId'
+    delete:
+      tags: [groups]
+      summary: Odebrání člena; nezletilý přejde do awaiting_group (US-F4.3, F5.1)
+      responses:
+        '204': { description: Odebráno }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+
+  /events/{eventId}/programs:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    get:
+      tags: [programs]
+      summary: Veřejný seznam programů řazený podle startsAt (US-F7.2)
+      security: []
+      parameters:
+        - name: from
+          in: query
+          schema: { type: string, format: date-time }
+        - name: to
+          in: query
+          schema: { type: string, format: date-time }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items: { type: array, items: { $ref: '#/components/schemas/Program' } }
+        '404': { $ref: '#/components/responses/NotFound' }
+    post:
+      tags: [programs]
+      summary: Vytvoření programu (US-F7.1)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ProgramInput' }
+      responses:
+        '201':
+          description: Vytvořeno
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Program' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '422': { $ref: '#/components/responses/ValidationError' }
+
+  /events/{eventId}/programs/{programId}:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+      - $ref: '#/components/parameters/ProgramId'
+    get:
+      tags: [programs]
+      summary: Detail programu; přihlášený volající dostane i isSignedUp
+      security: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Program'
+                  - type: object
+                    properties:
+                      isSignedUp: { type: boolean }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      tags: [programs]
+      summary: Úprava programu (US-F7.1)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ProgramPatch' }
+      responses:
+        '200':
+          description: Upraveno
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Program' }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '422': { $ref: '#/components/responses/ValidationError' }
+    delete:
+      tags: [programs]
+      summary: Smazání programu včetně přihlášek
+      responses:
+        '204': { description: Smazáno }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /events/{eventId}/programs/{programId}/signups:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+      - $ref: '#/components/parameters/ProgramId'
+    post:
+      tags: [programs]
+      summary: Přihlášení volajícího na program (US-F7.3, F7.4)
+      description: |
+        Pořadí kontrol: NOT_FOUND (bez registrace), REGISTRATION_NOT_COMPLETED, PROGRAM_SELECTION_CLOSED,
+        PROGRAM_NOT_AVAILABLE_FOR_ROLE, ALREADY_SIGNED_UP, PROGRAM_TIME_CONFLICT, PROGRAM_FULL.
+        Kapacita a unikátnost se hlídají atomicky v databázi; při náporu nikdy 5xx.
+      responses:
+        '201':
+          description: Přihlášen
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [programId, registrationId, createdAt, freeSpots]
+                properties:
+                  programId: { type: string, format: uuid }
+                  registrationId: { type: string, format: uuid }
+                  createdAt: { type: string, format: date-time }
+                  freeSpots: { type: integer, minimum: 0 }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    get:
+      tags: [programs]
+      summary: Přihlášení na programu; lektor programu, pořadatel, admin (US-F6.3)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, total]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      required: [registrationId, code, firstName, lastName, signedUpAt]
+                      properties:
+                        registrationId: { type: string, format: uuid }
+                        code: { $ref: '#/components/schemas/RegistrationCode' }
+                        firstName: { type: string }
+                        lastName: { type: string }
+                        signedUpAt: { type: string, format: date-time }
+                  total: { type: integer }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /events/{eventId}/programs/{programId}/signups/me:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+      - $ref: '#/components/parameters/ProgramId'
+    delete:
+      tags: [programs]
+      summary: Odhlášení volajícího z programu (US-F7.3)
+      responses:
+        '204': { description: Odhlášen }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+
+  /events/{eventId}/exports/columns:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    get:
+      tags: [exports]
+      summary: Sloupce, které smí volající exportovat (US-F8.4)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      required: [key, category, label]
+                      properties:
+                        key: { $ref: '#/components/schemas/ExportColumn' }
+                        category: { $ref: '#/components/schemas/DataCategory' }
+                        label: { type: string }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /events/{eventId}/exports:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    post:
+      tags: [exports]
+      summary: Export do CSV s výběrem sloupců (US-F8.4)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [columns]
+              properties:
+                columns:
+                  type: array
+                  uniqueItems: true
+                  items: { $ref: '#/components/schemas/ExportColumn' }
+                filters: { $ref: '#/components/schemas/RegistrationFilters' }
+      responses:
+        '200':
+          description: CSV v UTF-8 s BOM, oddělovač čárka, hlavička = klíče sloupců
+          headers:
+            Content-Disposition:
+              schema: { type: string }
+              description: attachment; filename="export-<eventId>-<YYYYMMDD-HHmmss>.csv"
+          content:
+            text/csv:
+              schema: { type: string }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '422': { $ref: '#/components/responses/ValidationError' }
+
+  /events/{eventId}/audit-log:
+    parameters:
+      - $ref: '#/components/parameters/EventId'
+    get:
+      tags: [audit]
+      summary: Historie operací, od nejnovější; pořadatel a admin (US-F9.1, F9.2)
+      parameters:
+        - name: action
+          in: query
+          schema: { type: array, items: { $ref: '#/components/schemas/AuditAction' } }
+          style: form
+          explode: true
+        - name: actorUserId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: targetRegistrationId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: from
+          in: query
+          schema: { type: string, format: date-time }
+        - name: to
+          in: query
+          schema: { type: string, format: date-time }
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/PageMeta'
+                  - type: object
+                    required: [items]
+                    properties:
+                      items: { type: array, items: { $ref: '#/components/schemas/AuditLogEntry' } }
+        '401': { $ref: '#/components/responses/Unauthenticated' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /health:
+    get:
+      tags: [test-support]
+      summary: Připravenost aplikace (vždy dostupné)
+      security: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status]
+                properties:
+                  status: { type: string, const: ok }
+
+  /test/reset:
+    post:
+      tags: [test-support]
+      summary: Smaže data a nahraje standardní seed (jen APP_ENV=test)
+      security: []
+      responses:
+        '200':
+          description: Seed nahrán
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [eventId, groupIds, programIds, userIds]
+                properties:
+                  eventId: { type: string, format: uuid, const: 11111111-1111-4111-8111-111111111111 }
+                  groupIds:
+                    type: object
+                    required: [lisky]
+                    properties:
+                      lisky: { type: string, format: uuid }
+                  programIds:
+                    type: object
+                    required: [lanove, lukostrelba, navazujici, zatez, jenLektori]
+                    properties:
+                      lanove: { type: string, format: uuid }
+                      lukostrelba: { type: string, format: uuid }
+                      navazujici: { type: string, format: uuid }
+                      zatez: { type: string, format: uuid }
+                      jenLektori: { type: string, format: uuid }
+                  userIds:
+                    type: object
+                    additionalProperties: { type: string, format: uuid }
+        '404': { description: Mimo APP_ENV=test }
+
+  /test/login-as:
+    post:
+      tags: [test-support]
+      summary: Token pro testový účet bez hesla (jen APP_ENV=test)
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email]
+              properties:
+                email: { type: string }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+        '404': { description: Mimo APP_ENV=test nebo neznámý e-mail }
+
+  /test/bulk-users:
+    post:
+      tags: [test-support]
+      summary: Vytvoří N plnoletých testových účtů pro zátěžový test (jen APP_ENV=test)
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [count, eventId]
+              properties:
+                count: { type: integer, minimum: 1, maximum: 5000 }
+                eventId: { type: string, format: uuid }
+                registered: { type: boolean, default: true, description: Rovnou vytvořit dokončenou registraci v roli participant }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      required: [userId, email, token]
+                      properties:
+                        userId: { type: string, format: uuid }
+                        registrationId: { type: [string, 'null'], format: uuid }
+                        email: { type: string }
+                        token: { type: string }
+        '404': { description: Mimo APP_ENV=test }
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+
+  parameters:
+    EventId:
+      name: eventId
+      in: path
+      required: true
+      schema: { type: string, format: uuid }
+    RegistrationId:
+      name: registrationId
+      in: path
+      required: true
+      schema: { type: string, format: uuid }
+    GroupId:
+      name: groupId
+      in: path
+      required: true
+      schema: { type: string, format: uuid }
+    ProgramId:
+      name: programId
+      in: path
+      required: true
+      schema: { type: string, format: uuid }
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, minimum: 1, default: 1 }
+    PageSize:
+      name: pageSize
+      in: query
+      schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+
+  responses:
+    Unauthenticated:
+      description: Nepřihlášen nebo špatné přihlašovací údaje (UNAUTHENTICATED, INVALID_CREDENTIALS)
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/Problem' }
+    Forbidden:
+      description: Bez oprávnění (FORBIDDEN)
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/Problem' }
+    NotFound:
+      description: Neexistuje nebo není dostupné (NOT_FOUND)
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/Problem' }
+    Conflict:
+      description: Porušení obchodního pravidla; konkrétní důvod v poli code
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/Problem' }
+    ValidationError:
+      description: Neplatný vstup (VALIDATION_ERROR, NO_COLUMNS_SELECTED)
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/Problem' }
+
+  schemas:
+    Problem:
+      type: object
+      required: [status, code, title]
+      properties:
+        type: { type: string, default: about:blank }
+        status: { type: integer }
+        code: { $ref: '#/components/schemas/ErrorCode' }
+        title: { type: string }
+        detail: { type: string }
+        errors:
+          type: array
+          items:
+            type: object
+            required: [field, code]
+            properties:
+              field: { type: string, description: 'Cesta k poli, např. data.contact.email' }
+              code: { type: string, description: 'Např. REQUIRED, INVALID_FORMAT, IN_FUTURE, TOO_LONG' }
+              message: { type: string }
+        existingRegistrationId: { type: string, format: uuid, description: Jen u ALREADY_REGISTERED }
+        conflictingProgramId: { type: string, format: uuid, description: Jen u PROGRAM_TIME_CONFLICT }
+
+    ErrorCode:
+      type: string
+      enum:
+        - VALIDATION_ERROR
+        - UNAUTHENTICATED
+        - INVALID_CREDENTIALS
+        - EMAIL_TAKEN
+        - FORBIDDEN
+        - NOT_FOUND
+        - REGISTRATION_CLOSED
+        - ALREADY_REGISTERED
+        - EVENT_FULL
+        - ROLE_NOT_OPEN
+        - LEADER_MUST_BE_ADULT
+        - GROUP_CODE_INVALID
+        - GROUP_FULL
+        - ALREADY_IN_GROUP
+        - ALREADY_HAS_GROUP
+        - LEADER_HAS_MEMBERS
+        - REGISTRATION_NOT_COMPLETED
+        - PROGRAM_SELECTION_CLOSED
+        - PROGRAM_FULL
+        - PROGRAM_TIME_CONFLICT
+        - PROGRAM_NOT_AVAILABLE_FOR_ROLE
+        - ALREADY_SIGNED_UP
+        - CAPACITY_BELOW_SIGNUPS
+        - NO_COLUMNS_SELECTED
+
+    PageMeta:
+      type: object
+      required: [page, pageSize, total]
+      properties:
+        page: { type: integer, minimum: 1 }
+        pageSize: { type: integer, minimum: 1, maximum: 200 }
+        total: { type: integer, minimum: 0 }
+
+    BaseRole:
+      type: string
+      enum: [participant, group_leader, lecturer]
+    Role:
+      type: string
+      enum: [participant, group_leader, lecturer, medic, organizer]
+    RegistrationStatus:
+      type: string
+      enum: [completed, awaiting_group]
+    DataCategory:
+      type: string
+      enum: [basic, contact, health, diet]
+    RegistrationCode:
+      type: string
+      pattern: '^[A-HJKMNP-Z2-9]{8}$'
+    GroupJoinCode:
+      type: string
+      pattern: '^[A-HJKMNP-Z2-9]{6}$'
+
+    User:
+      type: object
+      required: [id, email, displayName, authProvider, isVerifiedMember, isAdmin]
+      properties:
+        id: { type: string, format: uuid }
+        email: { type: string, format: email }
+        displayName: { type: string }
+        authProvider: { type: string, enum: [email, skautis_mock] }
+        isVerifiedMember: { type: boolean }
+        isAdmin: { type: boolean }
+
+    AuthResponse:
+      type: object
+      required: [token, user]
+      properties:
+        token: { type: string }
+        user: { $ref: '#/components/schemas/User' }
+
+    SkautisMockPerson:
+      type: object
+      required: [personId, firstName, lastName, birthDate, email, unit, isActiveMember]
+      properties:
+        personId: { type: string }
+        firstName: { type: string }
+        lastName: { type: string }
+        birthDate: { type: string, format: date }
+        email: { type: string }
+        unit: { type: string }
+        isActiveMember: { type: boolean }
+
+    EventBase:
+      type: object
+      required: [name, startDate, endDate, registrationOpensAt, registrationClosesAt, programSelectionOpensAt, programSelectionClosesAt]
+      properties:
+        name: { type: string, minLength: 1, maxLength: 200 }
+        startDate: { type: string, format: date }
+        endDate: { type: string, format: date }
+        registrationOpensAt: { type: string, format: date-time }
+        registrationClosesAt: { type: string, format: date-time }
+        programSelectionOpensAt: { type: string, format: date-time }
+        programSelectionClosesAt: { type: string, format: date-time }
+        capacity: { type: [integer, 'null'], minimum: 1 }
+        maxGroupSize: { type: [integer, 'null'], minimum: 1, description: Včetně vedoucího }
+        openRoles:
+          type: array
+          uniqueItems: true
+          items: { $ref: '#/components/schemas/BaseRole' }
+          default: [participant, group_leader, lecturer]
+
+    EventInput:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          required: [organizerUserIds]
+          properties:
+            organizerUserIds:
+              type: array
+              minItems: 1
+              items: { type: string, format: uuid }
+
+    EventPatch:
+      type: object
+      minProperties: 1
+      properties:
+        name: { type: string, minLength: 1, maxLength: 200 }
+        startDate: { type: string, format: date }
+        endDate: { type: string, format: date }
+        registrationOpensAt: { type: string, format: date-time }
+        registrationClosesAt: { type: string, format: date-time }
+        programSelectionOpensAt: { type: string, format: date-time }
+        programSelectionClosesAt: { type: string, format: date-time }
+        capacity: { type: [integer, 'null'], minimum: 1 }
+        maxGroupSize: { type: [integer, 'null'], minimum: 1 }
+        openRoles:
+          type: array
+          uniqueItems: true
+          items: { $ref: '#/components/schemas/BaseRole' }
+        organizerUserIds:
+          type: array
+          minItems: 1
+          items: { type: string, format: uuid }
+
+    Event:
+      allOf:
+        - $ref: '#/components/schemas/EventBase'
+        - type: object
+          required: [id, registeredCount, openRoles]
+          properties:
+            id: { type: string, format: uuid }
+            registeredCount: { type: integer, minimum: 0 }
+            organizerUserIds:
+              type: array
+              description: Jen pro pořadatele a admina; ostatním chybí
+              items: { type: string, format: uuid }
+
+    BasicData:
+      type: object
+      required: [firstName, lastName, birthDate]
+      properties:
+        firstName: { type: string, minLength: 1, maxLength: 100 }
+        lastName: { type: string, minLength: 1, maxLength: 100 }
+        birthDate: { type: string, format: date }
+    ContactData:
+      type: object
+      required: [email, phone]
+      properties:
+        email: { type: string, format: email }
+        phone: { type: string, pattern: '^\+?[0-9 ]{9,20}$' }
+    HealthData:
+      type: object
+      properties:
+        conditions: { type: [string, 'null'], maxLength: 1000 }
+        allergies: { type: [string, 'null'], maxLength: 1000 }
+        medications: { type: [string, 'null'], maxLength: 1000 }
+    DietData:
+      type: object
+      properties:
+        restrictions:
+          type: array
+          uniqueItems: true
+          items: { type: string, enum: [vegetarian, vegan, gluten_free, lactose_free, other] }
+          default: []
+        note: { type: [string, 'null'], maxLength: 500 }
+
+    RegistrationDataInput:
+      type: object
+      required: [basic, contact]
+      properties:
+        basic: { $ref: '#/components/schemas/BasicData' }
+        contact: { $ref: '#/components/schemas/ContactData' }
+        health: { $ref: '#/components/schemas/HealthData' }
+        diet: { $ref: '#/components/schemas/DietData' }
+
+    RegistrationDataPatch:
+      type: object
+      description: Částečná data; posílají se jen měněná pole
+      properties:
+        basic:
+          type: object
+          properties:
+            firstName: { type: string, minLength: 1, maxLength: 100 }
+            lastName: { type: string, minLength: 1, maxLength: 100 }
+            birthDate: { type: string, format: date }
+        contact:
+          type: object
+          properties:
+            email: { type: string, format: email }
+            phone: { type: string, pattern: '^\+?[0-9 ]{9,20}$' }
+        health: { $ref: '#/components/schemas/HealthData' }
+        diet: { $ref: '#/components/schemas/DietData' }
+
+    RegistrationDataOutput:
+      type: object
+      description: Obsahuje jen kategorie uvedené ve visibleCategories; ostatní klíče chybí
+      properties:
+        basic: { $ref: '#/components/schemas/BasicData' }
+        contact: { $ref: '#/components/schemas/ContactData' }
+        health: { $ref: '#/components/schemas/HealthData' }
+        diet: { $ref: '#/components/schemas/DietData' }
+
+    Registration:
+      type: object
+      required: [id, eventId, userId, code, roles, status, blockingReasons, groupId, ageAtEventStart, isMinor, visibleCategories, data, createdAt, updatedAt]
+      properties:
+        id: { type: string, format: uuid }
+        eventId: { type: string, format: uuid }
+        userId: { type: string, format: uuid }
+        code: { $ref: '#/components/schemas/RegistrationCode' }
+        roles:
+          type: array
+          minItems: 1
+          uniqueItems: true
+          items: { $ref: '#/components/schemas/Role' }
+        status: { $ref: '#/components/schemas/RegistrationStatus' }
+        blockingReasons:
+          type: array
+          items: { type: string, enum: [MINOR_REQUIRES_GROUP] }
+        groupId: { type: [string, 'null'], format: uuid }
+        ageAtEventStart: { type: integer, minimum: 0 }
+        isMinor: { type: boolean }
+        visibleCategories:
+          type: array
+          items: { $ref: '#/components/schemas/DataCategory' }
+        data: { $ref: '#/components/schemas/RegistrationDataOutput' }
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+
+    RegistrationListItem:
+      type: object
+      required: [id, code, roles, status, groupId, groupName, ageAtEventStart, isMinor, visibleCategories, data]
+      properties:
+        id: { type: string, format: uuid }
+        code: { $ref: '#/components/schemas/RegistrationCode' }
+        roles: { type: array, items: { $ref: '#/components/schemas/Role' } }
+        status: { $ref: '#/components/schemas/RegistrationStatus' }
+        groupId: { type: [string, 'null'], format: uuid }
+        groupName: { type: [string, 'null'] }
+        ageAtEventStart: { type: integer }
+        isMinor: { type: boolean }
+        visibleCategories: { type: array, items: { $ref: '#/components/schemas/DataCategory' } }
+        data: { $ref: '#/components/schemas/RegistrationDataOutput' }
+
+    RegistrationFilters:
+      type: object
+      properties:
+        role: { type: [array, 'null'], items: { $ref: '#/components/schemas/Role' } }
+        groupId: { type: [string, 'null'] }
+        status:
+          oneOf:
+            - $ref: '#/components/schemas/RegistrationStatus'
+            - type: 'null'
+        minorWithoutGroup: { type: [boolean, 'null'] }
+        q: { type: [string, 'null'] }
+
+    Group:
+      type: object
+      required: [id, eventId, name, leaderRegistrationId, leaderName, memberCount]
+      properties:
+        id: { type: string, format: uuid }
+        eventId: { type: string, format: uuid }
+        name: { type: string }
+        joinCode: { $ref: '#/components/schemas/GroupJoinCode' }
+        leaderRegistrationId: { type: string, format: uuid }
+        leaderName: { type: string }
+        memberCount: { type: integer, minimum: 1, description: Včetně vedoucího }
+
+    GroupMember:
+      type: object
+      required: [registrationId, code, firstName, lastName, ageAtEventStart, isMinor, isLeader]
+      properties:
+        registrationId: { type: string, format: uuid }
+        code: { $ref: '#/components/schemas/RegistrationCode' }
+        firstName: { type: string }
+        lastName: { type: string }
+        ageAtEventStart: { type: integer }
+        isMinor: { type: boolean }
+        isLeader: { type: boolean }
+        data: { $ref: '#/components/schemas/RegistrationDataOutput' }
+
+    GroupDetail:
+      allOf:
+        - $ref: '#/components/schemas/Group'
+        - type: object
+          required: [members]
+          properties:
+            members:
+              type: array
+              items: { $ref: '#/components/schemas/GroupMember' }
+
+    ProgramInput:
+      type: object
+      required: [name, startsAt, endsAt, location, capacity]
+      properties:
+        name: { type: string, minLength: 1, maxLength: 200 }
+        description: { type: [string, 'null'], maxLength: 2000 }
+        startsAt: { type: string, format: date-time }
+        endsAt: { type: string, format: date-time }
+        location: { type: string, minLength: 1, maxLength: 200 }
+        capacity: { type: integer, minimum: 1 }
+        lecturerRegistrationId: { type: [string, 'null'], format: uuid }
+        availableForRoles:
+          type: array
+          uniqueItems: true
+          items: { $ref: '#/components/schemas/BaseRole' }
+          default: []
+
+    ProgramPatch:
+      type: object
+      minProperties: 1
+      properties:
+        name: { type: string, minLength: 1, maxLength: 200 }
+        description: { type: [string, 'null'], maxLength: 2000 }
+        startsAt: { type: string, format: date-time }
+        endsAt: { type: string, format: date-time }
+        location: { type: string, minLength: 1, maxLength: 200 }
+        capacity: { type: integer, minimum: 1 }
+        lecturerRegistrationId: { type: [string, 'null'], format: uuid }
+        availableForRoles:
+          type: array
+          uniqueItems: true
+          items: { $ref: '#/components/schemas/BaseRole' }
+
+    Program:
+      allOf:
+        - $ref: '#/components/schemas/ProgramInput'
+        - type: object
+          required: [id, eventId, signedUpCount, freeSpots, lecturerName, availableForRoles]
+          properties:
+            id: { type: string, format: uuid }
+            eventId: { type: string, format: uuid }
+            signedUpCount: { type: integer, minimum: 0 }
+            freeSpots: { type: integer, minimum: 0 }
+            lecturerName: { type: [string, 'null'] }
+
+    ScheduleItem:
+      type: object
+      required: [programId, name, startsAt, endsAt, location]
+      properties:
+        programId: { type: string, format: uuid }
+        name: { type: string }
+        startsAt: { type: string, format: date-time }
+        endsAt: { type: string, format: date-time }
+        location: { type: string }
+
+    ExportColumn:
+      type: string
+      enum:
+        - code
+        - firstName
+        - lastName
+        - birthDate
+        - ageAtEventStart
+        - roles
+        - status
+        - groupName
+        - email
+        - phone
+        - healthConditions
+        - allergies
+        - medications
+        - dietRestrictions
+        - dietNote
+
+    AuditAction:
+      type: string
+      enum:
+        - registration.created
+        - registration.updated
+        - registration.roles_changed
+        - group.created
+        - group.member_joined
+        - group.member_removed
+        - program.signed_up
+        - program.signed_out
+        - export.created
+
+    AuditLogEntry:
+      type: object
+      required: [id, eventId, at, actorUserId, action, targetType, targetId, details]
+      properties:
+        id: { type: string, format: uuid }
+        eventId: { type: string, format: uuid }
+        at: { type: string, format: date-time }
+        actorUserId: { type: string, format: uuid }
+        action: { $ref: '#/components/schemas/AuditAction' }
+        targetType: { type: string, enum: [registration, group, program, export] }
+        targetId: { type: string, format: uuid }
+        targetRegistrationId: { type: [string, 'null'], format: uuid }
+        details:
+          type: object
+          description: Nikdy neobsahuje hodnoty polí, jen jejich názvy
+          properties:
+            changedFields: { type: array, items: { type: string } }
+            roles: { type: array, items: { $ref: '#/components/schemas/Role' } }
+            status: { $ref: '#/components/schemas/RegistrationStatus' }
+            before: { type: array, items: { $ref: '#/components/schemas/Role' } }
+            after: { type: array, items: { $ref: '#/components/schemas/Role' } }
+            groupId: { type: string, format: uuid }
+            name: { type: string }
+            newStatus: { $ref: '#/components/schemas/RegistrationStatus' }
+            programId: { type: string, format: uuid }
+            columns: { type: array, items: { $ref: '#/components/schemas/ExportColumn' } }
+            filters: { $ref: '#/components/schemas/RegistrationFilters' }
+            rowCount: { type: integer, minimum: 0 }
