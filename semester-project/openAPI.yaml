@@ -21,54 +21,6 @@ security:
   - bearerAuth: []
 
 paths:
-  /auth/register:
-    post:
-      tags: [auth]
-      summary: Založení účtu e-mailem (US-F1.1)
-      security: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [email, password]
-              properties:
-                email: { type: string, format: email }
-                password: { type: string, minLength: 8 }
-                displayName: { type: string, maxLength: 200 }
-      responses:
-        '201':
-          description: Účet založen
-          content:
-            application/json:
-              schema: { $ref: '#/components/schemas/AuthResponse' }
-        '409': { $ref: '#/components/responses/Conflict' }
-        '422': { $ref: '#/components/responses/ValidationError' }
-
-  /auth/login:
-    post:
-      tags: [auth]
-      summary: Přihlášení e-mailem a heslem (US-F1.2)
-      security: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [email, password]
-              properties:
-                email: { type: string }
-                password: { type: string }
-      responses:
-        '200':
-          description: Přihlášen
-          content:
-            application/json:
-              schema: { $ref: '#/components/schemas/AuthResponse' }
-        '401': { $ref: '#/components/responses/Unauthenticated' }
-
   /auth/logout:
     post:
       tags: [auth]
@@ -107,7 +59,7 @@ paths:
   /auth/skautis-mock/persons:
     get:
       tags: [auth]
-      summary: Testové osoby simulace skautISu (US-F1.3)
+      summary: Osoby simulace skautISu včetně všech osob ze seedu (US-F1.1)
       security: []
       responses:
         '200':
@@ -125,7 +77,7 @@ paths:
   /auth/skautis-mock/login:
     post:
       tags: [auth]
-      summary: Přihlášení simulací skautISu (US-F1.3)
+      summary: Jediný způsob přihlášení – simulace skautISu; první přihlášení založí účet (US-F1.1)
       security: []
       requestBody:
         required: true
@@ -855,7 +807,7 @@ paths:
   /test/login-as:
     post:
       tags: [test-support]
-      summary: Token pro testový účet bez hesla (jen APP_ENV=test)
+      summary: Token pro testový účet bez procházení simulace (jen APP_ENV=test)
       security: []
       requestBody:
         required: true
@@ -949,7 +901,7 @@ components:
 
   responses:
     Unauthenticated:
-      description: Nepřihlášen nebo špatné přihlašovací údaje (UNAUTHENTICATED, INVALID_CREDENTIALS)
+      description: Nepřihlášen nebo neplatný token (UNAUTHENTICATED)
       content:
         application/problem+json:
           schema: { $ref: '#/components/schemas/Problem' }
@@ -1001,8 +953,6 @@ components:
       enum:
         - VALIDATION_ERROR
         - UNAUTHENTICATED
-        - INVALID_CREDENTIALS
-        - EMAIL_TAKEN
         - FORBIDDEN
         - NOT_FOUND
         - REGISTRATION_CLOSED
@@ -1053,13 +1003,12 @@ components:
 
     User:
       type: object
-      required: [id, email, displayName, authProvider, isVerifiedMember, isAdmin]
+      required: [id, skautisPersonId, email, displayName, isAdmin]
       properties:
         id: { type: string, format: uuid }
+        skautisPersonId: { type: string }
         email: { type: string, format: email }
         displayName: { type: string }
-        authProvider: { type: string, enum: [email, skautis_mock] }
-        isVerifiedMember: { type: boolean }
         isAdmin: { type: boolean }
 
     AuthResponse:
@@ -1071,7 +1020,7 @@ components:
 
     SkautisMockPerson:
       type: object
-      required: [personId, firstName, lastName, birthDate, email, unit, isActiveMember]
+      required: [personId, firstName, lastName, birthDate, email, unit]
       properties:
         personId: { type: string }
         firstName: { type: string }
@@ -1079,7 +1028,6 @@ components:
         birthDate: { type: string, format: date }
         email: { type: string }
         unit: { type: string }
-        isActiveMember: { type: boolean }
 
     EventBase:
       type: object
