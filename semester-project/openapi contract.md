@@ -27,7 +27,7 @@ Strojově čitelná verze je v souboru `openapi.yaml` (OpenAPI 3.1). Pokud se ob
 
 ### 1.1 Autentizace
 
-- Po přihlášení vrátí API **token**. Je na variantě, zda jde o neprůhledný token, nebo JWT.
+- Jediný způsob přihlášení je simulace skautISu (`POST /auth/skautis-mock/login`). Po přihlášení vrátí API **token**. Je na variantě, zda jde o neprůhledný token, nebo JWT.
 - Klient token posílá v hlavičce `Authorization: Bearer <token>`.
 - Token platí minimálně 24 hodin. Po odhlášení (`POST /auth/logout`) je neplatný.
 - Chybějící, neplatný nebo expirovaný token → `401 UNAUTHENTICATED`.
@@ -97,10 +97,8 @@ Při náporu (souběžné přihlašování) **nesmí server vracet `5xx`** kvůl
 
 | `code` | HTTP | Význam | Příběh |
 |---|---|---|---|
-| `VALIDATION_ERROR` | 422 | Neplatný vstup, detail v `errors`. | F1.1, F2.1, F7.1 |
+| `VALIDATION_ERROR` | 422 | Neplatný vstup, detail v `errors`. | F2.1, F7.1 |
 | `UNAUTHENTICATED` | 401 | Chybí nebo je neplatný token. | F1.2 |
-| `INVALID_CREDENTIALS` | 401 | Špatný e-mail nebo heslo. Stejná chyba pro neexistující účet. | F1.2 |
-| `EMAIL_TAKEN` | 409 | Účet s tímto e-mailem už existuje. | F1.1 |
 | `FORBIDDEN` | 403 | Role nemá oprávnění k operaci nebo datům. | F6.1 |
 | `NOT_FOUND` | 404 | Objekt neexistuje nebo není dostupný. | – |
 | `REGISTRATION_CLOSED` | 409 | Mimo registrační okno akce. | F2.3, F2.4 |
@@ -131,18 +129,16 @@ Při náporu (souběžné přihlašování) **nesmí server vracet `5xx`** kvůl
 ```json
 {
   "id": "0b5d...",
-  "email": "jana.novakova@example.cz",
-  "displayName": "Jana Nováková",
-  "authProvider": "email",
-  "isVerifiedMember": false,
+  "skautisPersonId": "skautis-001",
+  "email": "tomas.skautis@example.cz",
+  "displayName": "Tomáš Dvořáček",
   "isAdmin": false
 }
 ```
 
 | Pole | Typ | Poznámka |
 |---|---|---|
-| `authProvider` | `email` \| `skautis_mock` | Jak byl účet založen. |
-| `isVerifiedMember` | boolean | `true` u přihlášení přes simulaci skautISu. |
+| `skautisPersonId` | string | Identifikátor osoby ve (simulovaném) skautISu. Každý účet má právě jeden, unikátní. |
 | `isAdmin` | boolean | Administrátor systému (globální role). |
 
 ### 3.2 Event (akce)
@@ -362,7 +358,7 @@ Legenda: **V** = veřejné bez přihlášení, **P** = přihlášený uživatel,
 
 | Endpoint | Smí |
 |---|---|
-| `POST /auth/register`, `POST /auth/login`, `GET /auth/skautis-mock/persons`, `POST /auth/skautis-mock/login` | V |
+| `GET /auth/skautis-mock/persons`, `POST /auth/skautis-mock/login` | V |
 | `POST /auth/logout`, `GET /auth/me` | P |
 | `GET /events`, `GET /events/{eventId}` | V |
 | `POST /events` | A |
@@ -393,36 +389,7 @@ U každého endpointu je uveden request, úspěšná odpověď a nejdůležitěj
 
 ### 5.1 Autentizace (F1)
 
-#### `POST /api/v1/auth/register` – založení účtu e-mailem · US-F1.1
-
-Request:
-```json
-{ "email": "jana.novakova@example.cz", "password": "tajneHeslo123", "displayName": "Jana Nováková" }
-```
-
-Odpověď `201`:
-```json
-{ "token": "eyJhbGciOi...", "user": { "id": "0b5d...", "email": "jana.novakova@example.cz", "displayName": "Jana Nováková", "authProvider": "email", "isVerifiedMember": false, "isAdmin": false } }
-```
-
-Chyby:
-- `422 VALIDATION_ERROR`: neplatný e-mail, heslo kratší než 8 znaků.
-- `409 EMAIL_TAKEN`.
-
-Pravidla:
-- E-mail se ukládá a porovnává malými písmeny.
-- Heslo se ukládá jen jako hash (bcrypt, scrypt nebo argon2).
-
-#### `POST /api/v1/auth/login` – přihlášení · US-F1.2
-
-Request:
-```json
-{ "email": "jana.novakova@example.cz", "password": "tajneHeslo123" }
-```
-
-Odpověď `200`: stejná jako u registrace (`token`, `user`).
-
-Chyby: `401 INVALID_CREDENTIALS`. Stejná odpověď pro špatné heslo i neexistující účet.
+Přihlášení je možné **pouze přes skautIS** (v MVP simulace). Endpointy pro registraci a přihlášení e-mailem a heslem **neexistují**.
 
 #### `POST /api/v1/auth/logout` – odhlášení · US-F1.2
 
@@ -433,29 +400,29 @@ Odpověď `204`. Token je od té chvíle neplatný a další požadavky s ním v
 Odpověď `200`:
 ```json
 {
-  "user": { "id": "0b5d...", "email": "...", "displayName": "...", "authProvider": "email", "isVerifiedMember": false, "isAdmin": false },
+  "user": { "id": "0b5d...", "skautisPersonId": "skautis-001", "email": "...", "displayName": "...", "isAdmin": false },
   "registrations": [
     { "eventId": "1111...", "eventName": "Testovací akce 2027", "registrationId": "7c9e...", "roles": ["participant"], "status": "completed" }
   ]
 }
 ```
 
-#### `GET /api/v1/auth/skautis-mock/persons` – testové osoby simulace skautISu · US-F1.3
+#### `GET /api/v1/auth/skautis-mock/persons` – osoby simulace skautISu · US-F1.1
 
 Odpověď `200`:
 ```json
 {
   "items": [
-    { "personId": "skautis-001", "firstName": "Tomáš", "lastName": "Dvořáček", "birthDate": "1998-03-12", "email": "tomas.skautis@example.cz", "unit": "Středisko Testov", "isActiveMember": true },
-    { "personId": "skautis-002", "firstName": "Eliška", "lastName": "Malá", "birthDate": "2013-07-01", "email": "eliska.skautis@example.cz", "unit": "Středisko Testov", "isActiveMember": true },
-    { "personId": "skautis-003", "firstName": "Marek", "lastName": "Veselý", "birthDate": "1990-11-30", "email": "marek.skautis@example.cz", "unit": "Středisko Testov", "isActiveMember": false }
+    { "personId": "skautis-001", "firstName": "Tomáš", "lastName": "Dvořáček", "birthDate": "1998-03-12", "email": "tomas.skautis@example.cz", "unit": "Středisko Testov" },
+    { "personId": "skautis-002", "firstName": "Eliška", "lastName": "Malá", "birthDate": "2013-07-01", "email": "eliska.skautis@example.cz", "unit": "Středisko Testov" },
+    { "personId": "skautis-003", "firstName": "Marek", "lastName": "Veselý", "birthDate": "1990-11-30", "email": "marek.skautis@example.cz", "unit": "Středisko Testov" }
   ]
 }
 ```
 
-Tyto tři osoby (se stejným `personId` a údaji) **musí existovat ve všech variantách**. Varianta může přidat další.
+Seznam obsahuje tyto tři osoby (se stejným `personId` a údaji) a **všechny osoby ze standardních testovacích dat** (kap. 6.2). Musí být stejný ve všech variantách. Řadí se podle příjmení.
 
-#### `POST /api/v1/auth/skautis-mock/login` – přihlášení simulací · US-F1.3
+#### `POST /api/v1/auth/skautis-mock/login` – přihlášení simulací · US-F1.1
 
 Request:
 ```json
@@ -466,7 +433,7 @@ Odpověď `200`:
 ```json
 {
   "token": "eyJhbGciOi...",
-  "user": { "id": "9a8b...", "email": "eliska.skautis@example.cz", "displayName": "Eliška Malá", "authProvider": "skautis_mock", "isVerifiedMember": true, "isAdmin": false },
+  "user": { "id": "9a8b...", "skautisPersonId": "skautis-002", "email": "eliska.skautis@example.cz", "displayName": "Eliška Malá", "isAdmin": false },
   "prefill": {
     "basic": { "firstName": "Eliška", "lastName": "Malá", "birthDate": "2013-07-01" },
     "contact": { "email": "eliska.skautis@example.cz", "phone": null }
@@ -475,8 +442,7 @@ Odpověď `200`:
 ```
 
 Pravidla:
-- První přihlášení účet založí, další přihlášení použije stejný účet.
-- `isVerifiedMember` = hodnota `isActiveMember` testové osoby.
+- První přihlášení účet založí, další přihlášení stejnou osobou použije stejný účet.
 - Neznámé `personId` → `404 NOT_FOUND`.
 - Simulace **nevolá žádnou externí službu**.
 
@@ -955,7 +921,7 @@ Testovací endpointy jsou dostupné **jen když běží aplikace s proměnnou pr
 |---|---|
 | `GET /api/v1/health` | Vždy dostupný. Vrací `200 {"status": "ok"}`, jakmile je aplikace připravena (čeká na něj CI). |
 | `POST /api/v1/test/reset` | Smaže všechna data a nahraje **standardní testovací data** (kap. 6.2). Vrací `200` s ID vytvořených objektů. |
-| `POST /api/v1/test/login-as` | Request `{ "email": "..." }`. Vrátí token pro testový účet bez hesla (zrychlení testů a zátěžového testu). |
+| `POST /api/v1/test/login-as` | Request `{ "email": "..." }`. Vrátí token pro testový účet bez procházení simulace (zrychlení testů a zátěžového testu). |
 | `POST /api/v1/test/bulk-users` | Request `{ "count": 300, "eventId": "...", "registered": true }`. Vytvoří N plnoletých testových účtů, volitelně rovnou registrovaných, a vrátí jejich tokeny. Slouží zátěžovému testu. |
 
 Odpověď `POST /test/reset`:
@@ -985,7 +951,7 @@ Data musí být po `POST /test/reset` **ve všech variantách stejná**. Seed se
 | `maxGroupSize` | `5` |
 | `openRoles` | `participant`, `group_leader`, `lecturer` |
 
-**Účty** (heslo u všech `Test1234!`). „Věk“ je věk k `startDate` akce: seed počítá `birthDate` tak, aby věk vyšel přesně, např. pro 14 let `birthDate = startDate − 14 let − 10 dní`.
+**Účty.** Každý účet odpovídá osobě simulace skautISu s `personId` = `seed-` + část e-mailu před `@` (např. `seed-poradatel`). Přihlašuje se výběrem osoby v simulaci nebo v testech přes `POST /test/login-as`. „Věk“ je věk k `startDate` akce: seed počítá `birthDate` tak, aby věk vyšel přesně, např. pro 14 let `birthDate = startDate − 14 let − 10 dní`.
 
 | E-mail | Admin | Registrace na akci | Věk | Skupina |
 |---|:-:|---|:-:|---|
@@ -1030,8 +996,8 @@ Skryté E2E testy (Playwright) hledají prvky podle atributu `data-testid`. Klí
 
 | `data-testid` | Prvek |
 |---|---|
-| `login-email`, `login-password`, `login-submit` | Přihlašovací formulář |
-| `skautis-mock-login`, `skautis-person-<personId>` | Simulace skautISu a výběr osoby |
+| `skautis-mock-login`, `skautis-person-<personId>` | Přihlášení: simulace skautISu a výběr osoby |
+| `logout` | Odhlášení |
 | `reg-role`, `reg-first-name`, `reg-last-name`, `reg-birth-date`, `reg-email`, `reg-phone`, `reg-allergies`, `reg-diet-<hodnota>`, `reg-group-code`, `reg-submit` | Registrační formulář |
 | `reg-status`, `reg-code` | Stav registrace a identifikační kód v profilu |
 | `field-error-<název pole>` | Chybová hláška u pole (např. `field-error-reg-email`) |
@@ -1048,7 +1014,7 @@ Skryté E2E testy (Playwright) hledají prvky podle atributu `data-testid`. Klí
 
 | User story | Endpointy | Metrika |
 |---|---|---|
-| F1.1–F1.3 | `/auth/*` | M1 |
+| F1.1–F1.2 | `/auth/*` | M1 |
 | F2.1–F2.5 | `POST/GET/PATCH /registrations[/me]`, `PATCH /events` | M1, M12 |
 | F3.1–F3.2 | `Registration.code`, `GET /registrations?q=` | M1 |
 | F4.1–F4.4 | `/groups/*`, `PATCH /events` (`maxGroupSize`) | M1 |
