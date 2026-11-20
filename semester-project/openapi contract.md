@@ -155,7 +155,7 @@ Při náporu (souběžné přihlašování) **nesmí server vracet `5xx`** kvůl
   "programSelectionClosesAt": "2027-05-15T23:59:59+02:00",
   "capacity": 400,
   "maxGroupSize": 12,
-  "openRoles": ["participant", "group_leader", "lecturer"],
+  "openRoles": ["participant", "group_leader"],
   "organizerUserIds": ["5a1e..."],
   "registeredCount": 128
 }
@@ -165,7 +165,7 @@ Při náporu (souběžné přihlašování) **nesmí server vracet `5xx`** kvůl
 |---|---|---|
 | `capacity` | integer \| null | `null` = neomezeno. Počítají se všechny registrace bez ohledu na stav. |
 | `maxGroupSize` | integer \| null | Maximální počet členů skupiny **včetně vedoucího**. `null` = neomezeno. |
-| `openRoles` | pole rolí | Role, do kterých se lze sám registrovat (podmnožina `participant`, `group_leader`, `lecturer`). |
+| `openRoles` | pole rolí | Role, do kterých se lze sám registrovat (podmnožina `participant`, `group_leader`). |
 | `registeredCount` | integer | Počítá server. Jen pro čtení. |
 
 ### 3.3 Registration (registrace osoby na akci)
@@ -211,7 +211,7 @@ Při náporu (souběžné přihlašování) **nesmí server vracet `5xx`** kvůl
 | Pole | Typ | Poznámka |
 |---|---|---|
 | `code` | string | Identifikační kód osoby (F3). Formát v kap. 3.7. Nikdy se nemění. |
-| `roles` | pole rolí | Právě **jedna základní role** (`participant`, `group_leader` nebo `lecturer`) + volitelně **týmové role** (`medic`, `organizer`). |
+| `roles` | pole rolí | Právě **jedna základní role** (`participant` nebo `group_leader`) + volitelně **týmové role** (`medic`, `program_team`, `organizer`), které přiřazuje pořadatel. |
 | `status` | `completed` \| `awaiting_group` | `awaiting_group` = nezletilý bez skupiny s plnoletým vedoucím (F5). |
 | `blockingReasons` | pole kódů | Proč registrace není dokončená, např. `["MINOR_REQUIRES_GROUP"]`. U `completed` prázdné. |
 | `groupId` | UUID \| null | Skupina, do které osoba patří. U vedoucího jeho vlastní skupina. |
@@ -273,8 +273,7 @@ Při náporu (souběžné přihlašování) **nesmí server vracet `5xx`** kvůl
   "capacity": 20,
   "signedUpCount": 17,
   "freeSpots": 3,
-  "lecturerRegistrationId": "c3d4...",
-  "lecturerName": "Petr Svoboda",
+  "fillRate": 0.85,
   "availableForRoles": ["participant", "group_leader"]
 }
 ```
@@ -283,7 +282,9 @@ Při náporu (souběžné přihlašování) **nesmí server vracet `5xx`** kvůl
 |---|---|
 | `availableForRoles` | Prázdné pole = dostupný pro všechny základní role. |
 | `signedUpCount`, `freeSpots` | Počítá server. `freeSpots = capacity − signedUpCount`, nikdy záporné. |
-| `lecturerName` | Jediný osobní údaj na veřejném výpisu (jméno lektora). |
+| `fillRate` | Zaplněnost `signedUpCount / capacity`, číslo 0–1 zaokrouhlené na 2 desetinná místa. |
+
+Objekt `Program` **nikdy neobsahuje osobní údaje** přihlášených, jen počty.
 
 ### 3.6 AuditLogEntry (záznam historie)
 
@@ -340,7 +341,7 @@ Hodnoty `action` a jejich `details`:
 |---|---|:-:|:-:|:-:|:-:|
 | `participant` | jen sebe | ✔ | ✔ | ✔ | ✔ |
 | `group_leader` | sebe + členy své skupiny | ✔ | ✔ | ✔ | ✔ |
-| `lecturer` | sebe + účastníky svého programu | ✔ (jen jméno, příjmení, kód) | ✘ | ✘ | ✘ |
+| `program_team` | jen sebe (u programů jen počty přihlášených) | ✔ | ✔ | ✔ | ✔ |
 | `medic` | všechny registrované na akci | ✔ | ✔ | ✔ | ✘ |
 | `organizer` | všechny registrované na své akci | ✔ | ✔ | ✔ | ✔ |
 | admin (`isAdmin`) | všechny ve všech akcích | ✔ | ✔ | ✔ | ✔ |
@@ -354,7 +355,7 @@ Pravidla:
 
 ### 4.2 Kdo smí volat jaký endpoint
 
-Legenda: **V** = veřejné bez přihlášení, **P** = přihlášený uživatel, **Ú** = registrovaný na akci (jakákoli role), **VS** = vedoucí dané skupiny, **L** = lektor daného programu, **Z** = zdravotník akce, **O** = pořadatel akce, **A** = administrátor.
+Legenda: **V** = veřejné bez přihlášení, **P** = přihlášený uživatel, **Ú** = registrovaný na akci (jakákoli role), **VS** = vedoucí dané skupiny, **TP** = člen týmu programu akce, **Z** = zdravotník akce, **O** = pořadatel akce, **A** = administrátor.
 
 | Endpoint | Smí |
 |---|---|
@@ -374,9 +375,11 @@ Legenda: **V** = veřejné bez přihlášení, **P** = přihlášený uživatel,
 | `POST /events/{eventId}/groups/join` | Ú |
 | `DELETE /events/{eventId}/groups/{groupId}/members/{registrationId}` | VS, O, A |
 | `GET /events/{eventId}/programs`, `GET .../programs/{programId}` | V |
-| `POST`/`PATCH`/`DELETE .../programs[/{programId}]` | O, A |
+| `POST .../programs`, `PATCH .../programs/{programId}` | TP, O, A |
+| `DELETE .../programs/{programId}` | O, A |
+| `GET .../programs/occupancy` | TP, O, A |
 | `POST .../programs/{programId}/signups`, `DELETE .../programs/{programId}/signups/me` | Ú |
-| `GET .../programs/{programId}/signups` | L, O, A |
+| `GET .../programs/{programId}/signups` | O, A |
 | `GET /events/{eventId}/registrations/me/schedule` | Ú |
 | `GET /events/{eventId}/exports/columns`, `POST /events/{eventId}/exports` | Z, O, A |
 | `GET /events/{eventId}/audit-log` | O, A |
@@ -472,7 +475,7 @@ Request:
   "programSelectionClosesAt": "2027-05-15T23:59:59+02:00",
   "capacity": 400,
   "maxGroupSize": 12,
-  "openRoles": ["participant", "group_leader", "lecturer"],
+  "openRoles": ["participant", "group_leader"],
   "organizerUserIds": ["5a1e..."]
 }
 ```
@@ -520,7 +523,7 @@ Request:
 }
 ```
 
-- `role`: povinné, jedna z `participant`, `group_leader`, `lecturer`.
+- `role`: povinné, jedna z `participant`, `group_leader`.
 - `groupCode`: nepovinné. Pokud je vyplněné, registrace se rovnou připojí do skupiny.
 - `health` a `diet`: nepovinné. Chybějící = prázdné hodnoty.
 
@@ -591,7 +594,7 @@ Query parametry:
 
 | Parametr | Příklad | Význam |
 |---|---|---|
-| `role` | `participant` | Filtr podle role (opakovatelný: `?role=participant&role=lecturer`). |
+| `role` | `participant` | Filtr podle role (opakovatelný: `?role=participant&role=medic`). |
 | `groupId` | UUID nebo `none` | Filtr podle skupiny. `none` = bez skupiny. |
 | `status` | `awaiting_group` | Filtr podle stavu. |
 | `minorWithoutGroup` | `true` | Jen nezletilí bez skupiny. |
@@ -735,7 +738,7 @@ Seznam se nestránkuje. Je řazený podle `startsAt` a **neobsahuje žádné oso
 
 Odpověď `200`: objekt `Program`. Pokud je volající přihlášený, odpověď navíc obsahuje `"isSignedUp": true|false`.
 
-#### `POST /api/v1/events/{eventId}/programs` – vytvoření programu · US-F7.1
+#### `POST /api/v1/events/{eventId}/programs` – vytvoření programu (tým programu, pořadatel) · US-F7.1
 
 Request:
 ```json
@@ -746,7 +749,6 @@ Request:
   "endsAt": "2027-06-02T11:00:00+02:00",
   "location": "Louka u jídelny",
   "capacity": 20,
-  "lecturerRegistrationId": "c3d4...",
   "availableForRoles": []
 }
 ```
@@ -756,10 +758,9 @@ Odpověď `201`: objekt `Program`.
 Chyby: `422 VALIDATION_ERROR`, pokud:
 - chybí povinné pole (`name`, `startsAt`, `endsAt`, `location`, `capacity`),
 - `endsAt <= startsAt`,
-- `capacity < 1`,
-- `lecturerRegistrationId` není registrace s rolí `lecturer` na této akci.
+- `capacity < 1`.
 
-#### `PATCH /api/v1/events/{eventId}/programs/{programId}` – úprava programu · US-F7.1
+#### `PATCH /api/v1/events/{eventId}/programs/{programId}` – úprava programu (tým programu, pořadatel) · US-F7.1
 
 Request: podmnožina polí z vytvoření.
 
@@ -769,7 +770,7 @@ Chyby:
 - `422 VALIDATION_ERROR`,
 - `409 CAPACITY_BELOW_SIGNUPS`, pokud by nová `capacity` byla menší než `signedUpCount`.
 
-#### `DELETE /api/v1/events/{eventId}/programs/{programId}` – smazání programu
+#### `DELETE /api/v1/events/{eventId}/programs/{programId}` – smazání programu (jen pořadatel)
 
 Odpověď `204`. Přihlášky se smažou a u každé se zaznamená `program.signed_out`.
 
@@ -805,7 +806,23 @@ Chyby:
 - `409 PROGRAM_SELECTION_CLOSED`,
 - `404 NOT_FOUND`, pokud volající na programu není.
 
-#### `GET /api/v1/events/{eventId}/programs/{programId}/signups` – přihlášení na programu · US-F6.3
+#### `GET /api/v1/events/{eventId}/programs/occupancy` – přehled obsazenosti · US-F7.6
+
+Query parametr `sort`: `fillRate`, `-fillRate`, `startsAt` (výchozí), `-startsAt`.
+
+Odpověď `200`:
+```json
+{
+  "items": [
+    { "programId": "e8a1...", "name": "Lanové centrum", "startsAt": "2027-06-02T09:00:00+02:00", "endsAt": "2027-06-02T11:00:00+02:00", "location": "Louka u jídelny", "capacity": 20, "signedUpCount": 17, "freeSpots": 3, "fillRate": 0.85 }
+  ],
+  "totals": { "programCount": 1, "capacity": 20, "signedUpCount": 17 }
+}
+```
+
+Odpověď **neobsahuje žádné osobní údaje**. Cesta `/programs/occupancy` má přednost před `/programs/{programId}`.
+
+#### `GET /api/v1/events/{eventId}/programs/{programId}/signups` – seznam přihlášených na programu · US-F7.6
 
 Odpověď `200`:
 ```json
@@ -817,7 +834,7 @@ Odpověď `200`:
 }
 ```
 
-Lektor dostane **jen tato pole**, a jen pro programy, kde je uveden jako lektor. U cizího programu → `403 FORBIDDEN`.
+Jen pro pořadatele a administrátora. Člen týmu programu dostane `403 FORBIDDEN`, protože jména přihlášených nevidí.
 
 #### `GET /api/v1/events/{eventId}/registrations/me/schedule` – můj harmonogram · US-F7.5
 
@@ -929,7 +946,7 @@ Odpověď `POST /test/reset`:
 {
   "eventId": "11111111-1111-4111-8111-111111111111",
   "groupIds": { "lisky": "..." },
-  "programIds": { "lanove": "...", "lukostrelba": "...", "navazujici": "...", "zatez": "...", "jenLektori": "..." },
+  "programIds": { "lanove": "...", "lukostrelba": "...", "navazujici": "...", "zatez": "...", "jenVedouci": "..." },
   "userIds": { "admin": "...", "organizer": "...", "...": "..." }
 }
 ```
@@ -949,7 +966,7 @@ Data musí být po `POST /test/reset` **ve všech variantách stejná**. Seed se
 | Okno výběru programů | od (teď − 1 den) do (teď + 30 dní) |
 | `capacity` | `null` |
 | `maxGroupSize` | `5` |
-| `openRoles` | `participant`, `group_leader`, `lecturer` |
+| `openRoles` | `participant`, `group_leader` |
 
 **Účty.** Každý účet odpovídá osobě simulace skautISu s `personId` = `seed-` + část e-mailu před `@` (např. `seed-poradatel`). Přihlašuje se výběrem osoby v simulaci nebo v testech přes `POST /test/login-as`. „Věk“ je věk k `startDate` akce: seed počítá `birthDate` tak, aby věk vyšel přesně, např. pro 14 let `birthDate = startDate − 14 let − 10 dní`.
 
@@ -958,7 +975,7 @@ Data musí být po `POST /test/reset` **ve všech variantách stejná**. Seed se
 | `admin@test.local` | ano | – | – | – |
 | `poradatel@test.local` | – | `participant` + `organizer` | 30 | – |
 | `zdravotnik@test.local` | – | `participant` + `medic` | 28 | – |
-| `lektor@test.local` | – | `lecturer` | 35 | – |
+| `tym-programu@test.local` | – | `participant` + `program_team` | 35 | – |
 | `vedouci@test.local` | – | `group_leader` | 25 | „Lišky“ (vedoucí) |
 | `dite1@test.local` | – | `participant` | 14 | „Lišky“ |
 | `dite2@test.local` | – | `participant` | 12 | „Lišky“ |
@@ -973,13 +990,13 @@ Data musí být po `POST /test/reset` **ve všech variantách stejná**. Seed se
 
 **Programy** (časy relativně k `startDate` akce, den 2 = `startDate` + 1 den):
 
-| Klíč v seedu | Název | Čas | Kapacita | Dostupný pro | Lektor |
-|---|---|---|:-:|---|---|
-| `lanove` | Lanové centrum | den 2, 09:00–11:00 | 2 | všechny | `lektor@test.local` |
-| `lukostrelba` | Lukostřelba | den 2, 10:00–12:00 (překryv s `lanove`) | 10 | všechny | – |
-| `navazujici` | Orientační běh | den 2, 11:00–12:30 (navazuje na `lanove`) | 10 | všechny | – |
-| `zatez` | Zátěžový program | den 3, 09:00–10:00 | 20 | všechny | – |
-| `jenLektori` | Setkání lektorů | den 3, 14:00–15:00 | 10 | `lecturer` | – |
+| Klíč v seedu | Název | Čas | Kapacita | Dostupný pro |
+|---|---|---|:-:|---|
+| `lanove` | Lanové centrum | den 2, 09:00–11:00 | 2 | všechny |
+| `lukostrelba` | Lukostřelba | den 2, 10:00–12:00 (překryv s `lanove`) | 10 | všechny |
+| `navazujici` | Orientační běh | den 2, 11:00–12:30 (navazuje na `lanove`) | 10 | všechny |
+| `zatez` | Zátěžový program | den 3, 09:00–10:00 | 20 | všechny |
+| `jenVedouci` | Setkání vedoucích | den 3, 14:00–15:00 | 10 | `group_leader` |
 
 Na programu `lanove` je po resetu přihlášen `dite1@test.local`, takže zbývá 1 volné místo.
 
@@ -1003,6 +1020,8 @@ Skryté E2E testy (Playwright) hledají prvky podle atributu `data-testid`. Klí
 | `field-error-<název pole>` | Chybová hláška u pole (např. `field-error-reg-email`) |
 | `group-create-name`, `group-create-submit`, `group-join-code`, `group-join-submit`, `group-member-<code>`, `group-remove-<code>` | Skupiny |
 | `program-<programId>`, `program-signup-<programId>`, `program-signout-<programId>`, `program-free-spots-<programId>` | Programy |
+| `program-form-name`, `program-form-starts-at`, `program-form-ends-at`, `program-form-location`, `program-form-capacity`, `program-form-submit`, `program-edit-<programId>` | Formulář programu (tým programu) |
+| `occupancy-table`, `occupancy-row-<programId>`, `occupancy-signed-up-<programId>` | Přehled obsazenosti programů |
 | `schedule-item-<programId>` | Můj harmonogram |
 | `admin-table`, `admin-row-<code>`, `admin-filter-role`, `admin-filter-minor-without-group`, `admin-search` | Přehled registrací |
 | `export-column-<key>`, `export-submit` | Export |
@@ -1019,8 +1038,8 @@ Skryté E2E testy (Playwright) hledají prvky podle atributu `data-testid`. Klí
 | F3.1–F3.2 | `Registration.code`, `GET /registrations?q=` | M1 |
 | F4.1–F4.4 | `/groups/*`, `PATCH /events` (`maxGroupSize`) | M1 |
 | F5.1–F5.2 | `POST /registrations`, `/groups/join`, `DELETE /groups/.../members`, `PUT /roles` | M1, M3b |
-| F6.1–F6.3 | všechny endpointy s daty osob, `?categories=` | M1, M3 |
-| F7.1–F7.5 | `/programs/*`, `/signups`, `/me/schedule` | M1, M11, M13, M14 |
+| F6.1–F6.2 | všechny endpointy s daty osob, `?categories=`, `PUT /roles` | M1, M3 |
+| F7.1–F7.6 | `/programs/*`, `/programs/occupancy`, `/signups`, `/me/schedule` | M1, M11, M13, M14 |
 | F8.1–F8.4 | `POST /events`, `GET /registrations`, `/exports` | M1, M13 |
 | F9.1–F9.2 | `/audit-log` | M1 |
 
