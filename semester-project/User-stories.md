@@ -136,19 +136,22 @@ AK:
 **Jako** vedoucí skupiny **chci** založit skupinu na akci, **abych** do ní mohl/a sdružit své členy.
 
 AK:
-1. Skupinu může založit pouze uživatel registrovaný na akci v roli **vedoucí skupiny**.
-2. Při založení zadám název skupiny. Systém vygeneruje **kód skupiny** pro připojení: náhodný, unikátní v rámci akce, nesouvisející s identifikačním kódem osoby.
-3. Zakladatel je automaticky vedoucím skupiny.
-4. Kód skupiny vidím v detailu skupiny a mohu ho poslat členům.
+1. Skupinu může založit pouze uživatel registrovaný na danou akci v roli **vedoucí skupiny**.
+2. Skupina bude vázána pouze na tuto akci.
+3. Při založení se zadá název skupiny. Systém vygeneruje **kód skupiny** pro připojení: náhodný, unikátní v rámci akce, nesouvisející s identifikačním kódem osoby.
+4. Zakladatel je automaticky vedoucím skupiny.
+5. Kód skupiny vidím v detailu skupiny a mohu ho poslat členům.
 
 ### US-F4.2 Připojení do skupiny kódem · Must
 **Jako** účastník **chci** se připojit do skupiny zadáním kódu, **aby** bylo jasné, ke kterému vedoucímu patřím.
 
 AK:
-1. Když při registraci nebo později zadám platný kód skupiny, pak se stanu členem této skupiny.
-2. Když zadám neplatný kód, pak se zobrazí chyba a do žádné skupiny nejsem přiřazen/a.
-3. Účastník může být na jedné akci členem nejvýše jedné skupiny.
-4. Pokud má skupina nastavený maximální počet členů a je plná, připojení se odmítne s hláškou „Skupina je plná“.
+1. Účastník může zadat kód skupiny při registraci nebo kdykoliv po jejím vytvoření.
+2. Pokud zadá platný kód skupiny náležící ke stejné akci, systém ho do skupiny přiřadí.
+3. Pokud zadá neplatný kód, systém zobrazí chybovou hlášku a účastník nebude do žádné skupiny přiřazen.
+4. Účastník může být na jedné akci členem nejvýše jedné skupiny.
+5. Pokud má skupina nastavený maximální počet členů a je plná, připojení se odmítne s hláškou „Skupina je plná“.
+6. Dospělý účastník může dokončit registraci i bez přiřazení do skupiny. Pokud zadá neplatný kód, může pokračovat bez skupiny.
 
 ### US-F4.3 Správa členů skupiny · Must
 **Jako** vedoucí skupiny **chci** vidět a spravovat členy své skupiny, **abych** měl/a přehled, za koho zodpovídám.
@@ -157,7 +160,8 @@ AK:
 1. V detailu skupiny vidím seznam členů s jejich identifikačním kódem a věkem k začátku akce.
 2. Mohu člena ze skupiny odebrat. Odebraný nezletilý člen se dostane do stavu „čeká na skupinu“ (viz F5).
 3. Vidím jen členy **své** skupiny, ne členy jiných skupin.
-4. Každé připojení i odebrání člena se zapíše do historie operací (F9).
+4. Odebraný dospělý účastník zůstává registrován na akci, ale není přiřazen do žádné skupiny.
+5. Každé připojení i odebrání člena se zapíše do historie operací (F9).
 
 ### US-F4.4 Nastavení skupin pořadatelem · Should
 **Jako** pořadatel **chci** nastavit maximální počet členů skupiny, **aby** skupiny odpovídaly možnostem akce.
@@ -175,10 +179,11 @@ AK:
 
 AK:
 1. Věk se počítá z data narození **k datu začátku akce**.
-2. Když je účastníkovi méně než 18 let a nezadá platný kód skupiny, pak registraci **nelze dokončit**. Zůstane ve stavu „čeká na skupinu“ a systém vysvětlí proč.
-3. Když se nezletilý připojí do skupiny, jejíž vedoucí je plnoletý, pak lze registraci dokončit.
-4. Když je nezletilý ze skupiny odebrán, jeho registrace se vrátí do stavu „čeká na skupinu“ a pořadatel ho vidí ve filtru „nezletilí bez skupiny“ (F8).
-5. Pravidlo se kontroluje na serveru. Nejde ho obejít přímým voláním API.
+2. Pokud je účastníkovi méně než 18 let, musí být před dokončením registrace přiřazen do skupiny s plnoletým vedoucím.
+3. Pokud nezletilý účastník při registraci nezadá platný kód skupiny, jeho registrace se uloží ve stavu „čeká na skupinu“ a systém vysvětlí, že registraci nelze dokončit.
+4. Pokud se nezletilý účastník dodatečně připojí k platné skupině s plnoletým vedoucím, jeho registrace může být dokončena.
+5. Pokud je nezletilý účastník odebrán ze skupiny, jeho registrace se vrátí do stavu „čeká na skupinu“ a pořadatel ho vidí ve filtru „nezletilí bez skupiny“ (F8).
+6. Pravidlo se kontroluje na serveru a nelze ho obejít přímým voláním API.
 
 ### US-F5.2 Vedoucí skupiny musí být plnoletý · Must
 **Jako** pořadatel **chci**, aby skupinu mohl vést jen plnoletý člověk, **aby** odpovědnost za děti nesla dospělá osoba.
