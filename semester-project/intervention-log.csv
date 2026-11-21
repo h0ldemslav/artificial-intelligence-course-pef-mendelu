@@ -1,0 +1,9 @@
+timestamp;varianta;milnik;typ_udalosti;pocita_se_m20;pocita_se_m21;popis_udalosti;pouzity_prompt_nebo_akce;cas_behu_min;volani_llm;tokeny_in;tokeny_out;git_commit_hash
+2026-11-22 10:00;B-LangGraph;M2;MILESTONE_START;0;0;Spusteni navrhu architektury a datoveho modelu;Predany user-stories.md, openAPI.yaml a initial-prompt.txt;14;8;42500;11200;a1b2c3d
+2026-11-22 10:25;B-LangGraph;M2;MILESTONE_REJECTED;1;1;V datovem modelu chybi vazba nezletileho ucastnika na plnoleteho vedouciho (F5);Vraceno architektovi s pozadavkem doplnit cizi klic leader_id a validaci veku k startDate;6;4;28100;6400;e4f5g6h
+2026-11-22 10:35;B-LangGraph;M2;MILESTONE_APPROVED;0;0;Datovy model opraven, navrh odpovida OpenAPI specifikaci;Schvaleno clovekem, prechod na M3.1;0;0;0;0;e4f5g6h
+2026-11-22 11:10;B-LangGraph;M3.1;RATE_LIMIT_PAUSE;0;0;HTTP 429 z Gemini API behem generovani backendu;Cekani 2 minuty a resume z checkpointu bez zmeny promptu;2;0;0;0;e4f5g6h
+2026-11-22 11:45;B-LangGraph;M3.1;INTERVENTION_NUDGE;1;0;Agent se zacyklil pri oprave importu v pytestu;Zaslan pokyn ke kontrole relativnich cest ve slozce backend/tests;5;3;19400;4100;i7j8k9l
+2026-11-22 12:15;B-LangGraph;M3.1;MANUAL_FIX;1;0;Agent opakovane nastavoval spatny CORS origin pro Vite frontend;Rucni uprava CORSMiddleware v backend/main.py;3;0;0;0;m0n1o2p
+2026-11-22 14:10;B-LangGraph;M3.2;TASK_SPLIT;1;0;Agent nezvladl kombinaci F5 a F6 v jednom behu;Ulozeno F4, otevrena nova session pro F5 a nasledne pro F6;18;12;64000;15800;q3r4s5t
+
