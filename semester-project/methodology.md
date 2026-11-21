@@ -121,7 +121,7 @@ Pokud agent například zvládl F4 (skupiny), ale opakovaně selhává při komb
 
 ## 8. Šablona Deníku zásahů
 
-Níže je seznam sloupců, které budou definovat deník zásahů, viz `intervention-log.csv`, který obsahuje ukázkové řádky pro všechny typy událostí.
+Níže je seznam sloupců, které budou definovat deník zásahů, viz `intervention-log.csv`, který obsahuje ukázkové řádky pro všechny typy událostí. Soubor používá čárku `,` jako oddělovač a pole obsahující čárku nebo uvozovky jsou uzavřena do uvozovek podle RFC 4180.
 
 - **`timestamp`** – Datum a čas zaznamenané události.
 - **`varianta`** – Identifikátor testované varianty, například `A-MetaGPT`, `B-LangGraph` nebo `C-OpenHands`.
