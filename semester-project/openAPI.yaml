@@ -1,11 +1,10 @@
 openapi: 3.1.0
 info:
-  title: Registrační systém akcí – MVP API kontrakt
+  title: Registrační systém akcí pro skauty
   version: 1.0.0
   description: |
-    Společný API kontrakt pro všechny tři varianty (MAS A, MAS B, single agent C).
-    Lidsky čitelný popis s pravidly a příklady je v souboru api-contract.md.
-    Pokud se dokumenty liší, platí tento soubor.
+    Jednotný API kontrakt pro MVP registračního systému akcí pro Junák (český skaut). 
+    Popisuje základní oblasti systému (akce, programy, registrace), se kterými skauti nejčastěji interagují.
 servers:
   - url: http://localhost:8080/api/v1
 tags:
