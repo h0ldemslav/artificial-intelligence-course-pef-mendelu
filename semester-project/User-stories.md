@@ -1,7 +1,5 @@
 # Odvozené uživatelské příběhy – MVP registračního systému akcí
 
-Tento dokument je **jediným zadáním, které dostávají všechny tři varianty** (MAS A, MAS B, single agent C). Původní zadání organizace se agentům nepředává. Příběhy jsou z něj odvozené a formulované vlastními slovy. Pokrývají pouze rozsah MVP F1–F9 z project proposalu (kap. 5).
-
 Formát:
 - **ID** `US-Fx.y`: funkce F1–F9 a pořadí příběhu.
 - **Priorita:** **Must** = nutné pro MVP, **Should** = důležité, ale MVP bez nich obstojí, **Could** = jen pokud zbude čas.
@@ -395,7 +393,7 @@ AK:
 
 ## Mimo rozsah MVP
 
-Tyto části zadání agenti **neimplementují:**
+Tyto části zadání se **neimplementují:**
 - přihlášení e-mailem a účty pro osoby bez skautISu (hosté),
 - reálné napojení na skautIS a na banku, párování plateb, vratky, potvrzení o platbě,
 - stravování a přítomnost na akci, merch, podakce,
