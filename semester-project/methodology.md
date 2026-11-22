@@ -18,7 +18,7 @@ Aby bylo možné výsledky všech tří variant (Varianta A: MetaGPT, Varianta B
 
 - **Databáze:** PostgreSQL, která je nutná pro atomickou transakční kontrolu kapacity při souběžné zátěži 300 uživatelů v `US-F7.4` (metriky M11–M14).
 
-- **Spuštění a testovací endpointy:** Celý systém musí jít spustit jedním příkazem (`docker compose up` dle NFR-8) a při nastavení `APP_ENV=test` musí zpřístupnit všechny endpointy ze sekce `test-support` (`/health`, `/test/reset`, `/test/login-as`, `/test/bulk-users`) včetně fixního UUID výchozí akce `11111111-1111-4111-8111-111111111111`.
+- **Spuštění a testovací endpointy:** Celý systém musí jít spustit jedním příkazem (`docker compose up --build` dle NFR-8). Endpointy `/health`, `/test/reset` a `/test/login-as` se zpřístupní v M3.1; `/test/bulk-users` se přidá až v M3.3. Ve finálním stavu musí být při nastavení `APP_ENV=test` dostupné všechny endpointy ze sekce `test-support`, včetně fixního UUID výchozí akce `11111111-1111-4111-8111-111111111111`.
 
 5. **Čistý repozitář:** Každá varianta běží ve svém izolovaném repozitáři se stejnou výchozí adresářovou strukturou (`/backend`, `/frontend`, `.github/workflows/ci.yml`).
 
@@ -34,6 +34,8 @@ Hypotéza H5 v project-proposalu stanovuje hranici nejvýše 5 lidských zásah�
 | **M3.1** | **Iterace 1: Jádro, skautIS mock, správa akcí a registrace**         | Pokrývá **F1, F2, F3, US-F8.1** a endpointy `/health`, `/test/reset`, `/test/login-as`. Funguje výběr fiktivní osoby ze skautISu, založení akce adminem, registrace se 4 kategoriemi údajů, validace, časové okno registrace a generování 8znakového kódu `[A-HJKMNP-Z2-9]{8}`.                                                    |
 | **M3.2** | **Iterace 2: Skupiny, pravidlo nezletilých a matice oprávnění**      | Pokrývá **F4, F5, F6**. Funguje založení skupiny s 6znakovým kódem `[A-HJKMNP-Z2-9]{6}`, připojení a odebrání člena, výpočet plnoletosti k `event.startDate`, stav `awaiting_group` pro nezletilé bez skupiny, zákaz nezletilého vedoucího a serverová kontrola 4 kategorií údajů podle rolí (HTTP 403 při neoprávněném přístupu). |
 | **M3.3** | **Iterace 3: Programy se souběžností, administrace, export a audit** | Pokrývá **F7, US-F8.2–F8.4, F9** a endpoint `/test/bulk-users`. Funguje přihlašování na programy s DB transakčním zámkem kapacity a kontrolou časových kolizí, přehled účastníků s filtry a vyhledáváním bez diakritiky, CSV export v UTF-8 s BOM a neměnný auditní log bez hodnot zdravotních údajů.                              |
+
+**Spouštění milníků:** Každý milník (`M2`, `M3.1`, `M3.2`, `M3.3`) spusťte jako novou čistou session (nový běh) nad aktuálním zacommitovaným stavem repozitáře. V každé session musí být jako vstup dostupné `initial-prompt.md`, `user-stories.md`, `openAPI.yaml` a konkrétní prompt z `milestone-prompts/`.
 
 ## 3. Specifika ovládání: MAS (Varianty A, B) vs. Single Agent (Varianta C)
 
