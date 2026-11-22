@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-22",
+  "phase": "setup_trial_not_experiment",
+  "planner_task_complete": false,
+  "versions": {
+    "docker_desktop": "4.99.0",
+    "docker_engine": "29.9.3",
+    "wsl": "3.0.5.0",
+    "agent_canvas": "1.43.0",
+    "agent_server": "1.63.1",
+    "sdk": "1.63.1",
+    "litellm": "1.108.13"
+  },
+  "model": "gemini/gemini-3.8-flash",
+  "tier": "Free tier",
+  "account_limits": {
+    "requests_per_minute": 5,
+    "input_tokens_per_minute": 250000,
+    "requests_per_day": 20
+  },
+  "single_agent_tools": [
+    "file_editor",
+    "task_tracker",
+    "terminal",
+    "browser_tool_set"
+  ],
+  "system_prompt_tools": [
+    "browser_click",
+    "browser_close_tab",
+    "browser_get_content",
+    "browser_get_state",
+    "browser_get_storage",
+    "browser_go_back",
+    "browser_list_tabs",
+    "browser_navigate",
+    "browser_scroll",
+    "browser_set_storage",
+    "browser_start_recording",
+    "browser_stop_recording",
+    "browser_switch_tab",
+    "browser_type",
+    "file_editor",
+    "finish",
+    "invoke_skill",
+    "task_tracker",
+    "terminal"
+  ],
+  "delegation_tools_present": [],
+  "verified_after_ui_attachment": true,
+  "child_conversations_observed": 0,
+  "first_trial_recorded_response": {
+    "input_tokens": 13817,
+    "output_tokens": 453,
+    "complete_api_attempt_count": null
+  },
+  "native_provider_error": {
+    "probe": "native_nonstream_low_from_container",
+    "status": 503,
+    "error_status": "UNAVAILABLE",
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "elapsed_seconds": 5.754
+  },
+  "diagnostic_settings": {
+    "stream": false,
+    "num_retries": 0,
+    "timeout": 45,
+    "reasoning_effort": "high"
+  },
+  "diagnostic_result": {
+    "elapsed_seconds": 3.53,
+    "execution_status": "error",
+    "errors": [
+      {
+        "code": "LLMRateLimitError",
+        "is503": false,
+        "is429": true,
+        "timeout": false,
+        "classification": {
+          "kind": "rate_limit",
+          "retryable": true,
+          "user_action": "retry"
+        }
+      }
+    ],
+    "provider_quota_evidence": {
+      "http_status": 429,
+      "status": "RESOURCE_EXHAUSTED",
+      "violations": [
+        {
+          "description": "Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.",
+          "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+          "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+          "quotaDimensions": {
+            "location": "global",
+            "model": "gemini-3.8-flash"
+          },
+          "quotaValue": "20"
+        }
+      ],
+      "retry_delay_reported_at_failure": "36386s"
+    }
+  },
+  "remaining": [
+    "successful end-to-end trial",
+    "persistence after container restart",
+    "complete API-attempt and auxiliary-call logging",
+    "shared experimental configuration approval"
+  ],
+  "note": "Only sanitized preparation evidence. No raw conversation archive, credentials, personal workstation paths or participant data."
+}
