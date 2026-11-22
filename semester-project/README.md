@@ -1,3 +1,3 @@
 # TODO
 
-- # [MAS postavený pomocí LangGraph](https://github.com/h0ldemslav/mvp-langgraph/tree/main)
+- [MAS postavený pomocí LangGraph](https://github.com/h0ldemslav/mvp-langgraph/tree/main)
