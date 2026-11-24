@@ -4,7 +4,7 @@ Níže je kompletní návrh jednotné metodiky pro všechny tři varianty vychá
 
 Aby bylo možné výsledky všech tří variant (Varianta A: MetaGPT, Varianta B: LangGraph, Varianta C: OpenHands) objektivně porovnat, musí každý vývojář před prvním spuštěním splnit následující podmínky:
 
-1. **Identické vstupní soubory:** Všechny tři systémy dostanou na vstupu naprosto stejnou sadu podkladů: `user-stories.md` (odvozené uživatelské příběhy a akceptační kritéria pro F1–F9 bez důvěrného zadání Junáka), `openAPI.yaml` (závazný kontrakt REST API) a `initial-prompt.md` (jednotné zadání tech stacku a provozních podmínek). Po zahájení experimentu se tyto soubory nesmí měnit.
+1. **Identické vstupní soubory:** Všechny tři systémy dostanou na vstupu naprosto stejnou sadu podkladů: `user-stories.md` (odvozené uživatelské příběhy a akceptační kritéria pro F1–F9 bez důvěrného zadání Junáka), `openAPI.yaml` (závazný kontrakt REST API), `initial-prompt.md` (jednotné zadání tech stacku a provozních podmínek) a konkrétní prompt z [`milestone-prompts/`](https://github.com/h0ldemslav/artificial-intelligence-course-pef-mendelu/tree/main/semester-project/milestone-prompts) (viz sekce 2). Po zahájení experimentu se tyto soubory nesmí měnit.
 
 2. **Identický jazykový model:** Všechny tři nástroje musí být nakonfigurovány na model `gemini-3.8-flash` přes Google AI Studio API se stejnou teplotou (`temperature=0.2`) pro konzistentní generování kódu.
 
@@ -35,7 +35,9 @@ Hypotéza H5 v project-proposalu stanovuje hranici nejvýše 5 lidských zásah�
 | **M3.2** | **Iterace 2: Skupiny, pravidlo nezletilých a matice oprávnění**      | Pokrývá **F4, F5, F6**. Funguje založení skupiny s 6znakovým kódem `[A-HJKMNP-Z2-9]{6}`, připojení a odebrání člena, výpočet plnoletosti k `event.startDate`, stav `awaiting_group` pro nezletilé bez skupiny, zákaz nezletilého vedoucího a serverová kontrola 4 kategorií údajů podle rolí (HTTP 403 při neoprávněném přístupu). |
 | **M3.3** | **Iterace 3: Programy se souběžností, administrace, export a audit** | Pokrývá **F7, US-F8.2–F8.4, F9** a endpoint `/test/bulk-users`. Funguje přihlašování na programy s DB transakčním zámkem kapacity a kontrolou časových kolizí, přehled účastníků s filtry a vyhledáváním bez diakritiky, CSV export v UTF-8 s BOM a neměnný auditní log bez hodnot zdravotních údajů.                              |
 
-**Spouštění milníků:** Každý milník (`M2`, `M3.1`, `M3.2`, `M3.3`) spusťte jako novou čistou session (nový běh) nad aktuálním zacommitovaným stavem repozitáře. V každé session musí být jako vstup dostupné `initial-prompt.md`, `user-stories.md`, `openAPI.yaml` a konkrétní prompt z `milestone-prompts/`.
+## Spouštění milníků 
+
+Každý milník (`M2`, `M3.1`, `M3.2`, `M3.3`) spusťte jako novou čistou session (nový běh) nad aktuálním zacommitovaným stavem repozitáře. V každé session musí být jako vstup dostupné `initial-prompt.md`, `user-stories.md`, `openAPI.yaml` a konkrétní prompt z [`milestone-prompts/`](https://github.com/h0ldemslav/artificial-intelligence-course-pef-mendelu/tree/main/semester-project/milestone-prompts).
 
 ## 3. Specifika ovládání: MAS (Varianty A, B) vs. Single Agent (Varianta C)
 
